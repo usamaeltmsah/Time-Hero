@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		192F41F825FD40F0007732EF /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192F41F725FD40F0007732EF /* ShadowView.swift */; };
 		1964F6E925FC3F5500DC694B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1964F6E825FC3F5500DC694B /* AppDelegate.swift */; };
 		1964F6EB25FC3F5500DC694B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1964F6EA25FC3F5500DC694B /* SceneDelegate.swift */; };
 		1964F6ED25FC3F5500DC694B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1964F6EC25FC3F5500DC694B /* ViewController.swift */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		192F41F725FD40F0007732EF /* ShadowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
 		1964F6E525FC3F5500DC694B /* DayPlanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DayPlanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1964F6E825FC3F5500DC694B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1964F6EA25FC3F5500DC694B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 				1964F70C25FC454E00DC694B /* EXTAlert.swift */,
 				1964F70925FC454100DC694B /* EXTInternet.swift */,
 				1964F71925FC479700DC694B /* style.swift */,
+				192F41F725FD40F0007732EF /* ShadowView.swift */,
 				1964F70625FC453100DC694B /* ExtentionLocalize.swift */,
 				1964F70225FC451600DC694B /* TextField+Extention.swift */,
 			);
@@ -169,6 +172,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				192F41F825FD40F0007732EF /* ShadowView.swift in Sources */,
 				1964F71D25FC55F900DC694B /* DayPlanTVCell.swift in Sources */,
 				1964F70A25FC454200DC694B /* EXTInternet.swift in Sources */,
 				1964F6ED25FC3F5500DC694B /* ViewController.swift in Sources */,
