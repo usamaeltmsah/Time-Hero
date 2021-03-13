@@ -13,6 +13,14 @@
 		1964F6F025FC3F5500DC694B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1964F6EE25FC3F5500DC694B /* Main.storyboard */; };
 		1964F6F225FC3F5800DC694B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1964F6F125FC3F5800DC694B /* Assets.xcassets */; };
 		1964F6F525FC3F5800DC694B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1964F6F325FC3F5800DC694B /* LaunchScreen.storyboard */; };
+		1964F70325FC451600DC694B /* TextField+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1964F70225FC451600DC694B /* TextField+Extention.swift */; };
+		1964F70725FC453100DC694B /* ExtentionLocalize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1964F70625FC453100DC694B /* ExtentionLocalize.swift */; };
+		1964F70A25FC454200DC694B /* EXTInternet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1964F70925FC454100DC694B /* EXTInternet.swift */; };
+		1964F70D25FC454E00DC694B /* EXTAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1964F70C25FC454E00DC694B /* EXTAlert.swift */; };
+		1964F71425FC461A00DC694B /* Shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1964F71325FC461A00DC694B /* Shared.swift */; };
+		1964F71725FC462800DC694B /* SalmanLocalize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1964F71625FC462800DC694B /* SalmanLocalize.swift */; };
+		1964F71A25FC479700DC694B /* style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1964F71925FC479700DC694B /* style.swift */; };
+		1964F71D25FC55F900DC694B /* DayPlanTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1964F71C25FC55F900DC694B /* DayPlanTVCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +32,14 @@
 		1964F6F125FC3F5800DC694B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1964F6F425FC3F5800DC694B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1964F6F625FC3F5800DC694B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1964F70225FC451600DC694B /* TextField+Extention.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TextField+Extention.swift"; sourceTree = "<group>"; };
+		1964F70625FC453100DC694B /* ExtentionLocalize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtentionLocalize.swift; sourceTree = "<group>"; };
+		1964F70925FC454100DC694B /* EXTInternet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EXTInternet.swift; sourceTree = "<group>"; };
+		1964F70C25FC454E00DC694B /* EXTAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EXTAlert.swift; sourceTree = "<group>"; };
+		1964F71325FC461A00DC694B /* Shared.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shared.swift; sourceTree = "<group>"; };
+		1964F71625FC462800DC694B /* SalmanLocalize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SalmanLocalize.swift; sourceTree = "<group>"; };
+		1964F71925FC479700DC694B /* style.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = style.swift; sourceTree = "<group>"; };
+		1964F71C25FC55F900DC694B /* DayPlanTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayPlanTVCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +56,7 @@
 		1964F6DC25FC3F5500DC694B = {
 			isa = PBXGroup;
 			children = (
+				1964F6FE25FC44C500DC694B /* Extensions */,
 				1964F6E725FC3F5500DC694B /* DayPlanner */,
 				1964F6E625FC3F5500DC694B /* Products */,
 			);
@@ -63,8 +80,23 @@
 				1964F6F125FC3F5800DC694B /* Assets.xcassets */,
 				1964F6F325FC3F5800DC694B /* LaunchScreen.storyboard */,
 				1964F6F625FC3F5800DC694B /* Info.plist */,
+				1964F71C25FC55F900DC694B /* DayPlanTVCell.swift */,
 			);
 			path = DayPlanner;
+			sourceTree = "<group>";
+		};
+		1964F6FE25FC44C500DC694B /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				1964F71325FC461A00DC694B /* Shared.swift */,
+				1964F71625FC462800DC694B /* SalmanLocalize.swift */,
+				1964F70C25FC454E00DC694B /* EXTAlert.swift */,
+				1964F70925FC454100DC694B /* EXTInternet.swift */,
+				1964F71925FC479700DC694B /* style.swift */,
+				1964F70625FC453100DC694B /* ExtentionLocalize.swift */,
+				1964F70225FC451600DC694B /* TextField+Extention.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,9 +169,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1964F71D25FC55F900DC694B /* DayPlanTVCell.swift in Sources */,
+				1964F70A25FC454200DC694B /* EXTInternet.swift in Sources */,
 				1964F6ED25FC3F5500DC694B /* ViewController.swift in Sources */,
+				1964F70325FC451600DC694B /* TextField+Extention.swift in Sources */,
+				1964F71A25FC479700DC694B /* style.swift in Sources */,
+				1964F70725FC453100DC694B /* ExtentionLocalize.swift in Sources */,
 				1964F6E925FC3F5500DC694B /* AppDelegate.swift in Sources */,
 				1964F6EB25FC3F5500DC694B /* SceneDelegate.swift in Sources */,
+				1964F71425FC461A00DC694B /* Shared.swift in Sources */,
+				1964F70D25FC454E00DC694B /* EXTAlert.swift in Sources */,
+				1964F71725FC462800DC694B /* SalmanLocalize.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
