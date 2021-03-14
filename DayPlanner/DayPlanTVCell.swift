@@ -9,6 +9,7 @@ import UIKit
 
 class DayPlanTVCell: UITableViewCell {
 
+    @IBOutlet var view: UIView!
     var taskTitle: String!
     var taskCat: String!
     var taskDesc: String?

@@ -17,6 +17,7 @@ class ViewController: UIViewController {
     @IBOutlet var fridayButton: UIButton!
     @IBOutlet var saturdayButton: UIButton!
     @IBOutlet var dayPlansTV: UITableView!
+    @IBOutlet var addPlanView: UIView!
     
     var selectedDay: UIButton!
     var daysButtons = [UIButton]()
@@ -59,12 +60,13 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = dayPlansTV.dequeueReusableCell(withIdentifier: "cell") as? DayPlanTVCell {
+            cell.view = addPlanView
             return cell
         }
         return DayPlanTVCell()
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("Youc clicked \(indexPath.row)")
+        print("You clicked \(indexPath.row)")
     }
 }
