@@ -55,7 +55,7 @@ class ViewController: UIViewController {
 
 extension ViewController : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return currentDayPlans.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -66,7 +66,28 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource {
         return DayPlanTVCell()
     }
     
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let editAction = UIContextualAction(style: .normal, title: "Edit") { [weak self] (_, _, _) in
+//            self?.editPlan(at: indexPath.row)
+        }
+        editAction.backgroundColor = UIColor(hexString: "#8E8E93FF")
+
+        return UISwipeActionsConfiguration(actions: [editAction])
+    }
+    
+    func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let doneAction = UIContextualAction(style: .normal, title: "Done") { [weak self] (_, _, _) in
+//            self?.editPlan(at: indexPath.row)
+        }
+        
+        doneAction.backgroundColor = UIColor(hexString: "#A9DE91FF")
+
+        return UISwipeActionsConfiguration(actions: [doneAction])
+    }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("You clicked \(indexPath.row)")
+        if let vc = storyboard?.instantiateViewController(identifier: "addCard") as? UINavigationController {
+            present(vc, animated: true)
+        }
     }
 }

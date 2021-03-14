@@ -28,10 +28,10 @@ class GlobalTaskSettingsVC: UIViewController {
         alwaysOnTV.delegate = self
         alwaysOnTV.dataSource = self
         
-        onClickTVTitles = ["fdf", "fdd", "fregrtgrt", "rgfrtghty", "tgtyhyt"]
-        onClickTVIsOn = [true, false, false, true, true]
+        onClickTVTitles = ["Show Hours on Left", "Show Hours on Card", "Show Hours on Left 2", "Show Hours on Top", "Expand Description", "Apply on All When Click"]
+        onClickTVIsOn = [true, false, false, true, true, false]
         
-        alwaysOnTVTitles = ["abc", "def", "fdfsds", "rgfrtghty"]
+        alwaysOnTVTitles = ["Show Hours on Left", "Cards Expanded", "Show Hours on Card", "Show Hours on Top"]
         alwaysOnTVIsOn = [false, false, true, false]
     }
     
