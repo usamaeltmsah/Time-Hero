@@ -23,6 +23,8 @@ class ViewController: UIViewController {
     var currentDayCards = [PlanCard]()
     var currentDayDoneCards = [PlanCard]()
     
+    var allCards = [PlanCard]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -30,8 +32,10 @@ class ViewController: UIViewController {
         dayPlansTV.dataSource = self
         
         daysButtons = [sundayButton, mondayButton, tuesdayButton, wednesdayButton, thuresdayButton, fridayButton, saturdayButton]
-        currentDayCards = [PlanCard(), PlanCard(), PlanCard(), PlanCard(), PlanCard(), PlanCard(), PlanCard()]
+        currentDayCards = [PlanCard(taskTitle: "New Task", taskCat: "Cdsc", taskDesc: "cdsvfdsv", taskColor: UIColor(hexString: "#F2AC80FF"), taskTime: "", taskLenght: "30M", isDone: false), PlanCard(taskTitle: "Task 2", taskCat: "Cat 2", taskDesc: "Desc of task 2", taskColor: UIColor(hexString: "#F28089FF"), taskTime: "", taskLenght: "3H", isDone: false), PlanCard(taskTitle: "Task 3", taskCat: "Cat 3", taskDesc: "Desc of task 3", taskColor: UIColor(hexString: "#80A3F2FF"), taskTime: "", taskLenght: "1H 30M", isDone: false)]
         currentDayDoneCards = [PlanCard(), PlanCard()]
+        
+        allCards = currentDayCards + currentDayDoneCards
     }
 
     @IBAction func dayButtonClicked(_ sender: UIButton) {
@@ -56,15 +60,20 @@ class ViewController: UIViewController {
 
 extension ViewController : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return currentDayCards.count + currentDayDoneCards.count + 1
+        return allCards.count + 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row < currentDayCards.count {
+            let card = currentDayCards[indexPath.row]
             if let cell = dayPlansTV.dequeueReusableCell(withIdentifier: "PlanCardCell") as? DayPlanCardTVCell {
+                cell.cardView.backgroundColor = card.taskColor
+                cell.cardTitle.text = card.taskTitle
+                cell.cardTtimeLength.text = card.taskLenght
+                cell.cardCategory.text = card.taskCat
                 return cell
             }
-        } else if indexPath.row < currentDayCards.count + currentDayDoneCards.count {
+        } else if indexPath.row < allCards.count {
             if let cell = dayPlansTV.dequeueReusableCell(withIdentifier: "DoneCardCell") as? DoneCardTVCell {
                 return cell
             }
@@ -78,27 +87,48 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        guard indexPath.row < allCards.count else {
+            return UISwipeActionsConfiguration(actions: [])
+        }
+        
         let editAction = UIContextualAction(style: .normal, title: "Edit") { [weak self] (_, _, _) in
 //            self?.editPlan(at: indexPath.row)
         }
         editAction.backgroundColor = UIColor(hexString: "#8E8E93FF")
-
+        
         return UISwipeActionsConfiguration(actions: [editAction])
     }
     
     func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        let doneAction = UIContextualAction(style: .normal, title: "Done") { [weak self] (_, _, _) in
-//            self?.savePlan(at: indexPath.row)
+        guard indexPath.row < allCards.count else {
+            return UISwipeActionsConfiguration(actions: [])
         }
         
-        doneAction.backgroundColor = UIColor(hexString: "#A9DE91FF")
+        if indexPath.row < currentDayCards.count {
+            let doneAction = UIContextualAction(style: .normal, title: "Done") { [weak self] (_, _, _) in
+    //            self?.savePlan(at: indexPath.row)
+            }
+            
+            doneAction.backgroundColor = UIColor(hexString: "#A9DE91FF")
 
-        return UISwipeActionsConfiguration(actions: [doneAction])
+            return UISwipeActionsConfiguration(actions: [doneAction])
+        } else {
+            let unDoneAction = UIContextualAction(style: .normal, title: "UnDone") { [weak self] (_, _, _) in
+    //            self?.savePlan(at: indexPath.row)
+            }
+            
+            unDoneAction.backgroundColor = .red
+
+            return UISwipeActionsConfiguration(actions: [unDoneAction])
+        }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let vc = storyboard?.instantiateViewController(identifier: "addCard") as? UINavigationController {
-            present(vc, animated: true)
+        if indexPath.row == allCards.count {
+            if let vc = storyboard?.instantiateViewController(identifier: "addCard") as? UINavigationController {
+                present(vc, animated: true)
+            }
         }
+        
     }
 }
