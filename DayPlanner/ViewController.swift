@@ -30,12 +30,15 @@ class ViewController: UIViewController {
         
         dayPlansTV.delegate = self
         dayPlansTV.dataSource = self
-        
+        dayPlansTV.dragDelegate = self
+        dayPlansTV.dropDelegate = self
         daysButtons = [sundayButton, mondayButton, tuesdayButton, wednesdayButton, thuresdayButton, fridayButton, saturdayButton]
         currentDayCards = [PlanCard(taskTitle: "New Task", taskCat: "Cdsc", taskDesc: "cdsvfdsv", taskColor: UIColor(hexString: "#F2AC80FF"), taskTime: "", taskLenght: "30M", isDone: false), PlanCard(taskTitle: "Task 2", taskCat: "Cat 2", taskDesc: "Desc of task 2", taskColor: UIColor(hexString: "#F28089FF"), taskTime: "", taskLenght: "3H", isDone: false), PlanCard(taskTitle: "Task 3", taskCat: "Cat 3", taskDesc: "Desc of task 3", taskColor: UIColor(hexString: "#80A3F2FF"), taskTime: "", taskLenght: "1H 30M", isDone: false)]
         currentDayDoneCards = [PlanCard(), PlanCard()]
         
         allCards = currentDayCards + currentDayDoneCards
+        
+        dayPlansTV.dragInteractionEnabled = true
     }
 
     @IBAction func dayButtonClicked(_ sender: UIButton) {
@@ -58,7 +61,7 @@ class ViewController: UIViewController {
     
 }
 
-extension ViewController : UITableViewDelegate, UITableViewDataSource {
+extension ViewController : UITableViewDelegate, UITableViewDataSource, UITableViewDragDelegate, UITableViewDropDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return allCards.count + 1
     }
@@ -130,5 +133,34 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource {
             }
         }
         
+    }
+    
+    func tableView(_ tableView: UITableView, itemsForBeginning session: UIDragSession, at indexPath: IndexPath) -> [UIDragItem] {
+        guard indexPath.row < currentDayCards.count else {
+            return []
+        }
+        print(3)
+        let dragItem = UIDragItem(itemProvider: NSItemProvider())
+        dragItem.localObject = currentDayCards[indexPath.row]
+        return [ dragItem ]
+    }
+    
+    func tableView(_ tableView: UITableView, performDropWith coordinator: UITableViewDropCoordinator) {
+        //
+    }
+    
+    func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
+        if indexPath.row < currentDayCards.count {
+            return true
+        }
+        return false
+    }
+    
+    func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        guard sourceIndexPath.row < currentDayCards.count && destinationIndexPath.row < currentDayCards.count else {
+            tableView.reloadData()
+            return
+        }
+        currentDayCards.swapAt(sourceIndexPath.row, destinationIndexPath.row)
     }
 }

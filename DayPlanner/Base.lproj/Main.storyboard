@@ -898,13 +898,13 @@
     </scenes>
     <designables>
         <designable name="8gA-Wk-dlr">
-            <size key="intrinsicContentSize" width="346" height="42.80078125"/>
+            <size key="intrinsicContentSize" width="196" height="34"/>
         </designable>
         <designable name="bAs-jM-Wnu">
-            <size key="intrinsicContentSize" width="346" height="42.80078125"/>
+            <size key="intrinsicContentSize" width="61" height="34"/>
         </designable>
         <designable name="jdx-eB-OId">
-            <size key="intrinsicContentSize" width="346" height="42.80078125"/>
+            <size key="intrinsicContentSize" width="98" height="34"/>
         </designable>
     </designables>
     <resources>
