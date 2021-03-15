@@ -17,11 +17,11 @@ class ViewController: UIViewController {
     @IBOutlet var fridayButton: UIButton!
     @IBOutlet var saturdayButton: UIButton!
     @IBOutlet var dayPlansTV: UITableView!
-    @IBOutlet var addPlanView: UIView!
     
     var selectedDay: UIButton!
     var daysButtons = [UIButton]()
-    var currentDayPlans = [Int]()
+    var currentDayCards = [PlanCard]()
+    var currentDayDoneCards = [PlanCard]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +30,8 @@ class ViewController: UIViewController {
         dayPlansTV.dataSource = self
         
         daysButtons = [sundayButton, mondayButton, tuesdayButton, wednesdayButton, thuresdayButton, fridayButton, saturdayButton]
-        currentDayPlans = [1]
+        currentDayCards = [PlanCard(), PlanCard(), PlanCard(), PlanCard(), PlanCard(), PlanCard(), PlanCard()]
+        currentDayDoneCards = [PlanCard(), PlanCard()]
     }
 
     @IBAction func dayButtonClicked(_ sender: UIButton) {
@@ -55,15 +56,25 @@ class ViewController: UIViewController {
 
 extension ViewController : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return currentDayPlans.count
+        return currentDayCards.count + currentDayDoneCards.count + 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = dayPlansTV.dequeueReusableCell(withIdentifier: "cell") as? DayPlanTVCell {
-            cell.view = addPlanView
-            return cell
+        if indexPath.row < currentDayCards.count {
+            if let cell = dayPlansTV.dequeueReusableCell(withIdentifier: "PlanCardCell") as? DayPlanCardTVCell {
+                return cell
+            }
+        } else if indexPath.row < currentDayCards.count + currentDayDoneCards.count {
+            if let cell = dayPlansTV.dequeueReusableCell(withIdentifier: "DoneCardCell") as? DoneCardTVCell {
+                return cell
+            }
+        } else {
+            if let cell = dayPlansTV.dequeueReusableCell(withIdentifier: "newTaskCardCell") as? AddTaskTVCell {
+                return cell
+            }
         }
-        return DayPlanTVCell()
+        
+        return DayPlanCardTVCell()
     }
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
@@ -77,7 +88,7 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let doneAction = UIContextualAction(style: .normal, title: "Done") { [weak self] (_, _, _) in
-//            self?.editPlan(at: indexPath.row)
+//            self?.savePlan(at: indexPath.row)
         }
         
         doneAction.backgroundColor = UIColor(hexString: "#A9DE91FF")

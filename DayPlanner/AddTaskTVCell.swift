@@ -7,19 +7,13 @@
 
 import UIKit
 
-class DayPlanTVCell: UITableViewCell {
+class AddTaskTVCell: UITableViewCell {
 
     @IBOutlet var view: UIView!
-    var taskTitle: String!
-    var taskCat: String!
-    var taskDesc: String?
-    var taskColor: String!
-    var taskTime: String!
-    var taskLenght: Int!
-    var isDone = false
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
     }
     
     override func layoutSubviews() {

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		194BAAEF25FECD6000129C23 /* DayPlanCardTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194BAAEE25FECD6000129C23 /* DayPlanCardTVCell.swift */; };
+		194BAAF225FECD9800129C23 /* DoneCardTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194BAAF125FECD9800129C23 /* DoneCardTVCell.swift */; };
+		194BAAF925FECF3B00129C23 /* PlanCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194BAAF825FECF3B00129C23 /* PlanCard.swift */; };
 		1964F6E925FC3F5500DC694B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1964F6E825FC3F5500DC694B /* AppDelegate.swift */; };
 		1964F6EB25FC3F5500DC694B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1964F6EA25FC3F5500DC694B /* SceneDelegate.swift */; };
 		1964F6ED25FC3F5500DC694B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1964F6EC25FC3F5500DC694B /* ViewController.swift */; };
@@ -20,7 +23,7 @@
 		1964F71425FC461A00DC694B /* Shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1964F71325FC461A00DC694B /* Shared.swift */; };
 		1964F71725FC462800DC694B /* SalmanLocalize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1964F71625FC462800DC694B /* SalmanLocalize.swift */; };
 		1964F71A25FC479700DC694B /* style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1964F71925FC479700DC694B /* style.swift */; };
-		1964F71D25FC55F900DC694B /* DayPlanTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1964F71C25FC55F900DC694B /* DayPlanTVCell.swift */; };
+		1964F71D25FC55F900DC694B /* AddTaskTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1964F71C25FC55F900DC694B /* AddTaskTVCell.swift */; };
 		19CDDBEB25FD789800686C09 /* GlobalTaskSettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19CDDBEA25FD789800686C09 /* GlobalTaskSettingsVC.swift */; };
 		19CDDBEE25FD7A4B00686C09 /* OnClickTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19CDDBED25FD7A4B00686C09 /* OnClickTVCell.swift */; };
 		19CDDBF125FD7C0E00686C09 /* AlwaysOnTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19CDDBF025FD7C0E00686C09 /* AlwaysOnTVCell.swift */; };
@@ -28,6 +31,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		194BAAEE25FECD6000129C23 /* DayPlanCardTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayPlanCardTVCell.swift; sourceTree = "<group>"; };
+		194BAAF125FECD9800129C23 /* DoneCardTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoneCardTVCell.swift; sourceTree = "<group>"; };
+		194BAAF825FECF3B00129C23 /* PlanCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanCard.swift; sourceTree = "<group>"; };
 		1964F6E525FC3F5500DC694B /* DayPlanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DayPlanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1964F6E825FC3F5500DC694B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1964F6EA25FC3F5500DC694B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -43,7 +49,7 @@
 		1964F71325FC461A00DC694B /* Shared.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shared.swift; sourceTree = "<group>"; };
 		1964F71625FC462800DC694B /* SalmanLocalize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SalmanLocalize.swift; sourceTree = "<group>"; };
 		1964F71925FC479700DC694B /* style.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = style.swift; sourceTree = "<group>"; };
-		1964F71C25FC55F900DC694B /* DayPlanTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayPlanTVCell.swift; sourceTree = "<group>"; };
+		1964F71C25FC55F900DC694B /* AddTaskTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskTVCell.swift; sourceTree = "<group>"; };
 		19CDDBEA25FD789800686C09 /* GlobalTaskSettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalTaskSettingsVC.swift; sourceTree = "<group>"; };
 		19CDDBED25FD7A4B00686C09 /* OnClickTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnClickTVCell.swift; sourceTree = "<group>"; };
 		19CDDBF025FD7C0E00686C09 /* AlwaysOnTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlwaysOnTVCell.swift; sourceTree = "<group>"; };
@@ -84,11 +90,14 @@
 				1964F6E825FC3F5500DC694B /* AppDelegate.swift */,
 				1964F6EA25FC3F5500DC694B /* SceneDelegate.swift */,
 				1964F6EC25FC3F5500DC694B /* ViewController.swift */,
+				194BAAF825FECF3B00129C23 /* PlanCard.swift */,
 				1964F6EE25FC3F5500DC694B /* Main.storyboard */,
+				194BAAEE25FECD6000129C23 /* DayPlanCardTVCell.swift */,
+				194BAAF125FECD9800129C23 /* DoneCardTVCell.swift */,
 				1964F6F125FC3F5800DC694B /* Assets.xcassets */,
 				1964F6F325FC3F5800DC694B /* LaunchScreen.storyboard */,
 				1964F6F625FC3F5800DC694B /* Info.plist */,
-				1964F71C25FC55F900DC694B /* DayPlanTVCell.swift */,
+				1964F71C25FC55F900DC694B /* AddTaskTVCell.swift */,
 				19CDDBEA25FD789800686C09 /* GlobalTaskSettingsVC.swift */,
 				19CDDBED25FD7A4B00686C09 /* OnClickTVCell.swift */,
 				19CDDBF025FD7C0E00686C09 /* AlwaysOnTVCell.swift */,
@@ -181,7 +190,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1964F71D25FC55F900DC694B /* DayPlanTVCell.swift in Sources */,
+				1964F71D25FC55F900DC694B /* AddTaskTVCell.swift in Sources */,
 				19CDDBEE25FD7A4B00686C09 /* OnClickTVCell.swift in Sources */,
 				1964F70A25FC454200DC694B /* EXTInternet.swift in Sources */,
 				1964F6ED25FC3F5500DC694B /* ViewController.swift in Sources */,
@@ -189,6 +198,7 @@
 				1964F71A25FC479700DC694B /* style.swift in Sources */,
 				1964F70725FC453100DC694B /* ExtentionLocalize.swift in Sources */,
 				19CDDBF825FD885900686C09 /* NewTaskVC.swift in Sources */,
+				194BAAF925FECF3B00129C23 /* PlanCard.swift in Sources */,
 				1964F6E925FC3F5500DC694B /* AppDelegate.swift in Sources */,
 				19CDDBEB25FD789800686C09 /* GlobalTaskSettingsVC.swift in Sources */,
 				1964F6EB25FC3F5500DC694B /* SceneDelegate.swift in Sources */,
@@ -196,6 +206,8 @@
 				19CDDBF125FD7C0E00686C09 /* AlwaysOnTVCell.swift in Sources */,
 				1964F70D25FC454E00DC694B /* EXTAlert.swift in Sources */,
 				1964F71725FC462800DC694B /* SalmanLocalize.swift in Sources */,
+				194BAAEF25FECD6000129C23 /* DayPlanCardTVCell.swift in Sources */,
+				194BAAF225FECD9800129C23 /* DoneCardTVCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
