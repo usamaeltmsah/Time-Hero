@@ -681,6 +681,9 @@
                     <navigationItem key="navigationItem" title="New Task" largeTitleDisplayMode="never" id="m6a-C5-0c7">
                         <barButtonItem key="backBarButtonItem" title="Back" id="Z7D-oH-S1x"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="TFTaskTitle" destination="bAs-jM-Wnu" id="nFt-io-DiB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bzQ-qB-36N" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
