@@ -16,17 +16,44 @@ class ViewController: UIViewController {
     @IBOutlet var thuresdayButton: UIButton!
     @IBOutlet var fridayButton: UIButton!
     @IBOutlet var saturdayButton: UIButton!
+    
     @IBOutlet var dayPlansTV: UITableView!
     
     var selectedDay: UIButton!
     var daysButtons = [UIButton]()
-    var currentDayCards = [PlanCard]()
-    var currentDayDoneCards = [PlanCard]()
+    
+    var selectedDayInd: Int! = 0
+    
+    // daysPlans: is a dictionary that holds the day index, and 2D array which contains 2 arrays one for currentDayCards, and the other for currentDayDoneCards.
+    var daysPlans = [Int:[[PlanCard]]]()
+    
+    var currentDayCards = [PlanCard]() {
+        didSet {
+            daysPlans[selectedDayInd] = [currentDayCards, currentDayDoneCards]
+        }
+    }
+    var currentDayDoneCards = [PlanCard]() {
+        didSet {
+            daysPlans[selectedDayInd] = [currentDayCards, currentDayDoneCards]
+        }
+    }
     
     var allCards = [PlanCard]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        for i in 0..<7 {
+            var arr = Array(repeating: [PlanCard](), count: 2)
+            for j in 0..<5 {
+                arr[0].append(PlanCard(taskTitle: "Title", taskCat: "Cat\(i)-\(j)", taskDesc: "Desc\(i)-\(j)", taskColor: .green, taskTime: "3H 5M", taskLenght: "Len", isDone: false))
+            }
+            
+            for j in 0..<5 {
+                arr[1].append(PlanCard(taskTitle: "Title", taskCat: "Cat\(i)-\(j)", taskDesc: "Desc\(i)-\(j)", taskColor: .green, taskTime: "3H 5M", taskLenght: "Len", isDone: true))
+            }
+            daysPlans[i] = arr
+        }
         
         dayPlansTV.delegate = self
         dayPlansTV.dataSource = self
@@ -57,6 +84,13 @@ class ViewController: UIViewController {
                 day.titleLabel?.font = .systemFont(ofSize: 20)
             }
         }
+        
+        selectedDayInd = daysButtons.firstIndex(of: selectedDay)
+        currentDayCards = daysPlans[selectedDayInd]?[0] ?? []
+        currentDayDoneCards = daysPlans[selectedDayInd]?[1] ?? []
+        
+        allCards = currentDayCards + currentDayDoneCards
+        dayPlansTV.reloadData()
     }
     
 }
@@ -139,7 +173,6 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource, UITableVi
         guard indexPath.row < currentDayCards.count else {
             return []
         }
-        print(3)
         let dragItem = UIDragItem(itemProvider: NSItemProvider())
         dragItem.localObject = currentDayCards[indexPath.row]
         return [ dragItem ]
@@ -161,6 +194,8 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource, UITableVi
             tableView.reloadData()
             return
         }
-        currentDayCards.swapAt(sourceIndexPath.row, destinationIndexPath.row)
+        let mover = currentDayCards.remove(at: sourceIndexPath.row)
+        currentDayCards.insert(mover, at: destinationIndexPath.row)
+        tableView.reloadData()
     }
 }
