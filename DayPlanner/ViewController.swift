@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UINavigationControllerDelegate {
 
     @IBOutlet var sundayButton: UIButton!
     @IBOutlet var mondayButton: UIButton!
@@ -27,18 +27,14 @@ class ViewController: UIViewController {
     // daysPlans: is a dictionary that holds the day index, and 2D array which contains 2 arrays one for currentDayCards, and the other for currentDayDoneCards.
     var daysPlans = [Int:[[PlanCard]]]()
     
-    var currentDayCards = [PlanCard]() {
-        didSet {
-            daysPlans[selectedDayInd] = [currentDayCards, currentDayDoneCards]
-        }
-    }
-    var currentDayDoneCards = [PlanCard]() {
-        didSet {
-            daysPlans[selectedDayInd] = [currentDayCards, currentDayDoneCards]
-        }
-    }
+    var currentDayCards = [PlanCard]()
+    var currentDayDoneCards = [PlanCard]()
     
-    var allCards = [PlanCard]()
+    var allCards = [PlanCard]() {
+        didSet {
+            daysPlans[selectedDayInd] = [currentDayCards, currentDayDoneCards]
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,9 +55,13 @@ class ViewController: UIViewController {
         dayPlansTV.dataSource = self
         dayPlansTV.dragDelegate = self
         dayPlansTV.dropDelegate = self
+        
         daysButtons = [sundayButton, mondayButton, tuesdayButton, wednesdayButton, thuresdayButton, fridayButton, saturdayButton]
-        currentDayCards = [PlanCard(taskTitle: "New Task", taskCat: "Cdsc", taskDesc: "cdsvfdsv", taskColor: UIColor(hexString: "#F2AC80FF"), taskTime: "", taskLenght: "30M", isDone: false), PlanCard(taskTitle: "Task 2", taskCat: "Cat 2", taskDesc: "Desc of task 2", taskColor: UIColor(hexString: "#F28089FF"), taskTime: "", taskLenght: "3H", isDone: false), PlanCard(taskTitle: "Task 3", taskCat: "Cat 3", taskDesc: "Desc of task 3", taskColor: UIColor(hexString: "#80A3F2FF"), taskTime: "", taskLenght: "1H 30M", isDone: false)]
-        currentDayDoneCards = [PlanCard(), PlanCard()]
+//        currentDayCards = [PlanCard(taskTitle: "New Task", taskCat: "Cdsc", taskDesc: "cdsvfdsv", taskColor: UIColor(hexString: "#F2AC80FF"), taskTime: "", taskLenght: "30M", isDone: false), PlanCard(taskTitle: "Task 2", taskCat: "Cat 2", taskDesc: "Desc of task 2", taskColor: UIColor(hexString: "#F28089FF"), taskTime: "", taskLenght: "3H", isDone: false), PlanCard(taskTitle: "Task 3", taskCat: "Cat 3", taskDesc: "Desc of task 3", taskColor: UIColor(hexString: "#80A3F2FF"), taskTime: "", taskLenght: "1H 30M", isDone: false)]
+//        currentDayDoneCards = [PlanCard(), PlanCard()]
+        
+        currentDayCards = daysPlans[selectedDayInd]?[0] ?? []
+        currentDayDoneCards = daysPlans[selectedDayInd]?[1] ?? []
         
         allCards = currentDayCards + currentDayDoneCards
         
@@ -163,6 +163,7 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource, UITableVi
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == allCards.count {
             if let vc = storyboard?.instantiateViewController(identifier: "addCard") as? UINavigationController {
+                vc.delegate = self
                 present(vc, animated: true)
             }
         }
@@ -196,6 +197,7 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource, UITableVi
         }
         let mover = currentDayCards.remove(at: sourceIndexPath.row)
         currentDayCards.insert(mover, at: destinationIndexPath.row)
+        daysPlans[selectedDayInd] = [currentDayCards, currentDayDoneCards]
         tableView.reloadData()
     }
 }
