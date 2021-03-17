@@ -267,6 +267,9 @@
                                                             </constraints>
                                                         </tableViewCellContentView>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <connections>
+                                                            <outlet property="taskTitle" destination="hoU-wp-Gfc" id="5aY-KL-ov9"/>
+                                                        </connections>
                                                     </tableViewCell>
                                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="newTaskCardCell" id="SaI-de-KR0" customClass="AddTaskTVCell" customModule="DayPlanner" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="183" width="414" height="100"/>

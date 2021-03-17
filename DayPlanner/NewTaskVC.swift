@@ -26,7 +26,6 @@ class NewTaskVC: UIViewController, UITextFieldDelegate {
     var colorButtons = [UIButton]()
     
     var selectedColor: UIColor!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -69,7 +68,7 @@ class NewTaskVC: UIViewController, UITextFieldDelegate {
     @objc func insertCard() {
         let date = datePicker.date.dateString(with: "HH:MM")
         let card = PlanCard(taskTitle: TFTaskTitle.text, taskCat: category.text, taskDesc: desc.text, taskColor: selectedColor, taskTime: date, taskLenght: getTaskLen(), isDone: false)
-        allCards.insert(card, at: 0)
+        currentDayUnDoneCards.insert(card, at: 0)
         
         dismiss(animated: true, completion: nil)
     }

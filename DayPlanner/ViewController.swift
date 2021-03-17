@@ -19,6 +19,9 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
     
     @IBOutlet var dayPlansTV: UITableView!
     
+    var selectedDay: UIButton!
+    var daysButtons = [UIButton]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -29,7 +32,12 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
         
         daysButtons = [sundayButton, mondayButton, tuesdayButton, wednesdayButton, thuresdayButton, fridayButton, saturdayButton]
         
-        allCards = daysPlans[selectedDayInd] ?? []
+        for i in 0 ..< 7 {
+            daysPlans[i] = Array(repeating: [PlanCard](), count: 2)
+        }
+        
+        currentDayUnDoneCards = daysPlans[selectedDayInd]?[0] ?? []
+        currentDayDoneCards = daysPlans[selectedDayInd]?[1] ?? []
         
         dayPlansTV.dragInteractionEnabled = true
     }
@@ -52,7 +60,8 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
         }
         
         selectedDayInd = daysButtons.firstIndex(of: selectedDay)
-        allCards = daysPlans[selectedDayInd] ?? []
+        currentDayUnDoneCards = daysPlans[selectedDayInd]?[0] ?? []
+        currentDayDoneCards = daysPlans[selectedDayInd]?[1] ?? []
         dayPlansTV.reloadData()
     }
     
@@ -60,27 +69,26 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
 
 extension ViewController : UITableViewDelegate, UITableViewDataSource, UITableViewDragDelegate, UITableViewDropDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return allCards.count + 1
+        return currentDayUnDoneCards.count + currentDayDoneCards.count + 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
-        if indexPath.row < allCards.count {
-            let card = allCards[indexPath.row]
-            if card.isDone {
-                if let cell = dayPlansTV.dequeueReusableCell(withIdentifier: "DoneCardCell") as? DoneCardTVCell {
-                    return cell
-                }
-            } else {
-                if let cell = dayPlansTV.dequeueReusableCell(withIdentifier: "PlanCardCell") as? DayPlanCardTVCell {
-                    cell.cardView.backgroundColor = card.taskColor
-                    cell.cardTitle.text = card.taskTitle
-                    cell.cardTtimeLength.text = card.taskLenght
-                    cell.cardCategory.text = card.taskCat
-                    return cell
-                }
+        if indexPath.row < currentDayUnDoneCards.count {
+            let card = currentDayUnDoneCards[indexPath.row]
+            if let cell = dayPlansTV.dequeueReusableCell(withIdentifier: "PlanCardCell") as? DayPlanCardTVCell {
+                cell.cardView.backgroundColor = card.taskColor
+                cell.cardTitle.text = card.taskTitle
+                cell.cardTtimeLength.text = card.taskLenght
+                cell.cardCategory.text = card.taskCat
+                return cell
             }
-            
+        } else if indexPath.row < currentDayUnDoneCards.count + currentDayDoneCards.count {
+            let card = currentDayDoneCards[indexPath.row - currentDayUnDoneCards.count]
+            if let cell = dayPlansTV.dequeueReusableCell(withIdentifier: "DoneCardCell") as? DoneCardTVCell {
+                cell.taskTitle.text = card.taskTitle
+                return cell
+            }
         } else {
             if let cell = dayPlansTV.dequeueReusableCell(withIdentifier: "newTaskCardCell") as? AddTaskTVCell {
                 return cell
@@ -91,7 +99,7 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource, UITableVi
     }
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        guard indexPath.row < allCards.count else {
+        guard indexPath.row < currentDayUnDoneCards.count + currentDayDoneCards.count else {
             return UISwipeActionsConfiguration(actions: [])
         }
         
@@ -104,34 +112,36 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource, UITableVi
     }
     
     func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        guard indexPath.row < allCards.count else {
+        guard indexPath.row < currentDayUnDoneCards.count + currentDayDoneCards.count else {
             return UISwipeActionsConfiguration(actions: [])
         }
         
-        if indexPath.row < allCards.count {
-            let card = allCards[indexPath.row]
-            if !card.isDone {
-                let doneAction = UIContextualAction(style: .normal, title: "Done") { [weak self] (_, _, _) in
-        //            self?.savePlan(at: indexPath.row)
-                }
-                
-                doneAction.backgroundColor = UIColor(hexString: "#A9DE91FF")
-
-                return UISwipeActionsConfiguration(actions: [doneAction])
-            } else {
-                let unDoneAction = UIContextualAction(style: .normal, title: "UnDone") { [weak self] (_, _, _) in
-        //            self?.savePlan(at: indexPath.row)
-                }
-                unDoneAction.backgroundColor = .red
-
-                return UISwipeActionsConfiguration(actions: [unDoneAction])
+        if indexPath.row < currentDayUnDoneCards.count {
+            let doneAction = UIContextualAction(style: .normal, title: "Done") {  (_, _, _) in
+//                currentDayUnDoneCards[indexPath.row].isDone = true
+                currentDayDoneCards.insert(currentDayUnDoneCards[indexPath.row], at: 0)
+                currentDayUnDoneCards.remove(at: indexPath.row)
+                tableView.reloadData()
             }
+            
+            doneAction.backgroundColor = UIColor(hexString: "#A9DE91FF")
+
+            return UISwipeActionsConfiguration(actions: [doneAction])
+        } else {
+            let unDoneAction = UIContextualAction(style: .normal, title: "UnDone") { (_, _, _) in
+                let ind = indexPath.row - currentDayUnDoneCards.count
+                currentDayUnDoneCards.insert(currentDayDoneCards[ind], at: 0)
+                currentDayDoneCards.remove(at: ind)
+                tableView.reloadData()
+            }
+            unDoneAction.backgroundColor = .red
+
+            return UISwipeActionsConfiguration(actions: [unDoneAction])
         }
-        return UISwipeActionsConfiguration(actions: [])
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.row == allCards.count {
+        if indexPath.row == currentDayUnDoneCards.count + currentDayDoneCards.count {
             if let vc = storyboard?.instantiateViewController(identifier: "addCardNavBar") as? NewTaskNC {
                 vc.deleg = self
                 present(vc, animated: true)
@@ -141,12 +151,11 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource, UITableVi
     }
     
     func tableView(_ tableView: UITableView, itemsForBeginning session: UIDragSession, at indexPath: IndexPath) -> [UIDragItem] {
-        let card = allCards[indexPath.row]
-        guard indexPath.row < allCards.count && !card.isDone else {
+        guard indexPath.row < currentDayUnDoneCards.count else {
             return []
         }
         let dragItem = UIDragItem(itemProvider: NSItemProvider())
-        dragItem.localObject = card
+        dragItem.localObject = currentDayUnDoneCards[indexPath.row]
         return [ dragItem ]
     }
     
@@ -155,21 +164,20 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource, UITableVi
     }
     
     func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        let card = allCards[indexPath.row]
-        if indexPath.row < allCards.count && !card.isDone {
+        if indexPath.row < currentDayUnDoneCards.count {
             return true
         }
         return false
     }
     
     func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
-        guard sourceIndexPath.row < allCards.count && destinationIndexPath.row < allCards.count && !allCards[sourceIndexPath.row].isDone && !allCards[destinationIndexPath.row].isDone else {
+        guard sourceIndexPath.row < currentDayUnDoneCards.count && destinationIndexPath.row < currentDayUnDoneCards.count else {
             tableView.reloadData()
             return
         }
-        let mover = allCards.remove(at: sourceIndexPath.row)
-        allCards.insert(mover, at: destinationIndexPath.row)
-        daysPlans[selectedDayInd] = allCards
+        let mover = currentDayUnDoneCards.remove(at: sourceIndexPath.row)
+        currentDayUnDoneCards.insert(mover, at: destinationIndexPath.row)
+        daysPlans[selectedDayInd] = [currentDayUnDoneCards, currentDayDoneCards]
         tableView.reloadData()
     }
 }

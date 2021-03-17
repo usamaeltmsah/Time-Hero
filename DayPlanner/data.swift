@@ -7,17 +7,20 @@
 
 import UIKit
 
-var selectedDay: UIButton!
-var daysButtons = [UIButton]()
+
 
 var selectedDayInd: Int! = 0
 
 // daysPlans: is a dictionary that holds the day index, and 1D array which contains allCards (Done and not done).
-var daysPlans = [Int:[PlanCard]]()
+var daysPlans = [Int:[[PlanCard]]]()
 
-var allCards = [PlanCard]() {
+var currentDayUnDoneCards = [PlanCard]() {
     didSet {
-        daysPlans[selectedDayInd] = allCards
+        daysPlans[selectedDayInd, default: []][0] = currentDayUnDoneCards
     }
 }
-
+var currentDayDoneCards = [PlanCard]()  {
+    didSet {
+        daysPlans[selectedDayInd, default: []][1] = currentDayDoneCards
+    }
+}
