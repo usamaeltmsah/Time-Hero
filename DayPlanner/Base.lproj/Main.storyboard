@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Dde-pk-t40">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Apw-NK-QON">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
@@ -344,6 +344,7 @@
                             <constraint firstItem="M2f-MD-sT6" firstAttribute="top" secondItem="yjV-dh-tbK" secondAttribute="top" id="wnQ-gC-Mev"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="x6P-GX-atQ"/>
                     <connections>
                         <outlet property="dayPlansTV" destination="eOO-ny-3KJ" id="WzX-B4-SGz"/>
                         <outlet property="fridayButton" destination="7f2-NV-M9L" id="CSG-mB-PWU"/>
@@ -357,12 +358,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZjZ-Yf-dFd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="140.57971014492756" y="-20.089285714285712"/>
+            <point key="canvasLocation" x="1960.8695652173915" y="-20.089285714285712"/>
         </scene>
         <!--New Task-->
         <scene sceneID="XfX-u4-wL2">
             <objects>
-                <viewController id="qbb-8P-LqP" customClass="NewTaskVC" customModule="DayPlanner" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="addCard" id="qbb-8P-LqP" customClass="NewTaskVC" customModule="DayPlanner" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vpT-VC-JMM">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -665,6 +666,9 @@
                                                 <real key="value" value="10"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="deleteTaskClicked:" destination="qbb-8P-LqP" eventType="touchUpInside" id="RjZ-96-Pvj"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -703,14 +707,17 @@
                         <barButtonItem key="backBarButtonItem" title="Back" id="Z7D-oH-S1x"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="TFTaskHours" destination="0b2-5U-Eai" id="knR-mk-Chb"/>
+                        <outlet property="TFTaskMinutes" destination="CGY-FN-XIv" id="clw-68-I5f"/>
                         <outlet property="TFTaskTitle" destination="bAs-jM-Wnu" id="nFt-io-DiB"/>
                         <outlet property="category" destination="jdx-eB-OId" id="1VV-70-nNy"/>
-                        <outlet property="color1" destination="mkH-qI-GtS" id="tkF-es-Hq2"/>
-                        <outlet property="color2" destination="CL5-IK-JGD" id="EgT-XU-FYU"/>
-                        <outlet property="color3" destination="z0h-OT-cjJ" id="0L9-V7-0vP"/>
-                        <outlet property="color4" destination="lnO-lk-R9C" id="Vqc-eS-dtS"/>
-                        <outlet property="color5" destination="hdQ-TZ-st2" id="ape-gC-sor"/>
-                        <outlet property="color6" destination="SkN-AJ-ek1" id="SlR-ZI-Kfy"/>
+                        <outlet property="color1" destination="mkH-qI-GtS" id="Uy9-8c-ZL0"/>
+                        <outlet property="color2" destination="CL5-IK-JGD" id="bcM-DR-tM8"/>
+                        <outlet property="color3" destination="z0h-OT-cjJ" id="onh-5c-CtK"/>
+                        <outlet property="color4" destination="lnO-lk-R9C" id="WMa-eV-Plh"/>
+                        <outlet property="color5" destination="hdQ-TZ-st2" id="HJP-kY-F5p"/>
+                        <outlet property="color6" destination="SkN-AJ-ek1" id="rUU-oV-nL9"/>
+                        <outlet property="datePicker" destination="g9a-xw-hUl" id="3Rt-pY-IYr"/>
                         <outlet property="desc" destination="8gA-Wk-dlr" id="N1k-v9-TMN"/>
                     </connections>
                 </viewController>
@@ -721,7 +728,7 @@
         <!--New Task-->
         <scene sceneID="b35-jc-Gc7">
             <objects>
-                <navigationController storyboardIdentifier="addCard" title="New Task" automaticallyAdjustsScrollViewInsets="NO" id="25Z-Jg-E8t" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="addCardNavBar" title="New Task" automaticallyAdjustsScrollViewInsets="NO" id="25Z-Jg-E8t" customClass="NewTaskNC" customModule="DayPlanner" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="n2o-lN-FwS">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -734,8 +741,9 @@
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Us6-oW-EsP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ATG-fs-QBI">
+                <view contentMode="scaleToFill" id="ATG-fs-QBI">
                     <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <viewLayoutGuide key="safeArea" id="9at-Ai-klv"/>
                     <color key="backgroundColor" red="0.94901960780000005" green="0.50196078430000002" blue="0.53725490200000003" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
@@ -923,6 +931,23 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SUB-D1-YJu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="609" y="1599"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="bry-qA-Lne">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="Apw-NK-QON" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="MAs-7m-3Wh">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Dde-pk-t40" kind="relationship" relationship="rootViewController" id="qDX-hp-9AJ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qeR-C8-fPh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1050.7246376811595" y="-20.089285714285712"/>
         </scene>
     </scenes>
     <designables>

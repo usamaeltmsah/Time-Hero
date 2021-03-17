@@ -24,10 +24,12 @@
 		1964F71725FC462800DC694B /* SalmanLocalize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1964F71625FC462800DC694B /* SalmanLocalize.swift */; };
 		1964F71A25FC479700DC694B /* style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1964F71925FC479700DC694B /* style.swift */; };
 		1964F71D25FC55F900DC694B /* AddTaskTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1964F71C25FC55F900DC694B /* AddTaskTVCell.swift */; };
+		1989FA1126013AA50008E943 /* data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1989FA1026013AA50008E943 /* data.swift */; };
 		19CDDBEB25FD789800686C09 /* GlobalTaskSettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19CDDBEA25FD789800686C09 /* GlobalTaskSettingsVC.swift */; };
 		19CDDBEE25FD7A4B00686C09 /* OnClickTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19CDDBED25FD7A4B00686C09 /* OnClickTVCell.swift */; };
 		19CDDBF125FD7C0E00686C09 /* AlwaysOnTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19CDDBF025FD7C0E00686C09 /* AlwaysOnTVCell.swift */; };
 		19CDDBF825FD885900686C09 /* NewTaskVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19CDDBF725FD885900686C09 /* NewTaskVC.swift */; };
+		19DFCC7B2602537E00F00EC7 /* NewTaskNC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DFCC7A2602537E00F00EC7 /* NewTaskNC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,10 +52,12 @@
 		1964F71625FC462800DC694B /* SalmanLocalize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SalmanLocalize.swift; sourceTree = "<group>"; };
 		1964F71925FC479700DC694B /* style.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = style.swift; sourceTree = "<group>"; };
 		1964F71C25FC55F900DC694B /* AddTaskTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskTVCell.swift; sourceTree = "<group>"; };
+		1989FA1026013AA50008E943 /* data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = data.swift; sourceTree = "<group>"; };
 		19CDDBEA25FD789800686C09 /* GlobalTaskSettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalTaskSettingsVC.swift; sourceTree = "<group>"; };
 		19CDDBED25FD7A4B00686C09 /* OnClickTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnClickTVCell.swift; sourceTree = "<group>"; };
 		19CDDBF025FD7C0E00686C09 /* AlwaysOnTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlwaysOnTVCell.swift; sourceTree = "<group>"; };
 		19CDDBF725FD885900686C09 /* NewTaskVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskVC.swift; sourceTree = "<group>"; };
+		19DFCC7A2602537E00F00EC7 /* NewTaskNC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskNC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +106,8 @@
 				19CDDBED25FD7A4B00686C09 /* OnClickTVCell.swift */,
 				19CDDBF025FD7C0E00686C09 /* AlwaysOnTVCell.swift */,
 				19CDDBF725FD885900686C09 /* NewTaskVC.swift */,
+				1989FA1026013AA50008E943 /* data.swift */,
+				19DFCC7A2602537E00F00EC7 /* NewTaskNC.swift */,
 			);
 			path = DayPlanner;
 			sourceTree = "<group>";
@@ -198,6 +204,7 @@
 				1964F71A25FC479700DC694B /* style.swift in Sources */,
 				1964F70725FC453100DC694B /* ExtentionLocalize.swift in Sources */,
 				19CDDBF825FD885900686C09 /* NewTaskVC.swift in Sources */,
+				19DFCC7B2602537E00F00EC7 /* NewTaskNC.swift in Sources */,
 				194BAAF925FECF3B00129C23 /* PlanCard.swift in Sources */,
 				1964F6E925FC3F5500DC694B /* AppDelegate.swift in Sources */,
 				19CDDBEB25FD789800686C09 /* GlobalTaskSettingsVC.swift in Sources */,
@@ -207,6 +214,7 @@
 				1964F70D25FC454E00DC694B /* EXTAlert.swift in Sources */,
 				1964F71725FC462800DC694B /* SalmanLocalize.swift in Sources */,
 				194BAAEF25FECD6000129C23 /* DayPlanCardTVCell.swift in Sources */,
+				1989FA1126013AA50008E943 /* data.swift in Sources */,
 				194BAAF225FECD9800129C23 /* DoneCardTVCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

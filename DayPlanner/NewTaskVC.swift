@@ -12,6 +12,9 @@ class NewTaskVC: UIViewController, UITextFieldDelegate {
     @IBOutlet var category: SkyFloatingLabelTextField!
     @IBOutlet var desc: SkyFloatingLabelTextField!
     
+    @IBOutlet var datePicker: UIDatePicker!
+    @IBOutlet var TFTaskHours: UITextField!
+    @IBOutlet var TFTaskMinutes: UITextField!
     
     @IBOutlet var color1: UIButton!
     @IBOutlet var color2: UIButton!
@@ -24,10 +27,10 @@ class NewTaskVC: UIViewController, UITextFieldDelegate {
     
     var selectedColor: UIColor!
     
-    var delegate: ViewController?
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationController?.isNavigationBarHidden = false
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(insertCard))
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(cancelClicked))
@@ -64,8 +67,34 @@ class NewTaskVC: UIViewController, UITextFieldDelegate {
     }
     
     @objc func insertCard() {
-//        let card = PlanCard(taskTitle: TFTaskTitle.text, taskCat: category, taskDesc: desc, taskColor: selectedColor, taskTime: taskTime, taskLenght: taskLen, isDone: false)
-//        delegate?.allCards.insert(card, at: 0)
+        let date = datePicker.date.dateString(with: "HH:MM")
+        let card = PlanCard(taskTitle: TFTaskTitle.text, taskCat: category.text, taskDesc: desc.text, taskColor: selectedColor, taskTime: date, taskLenght: getTaskLen(), isDone: false)
+        allCards.insert(card, at: 0)
+        
+        dismiss(animated: true, completion: nil)
     }
     
+    func getTaskLen() -> String {
+        var taskLength = ""
+        if let hr = Int(TFTaskHours.text!) {
+            taskLength += "\(hr)H "
+        }
+        
+        if let mn = Int(TFTaskMinutes.text!) {
+            taskLength += "\(mn)M"
+        }
+        
+        return taskLength
+    }
+    
+    @IBAction func deleteTaskClicked(_ sender: Any) {
+    }
+}
+
+extension Date {
+    func dateString(with strFormat: String) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = strFormat
+        return dateFormatter.string(from: self)
+    }
 }
