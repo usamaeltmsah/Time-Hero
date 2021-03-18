@@ -136,6 +136,18 @@ class NewTaskVC: UIViewController, UITextFieldDelegate {
     
     
     @IBAction func deleteTaskClicked(_ sender: Any) {
+        deletePlan(at: cardInd)
+    }
+    
+    func deletePlan(at index: Int?) {
+        if let idx = index {
+            if idx < currentDayUnDoneCards.count {
+                currentDayUnDoneCards.remove(at: idx)
+            } else {
+                currentDayDoneCards.remove(at: idx - currentDayUnDoneCards.count)
+            }
+        }
         
+        dismiss(animated: true, completion: nil)
     }
 }
