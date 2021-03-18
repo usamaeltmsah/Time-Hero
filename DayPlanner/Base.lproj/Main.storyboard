@@ -635,7 +635,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </view>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yUZ-uV-Yoo">
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yUZ-uV-Yoo">
                                         <rect key="frame" x="0.0" y="678" width="362" height="44"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -654,7 +654,7 @@
                                             <action selector="goToTaskSettingClicked:" destination="qbb-8P-LqP" eventType="touchUpInside" id="Jhs-Hg-N1N"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lk5-H6-Hrd">
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lk5-H6-Hrd">
                                         <rect key="frame" x="0.0" y="734" width="362" height="44"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -710,10 +710,10 @@
                         <barButtonItem key="backBarButtonItem" title="Back" id="Z7D-oH-S1x"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="TFCategory" destination="jdx-eB-OId" id="1VV-70-nNy"/>
                         <outlet property="TFTaskHours" destination="0b2-5U-Eai" id="knR-mk-Chb"/>
                         <outlet property="TFTaskMinutes" destination="CGY-FN-XIv" id="clw-68-I5f"/>
                         <outlet property="TFTaskTitle" destination="bAs-jM-Wnu" id="nFt-io-DiB"/>
-                        <outlet property="category" destination="jdx-eB-OId" id="1VV-70-nNy"/>
                         <outlet property="color1" destination="mkH-qI-GtS" id="Uy9-8c-ZL0"/>
                         <outlet property="color2" destination="CL5-IK-JGD" id="bcM-DR-tM8"/>
                         <outlet property="color3" destination="z0h-OT-cjJ" id="onh-5c-CtK"/>
@@ -721,7 +721,9 @@
                         <outlet property="color5" destination="hdQ-TZ-st2" id="HJP-kY-F5p"/>
                         <outlet property="color6" destination="SkN-AJ-ek1" id="rUU-oV-nL9"/>
                         <outlet property="datePicker" destination="g9a-xw-hUl" id="3Rt-pY-IYr"/>
+                        <outlet property="deleteTaskButton" destination="lk5-H6-Hrd" id="4JV-sd-G0a"/>
                         <outlet property="desc" destination="8gA-Wk-dlr" id="N1k-v9-TMN"/>
+                        <outlet property="settingButton" destination="yUZ-uV-Yoo" id="RwK-Mo-mBZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bzQ-qB-36N" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

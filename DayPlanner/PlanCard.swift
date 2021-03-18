@@ -11,8 +11,42 @@ struct PlanCard {
     var taskTitle: String!
     var taskCat: String!
     var taskDesc: String?
+    
+    var taskColorButton: UIButton!
+    var selectedColorInd: Int!
     var taskColor: UIColor!
-    var taskTime: String!
+    
+    var taskTime: Date!
     var taskLenght: String!
-    var isDone = false
+    var hours: Int!
+    var minutes: Int!
+    
+    func getTaskLen() -> String {
+        var taskLength = ""
+        if let hr = hours {
+            taskLength += "\(hr)H "
+        }
+        
+        if let mn = minutes {
+            taskLength += "\(mn)M"
+        }
+        
+        return taskLength
+    }
+    
+//    func getSelectedColor() -> UIColor! {
+//        return taskColorButton.backgroundColor
+//    }
+    
+    func getStringDate() -> String {
+        return taskTime.dateString(with: "HH:MM")
+    }
+}
+
+extension Date {
+    func dateString(with strFormat: String) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = strFormat
+        return dateFormatter.string(from: self)
+    }
 }

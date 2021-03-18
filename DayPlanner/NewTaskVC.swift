@@ -9,7 +9,7 @@ import UIKit
 
 class NewTaskVC: UIViewController, UITextFieldDelegate {
     @IBOutlet var TFTaskTitle: SkyFloatingLabelTextField!
-    @IBOutlet var category: SkyFloatingLabelTextField!
+    @IBOutlet var TFCategory: SkyFloatingLabelTextField!
     @IBOutlet var desc: SkyFloatingLabelTextField!
     
     @IBOutlet var datePicker: UIDatePicker!
@@ -24,19 +24,44 @@ class NewTaskVC: UIViewController, UITextFieldDelegate {
     @IBOutlet var color6: UIButton!
     
     var colorButtons = [UIButton]()
-    
+    var selectedColorInd: Int!
     var selectedColor: UIColor!
+    
+    var card: PlanCard!
+    var cardInd: Int!
+    
+    @IBOutlet var settingButton: UIButton!
+    @IBOutlet var deleteTaskButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         
         navigationController?.isNavigationBarHidden = false
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(insertCard))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(savePlan))
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(cancelClicked))
         
         view.addGestureRecognizer(UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing(_:))))
         
         colorButtons = [color1, color2, color3, color4, color5, color6]
+        
+        if let card = card {
+            settingButton.isHidden = false
+            deleteTaskButton.isHidden = false
+            TFTaskTitle.text = card.taskTitle
+            TFCategory.text = card.taskCat
+            desc.text = card.taskDesc
+            selectedColorInd = card.selectedColorInd
+            selectedColor(colorButtons[selectedColorInd])
+            selectedColor = getSelectedColor()
+            datePicker.date = card.taskTime
+            if let hr = card.hours {
+                TFTaskHours.text = "\(hr)"
+            }
+            
+            if let mn = card.minutes {
+                TFTaskMinutes.text = "\(mn)"
+            }
+        }
 
     }
     @IBAction func goToTaskSettingClicked(_ sender: Any) {
@@ -51,6 +76,7 @@ class NewTaskVC: UIViewController, UITextFieldDelegate {
     
     @IBAction func selectedColor(_ sender: UIButton) {
         selectedColor = sender.backgroundColor
+        selectedColorInd = colorButtons.firstIndex(of: sender)
         
         for color in colorButtons {
             if color.backgroundColor != selectedColor {
@@ -65,35 +91,51 @@ class NewTaskVC: UIViewController, UITextFieldDelegate {
         }
     }
     
-    @objc func insertCard() {
-        let date = datePicker.date.dateString(with: "HH:MM")
-        let card = PlanCard(taskTitle: TFTaskTitle.text, taskCat: category.text, taskDesc: desc.text, taskColor: selectedColor, taskTime: date, taskLenght: getTaskLen(), isDone: false)
-        currentDayUnDoneCards.insert(card, at: 0)
+    @objc func savePlan() {
+        guard selectedColor != nil && TFTaskTitle.text != "" && TFCategory.text != "" && (TFTaskHours.text != "" || TFTaskMinutes.text != "") else {
+            return
+        }
+        if card != nil {
+            editPlan(index: cardInd)
+        } else {
+            insertCard()
+        }
         
         dismiss(animated: true, completion: nil)
     }
     
-    func getTaskLen() -> String {
-        var taskLength = ""
-        if let hr = Int(TFTaskHours.text!) {
-            taskLength += "\(hr)H "
-        }
+    func insertCard() {
+        let date = datePicker.date
+        card = PlanCard(taskTitle: TFTaskTitle.text, taskCat: TFCategory.text, taskDesc: desc.text, taskColor: selectedColor, taskTime: date, hours: Int(TFTaskHours.text ?? ""), minutes: Int(TFTaskMinutes.text ?? ""))
+        card.taskColor = selectedColor
+        card.selectedColorInd = selectedColorInd
+        card.taskColorButton = colorButtons[selectedColorInd]
         
-        if let mn = Int(TFTaskMinutes.text!) {
-            taskLength += "\(mn)M"
-        }
-        
-        return taskLength
+        card.taskLenght = card.getTaskLen()
+        currentDayUnDoneCards.insert(card, at: 0)
     }
     
-    @IBAction func deleteTaskClicked(_ sender: Any) {
+    func editPlan(index: Int?) {
+        let date = datePicker.date
+        card = PlanCard(taskTitle: TFTaskTitle.text, taskCat: TFCategory.text, taskDesc: desc.text, taskColor: selectedColor, taskTime: date, hours: Int(TFTaskHours.text ?? ""), minutes: Int(TFTaskMinutes.text ?? ""))
+        card.taskLenght = card.getTaskLen()
+        card.selectedColorInd = selectedColorInd
+        card.taskColorButton = colorButtons[selectedColorInd]
+        if let idx = index {
+            if idx < currentDayUnDoneCards.count {
+                currentDayUnDoneCards[idx] = card
+            } else {
+                currentDayDoneCards[idx - currentDayUnDoneCards.count] = card
+            }
+        }
     }
-}
-
-extension Date {
-    func dateString(with strFormat: String) -> String {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = strFormat
-        return dateFormatter.string(from: self)
+    
+    func getSelectedColor() -> UIColor! {
+        return colorButtons[selectedColorInd].backgroundColor
+    }
+    
+    
+    @IBAction func deleteTaskClicked(_ sender: Any) {
+        
     }
 }

@@ -104,11 +104,31 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource, UITableVi
         }
         
         let editAction = UIContextualAction(style: .normal, title: "Edit") { [weak self] (_, _, _) in
-//            self?.editPlan(at: indexPath.row)
+            if indexPath.row < currentDayUnDoneCards.count {
+                self?.editPlan(index: indexPath.row, plan: currentDayUnDoneCards[indexPath.row])
+            } else {
+                self?.editPlan(index: indexPath.row, plan: currentDayDoneCards[indexPath.row - currentDayUnDoneCards.count])
+            }
         }
         editAction.backgroundColor = UIColor(hexString: "#8E8E93FF")
         
         return UISwipeActionsConfiguration(actions: [editAction])
+    }
+    
+    func editPlan(index: Int, plan: PlanCard) {
+        if let vc = storyboard?.instantiateViewController(identifier: "addCardNavBar") as? NewTaskNC {
+            if let taskVC = vc.viewControllers.first as? NewTaskVC {
+                taskVC.card = plan
+                taskVC.cardInd = index
+//                t.savePlan(plan: plan, index: index)
+            }
+            vc.deleg = self
+            present(vc, animated: true)
+        }
+    }
+    
+    func addNewCard(_ plan: PlanCard) {
+        
     }
     
     func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
@@ -118,7 +138,6 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource, UITableVi
         
         if indexPath.row < currentDayUnDoneCards.count {
             let doneAction = UIContextualAction(style: .normal, title: "Done") {  (_, _, _) in
-//                currentDayUnDoneCards[indexPath.row].isDone = true
                 currentDayDoneCards.insert(currentDayUnDoneCards[indexPath.row], at: 0)
                 currentDayUnDoneCards.remove(at: indexPath.row)
                 tableView.reloadData()
