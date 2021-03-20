@@ -30,6 +30,7 @@
 		198C45972605F39B00461F27 /* ShowHoursOnTopTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 198C45962605F39B00461F27 /* ShowHoursOnTopTVCell.swift */; };
 		198C459A2605F3D800461F27 /* ShowHoursOnCardTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 198C45992605F3D800461F27 /* ShowHoursOnCardTVCell.swift */; };
 		198C459D2605F3F900461F27 /* ExpandDescriptionTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 198C459C2605F3F900461F27 /* ExpandDescriptionTVCell.swift */; };
+		198C45AB26060E4200461F27 /* DisplayType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 198C45AA26060E4200461F27 /* DisplayType.swift */; };
 		19CDDBEB25FD789800686C09 /* GlobalTaskSettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19CDDBEA25FD789800686C09 /* GlobalTaskSettingsVC.swift */; };
 		19CDDBEE25FD7A4B00686C09 /* OnClickTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19CDDBED25FD7A4B00686C09 /* OnClickTVCell.swift */; };
 		19CDDBF125FD7C0E00686C09 /* AlwaysOnTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19CDDBF025FD7C0E00686C09 /* AlwaysOnTVCell.swift */; };
@@ -63,6 +64,7 @@
 		198C45962605F39B00461F27 /* ShowHoursOnTopTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowHoursOnTopTVCell.swift; sourceTree = "<group>"; };
 		198C45992605F3D800461F27 /* ShowHoursOnCardTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowHoursOnCardTVCell.swift; sourceTree = "<group>"; };
 		198C459C2605F3F900461F27 /* ExpandDescriptionTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandDescriptionTVCell.swift; sourceTree = "<group>"; };
+		198C45AA26060E4200461F27 /* DisplayType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayType.swift; sourceTree = "<group>"; };
 		19CDDBEA25FD789800686C09 /* GlobalTaskSettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalTaskSettingsVC.swift; sourceTree = "<group>"; };
 		19CDDBED25FD7A4B00686C09 /* OnClickTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnClickTVCell.swift; sourceTree = "<group>"; };
 		19CDDBF025FD7C0E00686C09 /* AlwaysOnTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlwaysOnTVCell.swift; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 			children = (
 				194BAAF825FECF3B00129C23 /* PlanCard.swift */,
 				1989FA1026013AA50008E943 /* data.swift */,
+				198C45AA26060E4200461F27 /* DisplayType.swift */,
 			);
 			path = DataDS;
 			sourceTree = "<group>";
@@ -247,6 +250,7 @@
 				19CDDBF825FD885900686C09 /* NewTaskVC.swift in Sources */,
 				19DFCC7B2602537E00F00EC7 /* NewTaskNC.swift in Sources */,
 				194BAAF925FECF3B00129C23 /* PlanCard.swift in Sources */,
+				198C45AB26060E4200461F27 /* DisplayType.swift in Sources */,
 				1964F6E925FC3F5500DC694B /* AppDelegate.swift in Sources */,
 				19CDDBEB25FD789800686C09 /* GlobalTaskSettingsVC.swift in Sources */,
 				1964F6EB25FC3F5500DC694B /* SceneDelegate.swift in Sources */,

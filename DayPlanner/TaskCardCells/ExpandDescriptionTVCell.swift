@@ -9,6 +9,7 @@ import UIKit
 
 class ExpandDescriptionTVCell: UITableViewCell {
 
+    @IBOutlet var cardView: UIView!
     @IBOutlet var fromTimeLabel: UILabel!
     @IBOutlet var toTimeLabel: UILabel!
     @IBOutlet var taskTitleLabel: UILabel!

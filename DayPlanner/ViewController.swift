@@ -74,14 +74,28 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource, UITableVi
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
+        print(indexPath.row)
         if indexPath.row < currentDayUnDoneCards.count {
             let card = currentDayUnDoneCards[indexPath.row]
-            if let cell = dayPlansTV.dequeueReusableCell(withIdentifier: "PlanCardCell") as? DayPlanCardTVCell {
-                cell.cardView.backgroundColor = card.taskColor
-                cell.cardTitle.text = card.taskTitle
-                cell.cardTtimeLength.text = card.taskLenght
-                cell.cardCategory.text = card.taskCat
-                return cell
+            if card.cardDisplay == .expandDesc {
+                print(5)
+                if let cell = dayPlansTV.dequeueReusableCell(withIdentifier: "ExpandDescriptionCell") as? ExpandDescriptionTVCell {
+                    cell.cardView.backgroundColor = card.taskColor
+                    cell.taskTitleLabel.text = card.taskTitle
+                    cell.taskLengthLabel.text = card.taskLenght
+                    cell.taskCatLabel.text = card.taskCat
+                    cell.fromTimeLabel.text = card.getStringDate()
+                    cell.taskDescLabel.text = card.taskDesc
+                    return cell
+                }
+            } else {
+                if let cell = dayPlansTV.dequeueReusableCell(withIdentifier: "PlanCardCell") as? DayPlanCardTVCell {
+                    cell.cardView.backgroundColor = card.taskColor
+                    cell.cardTitle.text = card.taskTitle
+                    cell.cardTtimeLength.text = card.taskLenght
+                    cell.cardCategory.text = card.taskCat
+                    return cell
+                }
             }
         } else if indexPath.row < currentDayUnDoneCards.count + currentDayDoneCards.count {
             let card = currentDayDoneCards[indexPath.row - currentDayUnDoneCards.count]
@@ -126,10 +140,6 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource, UITableVi
         }
     }
     
-    func addNewCard(_ plan: PlanCard) {
-        
-    }
-    
     func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         guard indexPath.row < currentDayUnDoneCards.count + currentDayDoneCards.count else {
             return UISwipeActionsConfiguration(actions: [])
@@ -159,7 +169,15 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource, UITableVi
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.row == currentDayUnDoneCards.count + currentDayDoneCards.count {
+        if indexPath.row < currentDayUnDoneCards.count + currentDayDoneCards.count {
+            let card = currentDayUnDoneCards[indexPath.row]
+            if card.cardDisplay != .expandDesc {
+                currentDayUnDoneCards[indexPath.row].cardDisplay = .expandDesc
+            } else {
+                currentDayUnDoneCards[indexPath.row].cardDisplay = .defualt
+            }
+            dayPlansTV.reloadData()
+        } else {
             if let vc = storyboard?.instantiateViewController(identifier: "addCardNavBar") as? NewTaskNC {
                 vc.deleg = self
                 present(vc, animated: true)

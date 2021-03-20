@@ -7,7 +7,7 @@
 
 import UIKit
 
-struct PlanCard {
+struct PlanCard : Hashable {
     var taskTitle: String!
     var taskCat: String!
     var taskDesc: String?
@@ -20,6 +20,8 @@ struct PlanCard {
     var taskLenght: String!
     var hours: Int!
     var minutes: Int!
+    
+    var cardDisplay: DisplayType!
     
     func getTaskLen() -> String {
         var taskLength = ""
