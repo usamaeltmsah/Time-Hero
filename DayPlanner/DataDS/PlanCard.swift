@@ -36,12 +36,22 @@ struct PlanCard : Hashable {
         return taskLength
     }
     
-//    func getSelectedColor() -> UIColor! {
-//        return taskColorButton.backgroundColor
-//    }
-    
     func getStringDate() -> String {
-        return taskTime.dateString(with: "HH:MM")
+        return taskTime.dateString(with: "HH:mm")
+    }
+    
+    func getToTime() -> String {
+        var toDate = taskTime
+        
+        if let hrs = hours {
+            toDate?.addTimeInterval(TimeInterval(hrs * 60 * 60))
+        }
+        
+        if let mins = minutes {
+            toDate?.addTimeInterval(TimeInterval(mins * 60))
+        }
+        
+        return toDate?.dateString(with: "HH:mm") ?? getStringDate()
     }
 }
 
@@ -50,5 +60,9 @@ extension Date {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = strFormat
         return dateFormatter.string(from: self)
+    }
+    
+    func adding(minutes: Int) -> Date {
+        return Calendar.current.date(byAdding: .minute, value: minutes, to: self)!
     }
 }

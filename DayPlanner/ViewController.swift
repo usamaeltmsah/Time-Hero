@@ -74,17 +74,16 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource, UITableVi
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
-        print(indexPath.row)
         if indexPath.row < currentDayUnDoneCards.count {
             let card = currentDayUnDoneCards[indexPath.row]
             if card.cardDisplay == .expandDesc {
-                print(5)
                 if let cell = dayPlansTV.dequeueReusableCell(withIdentifier: "ExpandDescriptionCell") as? ExpandDescriptionTVCell {
                     cell.cardView.backgroundColor = card.taskColor
                     cell.taskTitleLabel.text = card.taskTitle
                     cell.taskLengthLabel.text = card.taskLenght
                     cell.taskCatLabel.text = card.taskCat
                     cell.fromTimeLabel.text = card.getStringDate()
+                    cell.toTimeLabel.text = card.getToTime()
                     cell.taskDescLabel.text = card.taskDesc
                     return cell
                 }
