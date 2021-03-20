@@ -11,11 +11,11 @@ class GlobalTaskSettingsVC: UIViewController {
     @IBOutlet var onClickTV: UITableView!
     @IBOutlet var alwaysOnTV: UITableView!
     
-    var onClickTVTitlesIsOn = [String:Bool]()
-//    var onClickTVIsOn = [Bool]()
+    var onClickTVTitles = [String]()
+    var onClickTVIsOn = [Bool]()
     
-    var alwaysOnTVTitlesIsOn = [String:Bool]()
-//    var alwaysOnTVIsOn = [Bool]()
+    var alwaysOnTVTitles = [String]()
+    var alwaysOnTVIsOn = [Bool]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,11 +28,11 @@ class GlobalTaskSettingsVC: UIViewController {
         alwaysOnTV.delegate = self
         alwaysOnTV.dataSource = self
         
-        onClickTVTitlesIsOn = ["Show Hours on Left":true, "Show Hours on Card":false, "Show Hours on Left 2":false, "Show Hours on Top":true, "Expand Description": false, "Apply on All When Click":true]
-//        onClickTVIsOn = [true, false, false, true, true, false]
+        onClickTVTitles = ["Show Hours on Left", "Show Hours on Card", "Show Hours on Left 2", "Show Hours on Top", "Expand Description", "Apply on All When Click"]
+        onClickTVIsOn = [false, false, false, true, true, false]
         
-        alwaysOnTVTitlesIsOn = ["Show Hours on Left":false, "Cards Expanded":false, "Show Hours on Card":true, "Show Hours on Top":false]
-//        alwaysOnTVIsOn = [false, false, true, false]
+        alwaysOnTVTitles = ["Show Hours on Left", "Cards Expanded", "Show Hours on Card", "Show Hours on Top", "Show Task Description"]
+        alwaysOnTVIsOn = [false, false, false, true, false]
     }
     
     
@@ -41,23 +41,23 @@ class GlobalTaskSettingsVC: UIViewController {
 extension GlobalTaskSettingsVC : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if tableView == onClickTV {
-            return onClickTVTitlesIsOn.count
+            return onClickTVTitles.count
         } else {
-            return alwaysOnTVTitlesIsOn.count
+            return alwaysOnTVTitles.count
         }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if tableView == onClickTV {
             if let cell = onClickTV.dequeueReusableCell(withIdentifier: "cell") as? OnClickTVCell {
-                cell.title.text = Array(onClickTVTitlesIsOn.keys)[indexPath.row]
-                cell.isEnabled.isOn = Array(onClickTVTitlesIsOn.values)[indexPath.row]
+                cell.title.text = onClickTVTitles[indexPath.row]
+                cell.isEnabled.isOn = onClickTVIsOn[indexPath.row]
                 return cell
             }
         } else {
             if let cell = alwaysOnTV.dequeueReusableCell(withIdentifier: "cell") as? AlwaysOnTVCell {
-                cell.title.text = Array(alwaysOnTVTitlesIsOn.keys)[indexPath.row]
-                cell.isEnabled.isOn = Array(alwaysOnTVTitlesIsOn.values)[indexPath.row]
+                cell.title.text = alwaysOnTVTitles[indexPath.row]
+                cell.isEnabled.isOn = alwaysOnTVIsOn[indexPath.row]
                 return cell
             }
         }
