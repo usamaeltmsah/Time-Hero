@@ -120,7 +120,6 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource, UITableVi
             if let taskVC = vc.viewControllers.first as? NewTaskVC {
                 taskVC.card = plan
                 taskVC.cardInd = index
-//                t.savePlan(plan: plan, index: index)
             }
             vc.deleg = self
             present(vc, animated: true)
