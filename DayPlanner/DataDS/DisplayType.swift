@@ -8,5 +8,5 @@
 import Foundation
 
 enum DisplayType {
-    case defualt, done, add, showHrsLeft, showHrsLeft2, showHrsCard, expandDesc
+    case defualt, done, add, showHrsLeft, showHrsLeft2, showHrsTop, showHrsCard, expandDesc
 }

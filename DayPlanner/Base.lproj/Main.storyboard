@@ -328,7 +328,7 @@
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VDN-u8-rfr">
                                                                     <rect key="frame" x="10" y="5" width="394" height="90"/>
                                                                     <subviews>
-                                                                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jpd-cw-Tgk">
+                                                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Jpd-cw-Tgk">
                                                                             <rect key="frame" x="0.0" y="0.0" width="394" height="90"/>
                                                                             <subviews>
                                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cTc-DF-BaC">
@@ -366,7 +366,7 @@
                                                                                     </constraints>
                                                                                 </view>
                                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4f7-PN-BCH">
-                                                                                    <rect key="frame" x="70" y="0.0" width="324" height="90"/>
+                                                                                    <rect key="frame" x="80" y="0.0" width="314" height="90"/>
                                                                                     <subviews>
                                                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="HQc-66-Zj7">
                                                                                             <rect key="frame" x="30" y="13" width="124.5" height="64.5"/>
@@ -461,7 +461,7 @@
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FiQ-IM-v4r">
                                                                     <rect key="frame" x="10" y="5" width="394" height="90"/>
                                                                     <subviews>
-                                                                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="glH-YV-6Hh">
+                                                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="glH-YV-6Hh">
                                                                             <rect key="frame" x="0.0" y="0.0" width="394" height="90"/>
                                                                             <subviews>
                                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XTW-Zc-l6K">
@@ -501,7 +501,7 @@
                                                                                     </constraints>
                                                                                 </view>
                                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ymt-sM-DW0">
-                                                                                    <rect key="frame" x="70" y="0.0" width="324" height="90"/>
+                                                                                    <rect key="frame" x="80" y="0.0" width="314" height="90"/>
                                                                                     <subviews>
                                                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Wbl-jT-0dO">
                                                                                             <rect key="frame" x="30" y="13" width="124.5" height="64.5"/>
@@ -1456,7 +1456,7 @@
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="rr1-r0-f63">
+                                                                <switch opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="rr1-r0-f63">
                                                                     <rect key="frame" x="293" y="9.5" width="51" height="31"/>
                                                                 </switch>
                                                             </subviews>
@@ -1520,7 +1520,7 @@
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="e1D-gT-knM">
+                                                                <switch opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="e1D-gT-knM">
                                                                     <rect key="frame" x="293" y="9.5" width="51" height="31"/>
                                                                 </switch>
                                                             </subviews>

@@ -169,13 +169,17 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource, UITableVi
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row < currentDayUnDoneCards.count + currentDayDoneCards.count {
-            let card = currentDayUnDoneCards[indexPath.row]
-            if card.cardDisplay != .expandDesc {
-                currentDayUnDoneCards[indexPath.row].cardDisplay = .expandDesc
-            } else {
-                currentDayUnDoneCards[indexPath.row].cardDisplay = .defualt
-            }
-            dayPlansTV.reloadData()
+            
+            dayPlansTV.performBatchUpdates({
+                let card = currentDayUnDoneCards[indexPath.row]
+                if card.cardDisplay != .expandDesc {
+                    currentDayUnDoneCards[indexPath.row].cardDisplay = .expandDesc
+                } else {
+                    currentDayUnDoneCards[indexPath.row].cardDisplay = .defualt
+                }
+            }, completion: {_ in
+                self.dayPlansTV.reloadRows(at: [indexPath], with: .automatic)
+            })
         } else {
             if let vc = storyboard?.instantiateViewController(identifier: "addCardNavBar") as? NewTaskNC {
                 vc.deleg = self

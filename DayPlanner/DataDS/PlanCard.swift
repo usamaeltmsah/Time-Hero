@@ -23,6 +23,9 @@ struct PlanCard : Hashable {
     
     var cardDisplay: DisplayType!
     
+    var onClickSettings: [Bool]!
+    var alwaysOnSettings: [Bool]!
+    
     func getTaskLen() -> String {
         var taskLength = ""
         if let hr = hours {

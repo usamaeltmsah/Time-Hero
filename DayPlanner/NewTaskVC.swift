@@ -44,6 +44,7 @@ class NewTaskVC: UIViewController, UITextFieldDelegate {
         
         colorButtons = [color1, color2, color3, color4, color5, color6]
         
+        selectedColor(color1)
         if let card = card {
             settingButton.isHidden = false
             deleteTaskButton.isHidden = false
@@ -54,6 +55,7 @@ class NewTaskVC: UIViewController, UITextFieldDelegate {
             selectedColor(colorButtons[selectedColorInd])
             selectedColor = getSelectedColor()
             datePicker.date = card.taskTime
+            
             if let hr = card.hours {
                 TFTaskHours.text = "\(hr)"
             }
@@ -66,6 +68,7 @@ class NewTaskVC: UIViewController, UITextFieldDelegate {
     }
     @IBAction func goToTaskSettingClicked(_ sender: Any) {
         if let vc = storyboard?.instantiateViewController(identifier: "GlobalTaskSettings") as? GlobalTaskSettingsVC {
+            vc.delegate = self
             navigationController?.pushViewController(vc, animated: true)
         }
     }
@@ -106,10 +109,20 @@ class NewTaskVC: UIViewController, UITextFieldDelegate {
     
     func insertCard() {
         let date = datePicker.date
-        card = PlanCard(taskTitle: TFTaskTitle.text, taskCat: TFCategory.text, taskDesc: desc.text, taskColor: selectedColor, taskTime: date, hours: Int(TFTaskHours.text ?? ""), minutes: Int(TFTaskMinutes.text ?? ""))
+        card = PlanCard()
+        card.taskTitle = TFTaskTitle.text
+        card.taskCat = TFCategory.text
+        card.taskDesc = desc.text
+        card.taskColor = selectedColor
+        card.taskTime = date
+        card.hours = Int(TFTaskHours.text ?? "")
+        card.minutes = Int(TFTaskMinutes.text ?? "")
         card.taskColor = selectedColor
         card.selectedColorInd = selectedColorInd
         card.taskColorButton = colorButtons[selectedColorInd]
+        
+        card.onClickSettings = [false, false, false, true, true, false]
+        card.alwaysOnSettings = [false, false, false, true, false]
         
         card.taskLenght = card.getTaskLen()
         currentDayUnDoneCards.insert(card, at: 0)
@@ -117,7 +130,13 @@ class NewTaskVC: UIViewController, UITextFieldDelegate {
     
     func editPlan(index: Int?) {
         let date = datePicker.date
-        card = PlanCard(taskTitle: TFTaskTitle.text, taskCat: TFCategory.text, taskDesc: desc.text, taskColor: selectedColor, taskTime: date, hours: Int(TFTaskHours.text ?? ""), minutes: Int(TFTaskMinutes.text ?? ""))
+        card.taskTitle = TFTaskTitle.text
+        card.taskCat = TFCategory.text
+        card.taskDesc = desc.text
+        card.taskColor = selectedColor
+        card.taskTime = date
+        card.hours = Int(TFTaskHours.text ?? "")
+        card.minutes = Int(TFTaskMinutes.text ?? "")
         card.taskLenght = card.getTaskLen()
         card.selectedColorInd = selectedColorInd
         card.taskColorButton = colorButtons[selectedColorInd]

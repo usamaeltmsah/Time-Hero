@@ -24,3 +24,5 @@ var currentDayDoneCards = [PlanCard]()  {
         daysPlans[selectedDayInd, default: []][1] = currentDayDoneCards
     }
 }
+
+var isSettingsApplyToAll = false

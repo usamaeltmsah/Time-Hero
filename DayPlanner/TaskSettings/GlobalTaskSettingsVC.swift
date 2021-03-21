@@ -11,11 +11,18 @@ class GlobalTaskSettingsVC: UIViewController {
     @IBOutlet var onClickTV: UITableView!
     @IBOutlet var alwaysOnTV: UITableView!
     
-    var onClickTVTitles = [String]()
+    @IBOutlet var onClickSwitchButton: UISwitch!
+    @IBOutlet var alwaysOnSwitchButton: UISwitch!
+    var onClickTVTitles: [String] = ["Show Task Time on Left", "Show Task Time on Left 2.0", "Show Task Time on Card", "Show Hours on Top", "Show Task Description", "Apply on All Cards on Click"]
     var onClickTVIsOn = [Bool]()
     
-    var alwaysOnTVTitles = [String]()
+    // Always on means that it will be with no click.
+    var alwaysOnTVTitles: [String] = ["Show Task Time on Left", "Show Task Time on Left 2.0", "Show Task Time on Card", "Show Task Time on Top", "Show Task Description"]
     var alwaysOnTVIsOn = [Bool]()
+    
+    let onlyOneCanBeOn = [0, 1, 2, 3]
+    
+    var delegate: NewTaskVC!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,12 +34,13 @@ class GlobalTaskSettingsVC: UIViewController {
         
         alwaysOnTV.delegate = self
         alwaysOnTV.dataSource = self
+        if let onClickSet = delegate.card.onClickSettings {
+            onClickTVIsOn = onClickSet
+        }
         
-        onClickTVTitles = ["Show Hours on Left", "Show Hours on Card", "Show Hours on Left 2", "Show Hours on Top", "Expand Description", "Apply on All When Click"]
-        onClickTVIsOn = [false, false, false, true, true, false]
-        
-        alwaysOnTVTitles = ["Show Hours on Left", "Cards Expanded", "Show Hours on Card", "Show Hours on Top", "Show Task Description"]
-        alwaysOnTVIsOn = [false, false, false, true, false]
+        if let alwaysSet = delegate.card.alwaysOnSettings {
+            alwaysOnTVIsOn = alwaysSet
+        }
     }
     
     
@@ -51,7 +59,12 @@ extension GlobalTaskSettingsVC : UITableViewDelegate, UITableViewDataSource {
         if tableView == onClickTV {
             if let cell = onClickTV.dequeueReusableCell(withIdentifier: "cell") as? OnClickTVCell {
                 cell.title.text = onClickTVTitles[indexPath.row]
-                cell.isEnabled.isOn = onClickTVIsOn[indexPath.row]
+                if cell.isEnabled.isEnabled {
+                    cell.isEnabled.isOn = onClickTVIsOn[indexPath.row]
+                } else {
+                    cell.isEnabled.isOn = false
+                }
+                
                 return cell
             }
         } else {
@@ -66,6 +79,78 @@ extension GlobalTaskSettingsVC : UITableViewDelegate, UITableViewDataSource {
     }
     
     @objc func saveTaskSettings() {
+        currentDayUnDoneCards[delegate.cardInd].onClickSettings = onClickTVIsOn
+        currentDayUnDoneCards[delegate.cardInd].alwaysOnSettings = alwaysOnTVIsOn
+                
+        if onClickTVIsOn[0] {
+            delegate.card.cardDisplay = .showHrsLeft
+        } else if onClickTVIsOn[1]{
+            delegate.card.cardDisplay = .showHrsLeft2
+        } else if onClickTVIsOn[2] {
+            delegate.card.cardDisplay = .showHrsCard
+        } else if onClickTVIsOn[3] {
+            delegate.card.cardDisplay = .showHrsTop
+        }
+        if onClickTVIsOn[4] {
+            delegate.card.cardDisplay = .expandDesc
+        }
+        if onClickTVIsOn[5] {
+            isSettingsApplyToAll = true
+        }
         
+        if alwaysOnTVIsOn[0] {
+            delegate.card.cardDisplay = .showHrsLeft
+        } else if alwaysOnTVIsOn[1]{
+            delegate.card.cardDisplay = .showHrsLeft2
+        } else if alwaysOnTVIsOn[2] {
+            delegate.card.cardDisplay = .showHrsCard
+        } else if alwaysOnTVIsOn[3] {
+            delegate.card.cardDisplay = .showHrsTop
+        }
+        if alwaysOnTVIsOn[4] {
+            delegate.card.cardDisplay = .expandDesc
+        }
+        
+        dismiss(animated: true, completion: nil)
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if tableView == onClickTV {
+            onClickTVIsOn[indexPath.row].toggle()
+            
+            if onlyOneCanBeOn.contains(indexPath.row) {
+                for i in onlyOneCanBeOn {
+                    if i != indexPath.row {
+                        onClickTVIsOn[i] = false
+                    }
+                }
+                
+                if indexPath.row <= 1 {
+                    for i in 0 ... 1 {
+                        alwaysOnTVIsOn[i] = false
+                        alwaysOnTV.reloadRows(at: [IndexPath(row: i, section: 0)], with: .none)
+                    }
+                }
+            }
+            onClickTV.reloadData()
+        } else {
+            alwaysOnTVIsOn[indexPath.row].toggle()
+            
+            if onlyOneCanBeOn.contains(indexPath.row) {
+                for i in onlyOneCanBeOn {
+                    if i != indexPath.row {
+                        alwaysOnTVIsOn[i] = false
+                    }
+                }
+                
+                if indexPath.row <= 1 {
+                    for i in 0 ... 1 {
+                        onClickTVIsOn[i] = false
+                        onClickTV.reloadRows(at: [IndexPath(row: i, section: 0)], with: .none)
+                    }
+                }
+            }
+            alwaysOnTV.reloadData()
+        }
     }
 }
