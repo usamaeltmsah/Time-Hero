@@ -32,13 +32,16 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
         
         daysButtons = [sundayButton, mondayButton, tuesdayButton, wednesdayButton, thuresdayButton, fridayButton, saturdayButton]
         
-        for i in 0 ..< 7 {
-            daysPlans[i] = Array(repeating: [PlanCard](), count: 2)
+        if loadData() {
+            print(daysPlans)
+        } else {
+            for i in 0 ..< 7 {
+                daysPlans[i] = Array(repeating: [PlanCard](), count: 2)
+            }
         }
         
         currentDayUnDoneCards = daysPlans[selectedDayInd]?[0] ?? []
         currentDayDoneCards = daysPlans[selectedDayInd]?[1] ?? []
-        
         dayPlansTV.dragInteractionEnabled = true
     }
 

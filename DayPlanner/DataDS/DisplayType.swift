@@ -7,6 +7,6 @@
 
 import Foundation
 
-enum DisplayType {
+enum DisplayType: Int, Codable {
     case defualt, done, add, showHrsLeft, showHrsLeft2, showHrsTop, showHrsCard, expandDesc
 }

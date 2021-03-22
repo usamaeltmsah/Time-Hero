@@ -119,7 +119,6 @@ class NewTaskVC: UIViewController, UITextFieldDelegate {
         card.minutes = Int(TFTaskMinutes.text ?? "")
         card.taskColor = selectedColor
         card.selectedColorInd = selectedColorInd
-        card.taskColorButton = colorButtons[selectedColorInd]
         
         card.onClickSettings = [false, false, false, true, true, false]
         card.alwaysOnSettings = [false, false, false, true, false]
@@ -139,7 +138,7 @@ class NewTaskVC: UIViewController, UITextFieldDelegate {
         card.minutes = Int(TFTaskMinutes.text ?? "")
         card.taskLenght = card.getTaskLen()
         card.selectedColorInd = selectedColorInd
-        card.taskColorButton = colorButtons[selectedColorInd]
+
         if let idx = index {
             if idx < currentDayUnDoneCards.count {
                 currentDayUnDoneCards[idx] = card

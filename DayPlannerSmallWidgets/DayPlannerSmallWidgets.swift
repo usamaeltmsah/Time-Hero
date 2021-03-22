@@ -9,7 +9,7 @@ import WidgetKit
 import SwiftUI
 import Intents
 
-let cards = [PlanCard(taskTitle: "Wake Up & Eat", taskCat: "Morning Routine", taskDesc: "fevw rewnkmlver w", taskColor: #colorLiteral(red: 0.9294117647, green: 0.5137254902, blue: 0.5450980392, alpha: 1), taskTime: Date().adding(minutes: -400), hours: 1, minutes: 20), PlanCard(taskTitle: "Sleep Again!", taskCat: "Afternoon", taskDesc: "fevw rewnkmlver w", taskColor: #colorLiteral(red: 0.4431372549, green: 0.7882352941, blue: 0.6941176471, alpha: 1), taskTime: Date().adding(minutes: -100) , hours: 3, minutes: 30), PlanCard(taskTitle: "Wake Up & Eat", taskCat: "Morning Routine", taskDesc: "fevw rewnkmlver w", taskColor: #colorLiteral(red: 0.5019607843, green: 0.6392156863, blue: 0.9490196078, alpha: 1), taskTime: Date().adding(minutes: 30), minutes: 30)]
+let cards = [PlanCard(taskTitle: "Wake Up & Eat", taskCat: "Morning Routine", taskDesc: "fevw rewnkmlver w", taskColor: #colorLiteral(red: 0.9294117647, green: 0.5137254902, blue: 0.5450980392, alpha: 1), taskTime: Date().adding(minutes: -400), hours: 1, minutes: 20), PlanCard(taskTitle: "Sleep Again!", taskCat: "Afternoon", taskDesc: "fevw rewnkmlver w", taskColor: #colorLiteral(red: 0.4431372549, green: 0.7882352941, blue: 0.6941176471, alpha: 1), taskTime: Date().adding(minutes: -100) , hours: 3, minutes: 30), PlanCard(taskTitle: "Wake Up & Eat", taskCat: "Morning Routine", taskDesc: "fevw rewnkmlver w", taskColor: #colorLiteral(red: 0.5019607843, green: 0.6392156863, blue: 0.9490196078, alpha: 1), taskTime: Date().adding(minutes: 30), hours: nil, minutes: 30)]
 
 let card = cards[0]
 
@@ -103,7 +103,7 @@ struct DayPlannerSmallWidgetsEntryView : View {
                     
                     Text("Today’s Upcoming Tasks:").font(Font.system(size: 14, weight: .bold, design: .default))
                 }
-            }.frame(width: .infinity, height: 60, alignment: .top)
+            }.frame(height: 60, alignment: .top)
             
             VStack(alignment: .leading) {
                 if !cards.isEmpty {
