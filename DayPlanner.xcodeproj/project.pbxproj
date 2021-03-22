@@ -17,6 +17,7 @@
 		192895A92607EA2500EC96FC /* DisplayType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 198C45AA26060E4200461F27 /* DisplayType.swift */; };
 		192895AC2607EA2800EC96FC /* data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1989FA1026013AA50008E943 /* data.swift */; };
 		192895AF2607EA2A00EC96FC /* PlanCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194BAAF825FECF3B00129C23 /* PlanCard.swift */; };
+		192895D3260839F500EC96FC /* ShowHoursOnCardTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 198C45992605F3D800461F27 /* ShowHoursOnCardTVCell.swift */; };
 		194BAAEF25FECD6000129C23 /* DayPlanCardTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194BAAEE25FECD6000129C23 /* DayPlanCardTVCell.swift */; };
 		194BAAF225FECD9800129C23 /* DoneCardTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194BAAF125FECD9800129C23 /* DoneCardTVCell.swift */; };
 		194BAAF925FECF3B00129C23 /* PlanCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194BAAF825FECF3B00129C23 /* PlanCard.swift */; };
@@ -347,6 +348,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				192895AF2607EA2A00EC96FC /* PlanCard.swift in Sources */,
+				192895D3260839F500EC96FC /* ShowHoursOnCardTVCell.swift in Sources */,
 				192895A92607EA2500EC96FC /* DisplayType.swift in Sources */,
 				192895982607D7A300EC96FC /* DayPlannerSmallWidgets.intentdefinition in Sources */,
 				192895932607D7A000EC96FC /* DayPlannerSmallWidgets.swift in Sources */,
