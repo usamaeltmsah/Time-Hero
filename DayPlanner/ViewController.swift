@@ -25,6 +25,14 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        if let dayNum = Date().dayNumberOfWeek() {
+            if dayNum - 1 >= 0 {
+                selectedDayInd = dayNum - 1
+            } else {
+                selectedDayInd = 6
+            }
+        }
+        
         dayPlansTV.delegate = self
         dayPlansTV.dataSource = self
         dayPlansTV.dragDelegate = self
@@ -33,7 +41,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
         daysButtons = [sundayButton, mondayButton, tuesdayButton, wednesdayButton, thuresdayButton, fridayButton, saturdayButton]
         
         if loadData() {
-            print(daysPlans)
+            print("Data Loaded Successfully!")
         } else {
             for i in 0 ..< 7 {
                 daysPlans[i] = Array(repeating: [PlanCard](), count: 2)
@@ -42,6 +50,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
         
         currentDayUnDoneCards = daysPlans[selectedDayInd]?[0] ?? []
         currentDayDoneCards = daysPlans[selectedDayInd]?[1] ?? []
+        dayButtonClicked(daysButtons[selectedDayInd])
         dayPlansTV.dragInteractionEnabled = true
     }
 
@@ -221,5 +230,11 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource, UITableVi
         currentDayUnDoneCards.insert(mover, at: destinationIndexPath.row)
         daysPlans[selectedDayInd] = [currentDayUnDoneCards, currentDayDoneCards]
         tableView.reloadData()
+    }
+}
+
+extension Date {
+    func dayNumberOfWeek() -> Int? {
+        return Calendar.current.dateComponents([.weekday], from: self).weekday
     }
 }
