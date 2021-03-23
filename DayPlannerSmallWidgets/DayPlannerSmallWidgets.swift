@@ -69,19 +69,34 @@ struct DayPlannerSmallWidgetsEntryView : View {
     //                Image("background").resizable().aspectRatio(contentMode: .fill).frame(width: geo.size.width, height: geo.size.height, alignment: .center)
                 }
                 
-                Color(card.taskColor)
-                VStack(alignment: .leading, spacing: 5) {
-                    Text(card.taskTitle).font(Font.system(size: 14, weight: .semibold, design: .default))
+                if !cards.isEmpty {
+                    let card = cards[0]
                     
-                    Text(card.taskCat).font(Font.system(size: 10, weight: .medium, design: .default))
+                    Color(card.taskColor)
+                    VStack(alignment: .leading, spacing: 5) {
+                        Text(card.taskTitle).font(Font.system(size: 14, weight: .semibold, design: .default))
+                        
+                        Text(card.taskCat).font(Font.system(size: 10, weight: .medium, design: .default))
+                        
+                        HStack(alignment: .center, spacing: 5) {
+                            Image(systemName: "clock").foregroundColor(.white)
+                            Text(card.getTaskLen()).font(Font.system(size: 14, weight: .semibold, design: .default))
+                        }
+                        
+                        Text("\(card.getStringDate()) - \(card.getToTime())").font(Font.system(size: 14, weight: .semibold, design: .default))
+                    }.foregroundColor(.white).padding(EdgeInsets(top: 10, leading: -20, bottom: 10, trailing: 10))
+                } else {
+                    Color(#colorLiteral(red: 0.4509803922, green: 0.5607843137, blue: 0.937254902, alpha: 1))
                     
-                    HStack(alignment: .center, spacing: 5) {
-                        Image(systemName: "clock").foregroundColor(.white)
-                        Text(card.getTaskLen()).font(Font.system(size: 14, weight: .semibold, design: .default))
+                    VStack(alignment: .center, spacing: 5) {
+                        HStack(alignment: .center) {
+                            Spacer()
+                            Text("No Tasks Left for Today!").font(Font.system(size: 18, weight: .bold, design: .default)).foregroundColor(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1))).multilineTextAlignment(.center)
+                            Spacer()
+                        }
+                        Image("WhiteLogo").resizable().frame(width: 20, height: 20, alignment: .center).cornerRadius(10)
                     }
-                    
-                    Text("\(card.getStringDate()) - \(card.getToTime())").font(Font.system(size: 14, weight: .semibold, design: .default))
-                }.foregroundColor(.white).padding(EdgeInsets(top: 10, leading: -20, bottom: 10, trailing: 10))
+                }
             }
         }
     }
@@ -95,7 +110,7 @@ struct DayPlannerSmallWidgetsEntryView : View {
                         Text("TIME").font(Font.system(size: 18, weight: .bold, design: .default))
                         HStack(alignment: .center, spacing: 1) {
                             Text("HER").font(Font.system(size: 18, weight: .bold, design: .default))
-                            Image("background").resizable().frame(width: 20, height: 20, alignment: .center)
+                            Image("WhiteLogo").resizable().frame(width: 15, height: 15, alignment: .center)
                         }
                     }
                     
@@ -132,13 +147,9 @@ struct DayPlannerSmallWidgetsEntryView : View {
                     }
                 } else {
                     Spacer()
-                    VStack{
-                        Text("No Tasks For Today!").font(Font.system(size: 30, weight: .bold, design: .default)).foregroundColor(Color(#colorLiteral(red: 0.4509803922, green: 0.5607843137, blue: 0.937254902, alpha: 1)))
-                        HStack {
-                            Spacer()
-                            Image("background").resizable().frame(width: 50, height: 50, alignment: .center).cornerRadius(25)
-                            Spacer()
-                        }
+                    HStack{
+                        Text("No Tasks For Today!").font(Font.system(size: 25, weight: .bold, design: .default)).foregroundColor(Color(#colorLiteral(red: 0.4509803922, green: 0.5607843137, blue: 0.937254902, alpha: 1)))
+                            Image("BlueCheckmark").resizable().frame(width: 30, height: 30, alignment: .center).cornerRadius(15)
                     }
                     Spacer()
                 }
@@ -163,6 +174,6 @@ struct DayPlannerSmallWidgets: Widget {
 struct DayPlannerSmallWidgets_Previews: PreviewProvider {
     static var previews: some View {
         DayPlannerSmallWidgetsEntryView(entry: SimpleEntry(date: Date(), upcomingTask: card, configuration: ConfigurationIntent()))
-            .previewContext(WidgetPreviewContext(family: .systemLarge))
+            .previewContext(WidgetPreviewContext(family: .systemSmall))
     }
 }
