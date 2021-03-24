@@ -232,9 +232,3 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource, UITableVi
         tableView.reloadData()
     }
 }
-
-extension Date {
-    func dayNumberOfWeek() -> Int? {
-        return Calendar.current.dateComponents([.weekday], from: self).weekday
-    }
-}
