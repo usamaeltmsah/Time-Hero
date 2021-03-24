@@ -12,8 +12,6 @@ import Intents
 
 var cards = [PlanCard]()
 
-var card: PlanCard?
-
 struct Provider: IntentTimelineProvider {
     func placeholder(in context: Context) -> SimpleEntry {
         SimpleEntry(date: Date(), undoneCards: [], configuration: ConfigurationIntent())
@@ -138,6 +136,7 @@ struct DayPlannerSmallWidgetsEntryView : View {
             
             VStack(alignment: .leading) {
                 let cards = entry.undoneCards
+
                 if !cards.isEmpty {
                     let count = cards.count
                     ForEach(0 ..< 3) {i in
@@ -160,11 +159,10 @@ struct DayPlannerSmallWidgetsEntryView : View {
                                         Text("\(card.getStringDate()) - \(card.getToTime())").font(Font.system(size: 14, weight: .semibold, design: .default)).padding(EdgeInsets(top: 12, leading: 0, bottom: 0, trailing: 13))
                                     }.padding(EdgeInsets(top: 0, leading: 15, bottom: 0, trailing: 0))
                                 }
-                            }.cornerRadius(15)
+                            }.cornerRadius(15).frame(height: 80)
                         }
-                        
-                        Spacer()
                     }
+                    Spacer()
                 } else {
                     Spacer()
                     HStack{
