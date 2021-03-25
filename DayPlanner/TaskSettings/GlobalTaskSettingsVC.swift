@@ -79,44 +79,61 @@ extension GlobalTaskSettingsVC : UITableViewDelegate, UITableViewDataSource {
     }
     
     @objc func saveTaskSettings() {
-        currentDayUnDoneCards[delegate.cardInd].onClickSettings = onClickTVIsOn
-        currentDayUnDoneCards[delegate.cardInd].alwaysOnSettings = alwaysOnTVIsOn
-                
-        if onClickTVIsOn[0] {
-            delegate.card.cardDisplay = .showHrsLeft
-        } else if onClickTVIsOn[1]{
-            delegate.card.cardDisplay = .showHrsLeft2
-        } else if onClickTVIsOn[2] {
-            delegate.card.cardDisplay = .showHrsCard
-        } else if onClickTVIsOn[3] {
-            delegate.card.cardDisplay = .showHrsTop
-        }
-        if onClickTVIsOn[4] {
-            delegate.card.cardDisplay = .expandDesc
-        }
-        if onClickTVIsOn[5] {
-            isSettingsApplyToAll = true
-        }
-        
-        if alwaysOnTVIsOn[0] {
-            delegate.card.cardDisplay = .showHrsLeft
-        } else if alwaysOnTVIsOn[1]{
-            delegate.card.cardDisplay = .showHrsLeft2
-        } else if alwaysOnTVIsOn[2] {
-            delegate.card.cardDisplay = .showHrsCard
-        } else if alwaysOnTVIsOn[3] {
-            delegate.card.cardDisplay = .showHrsTop
-        }
-        if alwaysOnTVIsOn[4] {
-            delegate.card.cardDisplay = .expandDesc
+        if delegate.cardInd < currentDayUnDoneCards.count {
+            currentDayUnDoneCards[delegate.cardInd].onClickSettings = onClickTVIsOn
+            currentDayUnDoneCards[delegate.cardInd].alwaysOnSettings = alwaysOnTVIsOn
+            
+            updateSettings(for: &currentDayUnDoneCards, at: delegate.cardInd)
+        } else {
+            let ind = delegate.cardInd - currentDayUnDoneCards.count
+            currentDayDoneCards[ind].onClickSettings = onClickTVIsOn
+            currentDayDoneCards[ind].alwaysOnSettings = alwaysOnTVIsOn
+            
+            updateSettings(for: &currentDayDoneCards, at: ind)
         }
         
         dismiss(animated: true, completion: nil)
     }
     
+    func updateSettings(for tableCards: inout [PlanCard], at index: Int) {
+        if onClickTVIsOn[0] {
+            tableCards[index].OnClickcardDisplay = .showHrsLeft
+        } else if onClickTVIsOn[1]{
+            tableCards[index].OnClickcardDisplay = .showHrsLeft2
+        } else if onClickTVIsOn[2] {
+            tableCards[index].OnClickcardDisplay = .showHrsCard
+        } else if onClickTVIsOn[3] {
+            tableCards[index].OnClickcardDisplay = .showHrsTop
+        }
+        if onClickTVIsOn[4] {
+            tableCards[index].OnClickcardDisplay = .expandDesc
+        }
+        if onClickTVIsOn[5] {
+            isOnClickSettingsApplyToAll = true
+        }
+        
+        if alwaysOnTVIsOn[0] {
+            tableCards[index].AlwaysOncardDisplay = .showHrsLeft
+        } else if alwaysOnTVIsOn[1] {
+            tableCards[index].AlwaysOncardDisplay = .showHrsLeft2
+        } else if alwaysOnTVIsOn[2] {
+            tableCards[index].AlwaysOncardDisplay = .showHrsCard
+        } else if alwaysOnTVIsOn[3] {
+            tableCards[index].AlwaysOncardDisplay = .showHrsTop
+        }
+        if alwaysOnTVIsOn[4] {
+            tableCards[index].AlwaysOncardDisplay = .expandDesc
+        }
+    }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if tableView == onClickTV {
             onClickTVIsOn[indexPath.row].toggle()
+            
+            if indexPath.row > 2 && indexPath.row < 5 {
+                alwaysOnTVIsOn[indexPath.row] = false
+                alwaysOnTV.reloadRows(at: [IndexPath(row: indexPath.row, section: 0)], with: .none)
+            }
             
             if onlyOneCanBeOn.contains(indexPath.row) {
                 for i in onlyOneCanBeOn {
@@ -135,6 +152,11 @@ extension GlobalTaskSettingsVC : UITableViewDelegate, UITableViewDataSource {
             onClickTV.reloadData()
         } else {
             alwaysOnTVIsOn[indexPath.row].toggle()
+            
+            if indexPath.row > 2 && indexPath.row < 5 {
+                onClickTVIsOn[indexPath.row] = false
+                onClickTV.reloadRows(at: [IndexPath(row: indexPath.row, section: 0)], with: .none)
+            }
             
             if onlyOneCanBeOn.contains(indexPath.row) {
                 for i in onlyOneCanBeOn {

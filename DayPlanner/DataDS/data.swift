@@ -26,7 +26,10 @@ var currentDayDoneCards = [PlanCard]()  {
     }
 }
 
-var isSettingsApplyToAll = false
+var isOnClickSettingsApplyToAll = false
+
+// ON-Click global settings
+var globalSettings = [Bool]()
 
 func saveData() {
     let jsonEncoder = JSONEncoder()

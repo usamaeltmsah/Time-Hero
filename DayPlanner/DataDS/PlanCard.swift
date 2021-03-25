@@ -20,13 +20,14 @@ struct PlanCard : Hashable, Codable {
     var hours: Int!
     var minutes: Int!
     
-    var cardDisplay: DisplayType!
+    var OnClickcardDisplay: DisplayType!
+    var AlwaysOncardDisplay: DisplayType!
     
     var onClickSettings: [Bool]!
     var alwaysOnSettings: [Bool]!
     
     enum CodingKeys: String, CodingKey {
-        case taskTitle, taskCat, taskDesc, taskColor, selectedColorInd, taskTime, taskLenght, hours, minutes, cardDisplay, onClickSettings, alwaysOnSettings
+        case taskTitle, taskCat, taskDesc, taskColor, selectedColorInd, taskTime, taskLenght, hours, minutes, OnClickcardDisplay, AlwaysOncardDisplay, onClickSettings, alwaysOnSettings
     }
     
     init(from decoder: Decoder) throws {
@@ -42,7 +43,8 @@ struct PlanCard : Hashable, Codable {
         hours = try? values.decode(Int.self, forKey: .hours)
         minutes = try? values.decode(Int.self, forKey: .minutes)
         taskLenght = try values.decode(String.self, forKey: .taskLenght)
-        cardDisplay = try? values.decode(DisplayType.self, forKey: .cardDisplay)
+        OnClickcardDisplay = try? values.decode(DisplayType.self, forKey: .OnClickcardDisplay)
+        AlwaysOncardDisplay = try? values.decode(DisplayType.self, forKey: .AlwaysOncardDisplay)
         onClickSettings = try? values.decode([Bool].self, forKey: .onClickSettings)
         alwaysOnSettings = try? values.decode([Bool].self, forKey: .alwaysOnSettings)
     }
@@ -74,7 +76,8 @@ struct PlanCard : Hashable, Codable {
         try? container.encode(hours, forKey: .hours)
         try? container.encode(minutes, forKey: .minutes)
         try container.encode(taskLenght, forKey: .taskLenght)
-        try? container.encode(cardDisplay, forKey: .cardDisplay)
+        try? container.encode(OnClickcardDisplay, forKey: .OnClickcardDisplay)
+        try? container.encode(AlwaysOncardDisplay, forKey: .AlwaysOncardDisplay)
         try? container.encode(onClickSettings, forKey: .onClickSettings)
         try? container.encode(alwaysOnSettings, forKey: .alwaysOnSettings)
     }

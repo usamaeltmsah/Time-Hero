@@ -8,5 +8,5 @@
 import Foundation
 
 enum DisplayType: Int, Codable {
-    case defualt, done, add, showHrsLeft, showHrsLeft2, showHrsTop, showHrsCard, expandDesc
+    case defualt, done, showHrsLeft, showHrsLeft2, showHrsTop, showHrsCard, showHrsLeftTop, showHrsLeft2Top, expandDesc
 }

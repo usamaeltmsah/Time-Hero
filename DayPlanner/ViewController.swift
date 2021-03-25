@@ -88,7 +88,10 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource, UITableVi
 
         if indexPath.row < currentDayUnDoneCards.count {
             let card = currentDayUnDoneCards[indexPath.row]
-            if card.cardDisplay == .expandDesc {
+            if card.AlwaysOncardDisplay == DisplayType.showHrsLeftTop {
+                
+            }
+            if card.AlwaysOncardDisplay == .expandDesc {
                 if let cell = dayPlansTV.dequeueReusableCell(withIdentifier: "ExpandDescriptionCell") as? ExpandDescriptionTVCell {
                     cell.cardView.backgroundColor = card.taskColor
                     cell.taskTitleLabel.text = card.taskTitle
@@ -184,10 +187,10 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource, UITableVi
             
             dayPlansTV.performBatchUpdates({
                 let card = currentDayUnDoneCards[indexPath.row]
-                if card.cardDisplay != .expandDesc {
-                    currentDayUnDoneCards[indexPath.row].cardDisplay = .expandDesc
+                if card.OnClickcardDisplay != .expandDesc {
+                    currentDayUnDoneCards[indexPath.row].OnClickcardDisplay = .expandDesc
                 } else {
-                    currentDayUnDoneCards[indexPath.row].cardDisplay = .defualt
+                    currentDayUnDoneCards[indexPath.row].OnClickcardDisplay = .defualt
                 }
             }, completion: {_ in
                 self.dayPlansTV.reloadRows(at: [indexPath], with: .automatic)
