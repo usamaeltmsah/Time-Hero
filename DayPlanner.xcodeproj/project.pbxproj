@@ -40,8 +40,9 @@
 		198C45942605F35500461F27 /* ShowHoursOnLeft2TVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 198C45932605F35500461F27 /* ShowHoursOnLeft2TVCell.swift */; };
 		198C45972605F39B00461F27 /* ShowHoursOnTopTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 198C45962605F39B00461F27 /* ShowHoursOnTopTVCell.swift */; };
 		198C459A2605F3D800461F27 /* ShowHoursOnCardTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 198C45992605F3D800461F27 /* ShowHoursOnCardTVCell.swift */; };
-		198C459D2605F3F900461F27 /* ExpandDescriptionTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 198C459C2605F3F900461F27 /* ExpandDescriptionTVCell.swift */; };
+		198C459D2605F3F900461F27 /* DayPlanCardWithLeftTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 198C459C2605F3F900461F27 /* DayPlanCardWithLeftTVCell.swift */; };
 		198C45AB26060E4200461F27 /* DisplayType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 198C45AA26060E4200461F27 /* DisplayType.swift */; };
+		19AF15C5260C7F84009AFCF0 /* DayPlanCardWithLeft2TVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19AF15C4260C7F84009AFCF0 /* DayPlanCardWithLeft2TVCell.swift */; };
 		19CDDBEB25FD789800686C09 /* GlobalTaskSettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19CDDBEA25FD789800686C09 /* GlobalTaskSettingsVC.swift */; };
 		19CDDBEE25FD7A4B00686C09 /* OnClickTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19CDDBED25FD7A4B00686C09 /* OnClickTVCell.swift */; };
 		19CDDBF125FD7C0E00686C09 /* AlwaysOnTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19CDDBF025FD7C0E00686C09 /* AlwaysOnTVCell.swift */; };
@@ -107,8 +108,9 @@
 		198C45932605F35500461F27 /* ShowHoursOnLeft2TVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowHoursOnLeft2TVCell.swift; sourceTree = "<group>"; };
 		198C45962605F39B00461F27 /* ShowHoursOnTopTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowHoursOnTopTVCell.swift; sourceTree = "<group>"; };
 		198C45992605F3D800461F27 /* ShowHoursOnCardTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowHoursOnCardTVCell.swift; sourceTree = "<group>"; };
-		198C459C2605F3F900461F27 /* ExpandDescriptionTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandDescriptionTVCell.swift; sourceTree = "<group>"; };
+		198C459C2605F3F900461F27 /* DayPlanCardWithLeftTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayPlanCardWithLeftTVCell.swift; sourceTree = "<group>"; };
 		198C45AA26060E4200461F27 /* DisplayType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayType.swift; sourceTree = "<group>"; };
+		19AF15C4260C7F84009AFCF0 /* DayPlanCardWithLeft2TVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayPlanCardWithLeft2TVCell.swift; sourceTree = "<group>"; };
 		19CDDBEA25FD789800686C09 /* GlobalTaskSettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalTaskSettingsVC.swift; sourceTree = "<group>"; };
 		19CDDBED25FD7A4B00686C09 /* OnClickTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnClickTVCell.swift; sourceTree = "<group>"; };
 		19CDDBF025FD7C0E00686C09 /* AlwaysOnTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlwaysOnTVCell.swift; sourceTree = "<group>"; };
@@ -221,7 +223,8 @@
 				198C45932605F35500461F27 /* ShowHoursOnLeft2TVCell.swift */,
 				198C45962605F39B00461F27 /* ShowHoursOnTopTVCell.swift */,
 				198C45992605F3D800461F27 /* ShowHoursOnCardTVCell.swift */,
-				198C459C2605F3F900461F27 /* ExpandDescriptionTVCell.swift */,
+				198C459C2605F3F900461F27 /* DayPlanCardWithLeftTVCell.swift */,
+				19AF15C4260C7F84009AFCF0 /* DayPlanCardWithLeft2TVCell.swift */,
 			);
 			path = TaskCardCells;
 			sourceTree = "<group>";
@@ -362,11 +365,12 @@
 			files = (
 				1964F71D25FC55F900DC694B /* AddTaskTVCell.swift in Sources */,
 				198C459A2605F3D800461F27 /* ShowHoursOnCardTVCell.swift in Sources */,
+				19AF15C5260C7F84009AFCF0 /* DayPlanCardWithLeft2TVCell.swift in Sources */,
 				19CDDBEE25FD7A4B00686C09 /* OnClickTVCell.swift in Sources */,
 				192895992607D7A300EC96FC /* DayPlannerSmallWidgets.intentdefinition in Sources */,
 				1964F70A25FC454200DC694B /* EXTInternet.swift in Sources */,
 				1964F6ED25FC3F5500DC694B /* ViewController.swift in Sources */,
-				198C459D2605F3F900461F27 /* ExpandDescriptionTVCell.swift in Sources */,
+				198C459D2605F3F900461F27 /* DayPlanCardWithLeftTVCell.swift in Sources */,
 				1964F70325FC451600DC694B /* TextField+Extention.swift in Sources */,
 				1964F71A25FC479700DC694B /* style.swift in Sources */,
 				1964F70725FC453100DC694B /* ExtentionLocalize.swift in Sources */,
