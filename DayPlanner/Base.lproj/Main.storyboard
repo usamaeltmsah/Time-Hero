@@ -317,7 +317,7 @@
                                                         </tableViewCellContentView>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </tableViewCell>
-                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="DayPlanCardWithLeftTVCell" id="3aX-li-fuF" customClass="DayPlanCardWithLeftTVCell" customModule="DayPlanner" customModuleProvider="target">
+                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="DayPlanCardWithLeftTVCell" id="3aX-li-fuF" customClass="DayPlanCardWithLeftTopOnCardTVCell" customModule="DayPlanner" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="283" width="414" height="369"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="3aX-li-fuF" id="gqu-rv-9gQ">
@@ -327,7 +327,7 @@
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dyj-2A-gJh">
                                                                     <rect key="frame" x="10" y="5" width="394" height="359"/>
                                                                     <subviews>
-                                                                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Wc-al-btM">
+                                                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="8Wc-al-btM">
                                                                             <rect key="frame" x="0.0" y="0.0" width="394" height="359"/>
                                                                             <subviews>
                                                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="GKf-yr-t94">
@@ -375,10 +375,10 @@
                                                                                     </subviews>
                                                                                 </stackView>
                                                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="M4Y-Le-9aq">
-                                                                                    <rect key="frame" x="70" y="0.0" width="324" height="359"/>
+                                                                                    <rect key="frame" x="73" y="0.0" width="321" height="359"/>
                                                                                     <subviews>
                                                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DxF-gK-65z">
-                                                                                            <rect key="frame" x="0.0" y="0.0" width="324" height="30"/>
+                                                                                            <rect key="frame" x="0.0" y="0.0" width="321" height="30"/>
                                                                                             <subviews>
                                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hfx-1v-PeB">
                                                                                                     <rect key="frame" x="55" y="6" width="7.5" height="18"/>
@@ -412,10 +412,10 @@
                                                                                             </constraints>
                                                                                         </view>
                                                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rlV-Gr-59e">
-                                                                                            <rect key="frame" x="0.0" y="30" width="324" height="329"/>
+                                                                                            <rect key="frame" x="0.0" y="30" width="321" height="329"/>
                                                                                             <subviews>
                                                                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="BBT-JJ-Gwn">
-                                                                                                    <rect key="frame" x="189.5" y="10" width="114.5" height="18"/>
+                                                                                                    <rect key="frame" x="186.5" y="10" width="114.5" height="18"/>
                                                                                                     <subviews>
                                                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="04:50" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cgl-ZE-YqR">
                                                                                                             <rect key="frame" x="0.0" y="0.0" width="44" height="18"/>
@@ -438,7 +438,7 @@
                                                                                                     </subviews>
                                                                                                 </stackView>
                                                                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="SAs-p7-iFx">
-                                                                                                    <rect key="frame" x="30" y="10" width="294" height="309"/>
+                                                                                                    <rect key="frame" x="30" y="10" width="291" height="309"/>
                                                                                                     <subviews>
                                                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wake Up &amp; Eat" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tsg-ow-pkx">
                                                                                                             <rect key="frame" x="0.0" y="0.0" width="124.5" height="21.5"/>
@@ -490,13 +490,13 @@
                                                                                             </subviews>
                                                                                             <color key="backgroundColor" red="0.94901960780000005" green="0.67450980390000004" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
                                                                                             <constraints>
-                                                                                                <constraint firstAttribute="trailing" secondItem="SAs-p7-iFx" secondAttribute="trailing" id="5Ci-eb-jbd"/>
                                                                                                 <constraint firstItem="SAs-p7-iFx" firstAttribute="centerY" secondItem="rlV-Gr-59e" secondAttribute="centerY" id="6SQ-vH-nfm"/>
                                                                                                 <constraint firstAttribute="trailing" secondItem="BBT-JJ-Gwn" secondAttribute="trailing" constant="20" id="9KF-qe-qeb"/>
                                                                                                 <constraint firstItem="BBT-JJ-Gwn" firstAttribute="top" secondItem="rlV-Gr-59e" secondAttribute="top" constant="10" id="FnI-Z1-gRN"/>
                                                                                                 <constraint firstItem="dS1-iH-0Cg" firstAttribute="top" secondItem="rlV-Gr-59e" secondAttribute="top" id="JTo-gu-AlY"/>
                                                                                                 <constraint firstItem="SAs-p7-iFx" firstAttribute="leading" secondItem="dS1-iH-0Cg" secondAttribute="trailing" id="Lmx-9M-phd"/>
                                                                                                 <constraint firstItem="SAs-p7-iFx" firstAttribute="top" secondItem="rlV-Gr-59e" secondAttribute="top" constant="10" id="Ufw-6i-HcE"/>
+                                                                                                <constraint firstAttribute="trailing" secondItem="SAs-p7-iFx" secondAttribute="trailing" id="XnC-EA-ku1"/>
                                                                                                 <constraint firstAttribute="bottom" secondItem="dS1-iH-0Cg" secondAttribute="bottom" id="aWe-Aj-0iY"/>
                                                                                                 <constraint firstItem="dS1-iH-0Cg" firstAttribute="leading" secondItem="rlV-Gr-59e" secondAttribute="leading" id="c64-MU-qU8"/>
                                                                                                 <constraint firstAttribute="bottom" secondItem="SAs-p7-iFx" secondAttribute="bottom" constant="10" id="cnX-KT-yYB"/>
@@ -512,17 +512,16 @@
                                                                             </subviews>
                                                                             <constraints>
                                                                                 <constraint firstItem="M4Y-Le-9aq" firstAttribute="top" secondItem="8Wc-al-btM" secondAttribute="top" id="RWa-xL-PVa"/>
-                                                                                <constraint firstAttribute="trailing" secondItem="M4Y-Le-9aq" secondAttribute="trailing" id="h0y-Hf-Qjg"/>
                                                                                 <constraint firstAttribute="bottom" secondItem="M4Y-Le-9aq" secondAttribute="bottom" id="wUf-ur-hBO"/>
                                                                                 <constraint firstItem="8GO-mS-NTy" firstAttribute="centerY" secondItem="rlV-Gr-59e" secondAttribute="centerY" id="zNY-ig-m5C"/>
                                                                             </constraints>
                                                                         </stackView>
                                                                     </subviews>
                                                                     <constraints>
+                                                                        <constraint firstAttribute="trailing" secondItem="8Wc-al-btM" secondAttribute="trailing" id="Fbo-4I-99z"/>
                                                                         <constraint firstItem="8Wc-al-btM" firstAttribute="top" secondItem="Dyj-2A-gJh" secondAttribute="top" id="GdH-Nf-Xy5"/>
                                                                         <constraint firstItem="8Wc-al-btM" firstAttribute="leading" secondItem="Dyj-2A-gJh" secondAttribute="leading" id="dE8-DA-KLj"/>
                                                                         <constraint firstAttribute="bottom" secondItem="8Wc-al-btM" secondAttribute="bottom" id="o9F-2V-F0l"/>
-                                                                        <constraint firstAttribute="trailing" secondItem="8Wc-al-btM" secondAttribute="trailing" id="opM-6s-6Yk"/>
                                                                     </constraints>
                                                                     <userDefinedRuntimeAttributes>
                                                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -542,15 +541,23 @@
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <connections>
                                                             <outlet property="cardView" destination="rlV-Gr-59e" id="wSv-bQ-aYz"/>
-                                                            <outlet property="fromTimeLabel" destination="egJ-SO-aDO" id="qzc-Ke-3zN"/>
-                                                            <outlet property="leftCardTimeView" destination="NMf-Kd-ixj" id="aGv-gb-ZEl"/>
+                                                            <outlet property="left1TimeSeperator" destination="lNF-F5-hRy" id="4qg-yi-ijb"/>
+                                                            <outlet property="left2TimeSeperator" destination="RLg-Od-5PF" id="nqA-7d-od8"/>
+                                                            <outlet property="leftCardTimeView" destination="GKf-yr-t94" id="1cj-f4-1d4"/>
+                                                            <outlet property="leftFromTimeLabel" destination="egJ-SO-aDO" id="qzc-Ke-3zN"/>
+                                                            <outlet property="leftToTimeLabel" destination="4eZ-cw-bU7" id="h3s-3z-8JE"/>
+                                                            <outlet property="onCardFromTimeLabel" destination="Cgl-ZE-YqR" id="17d-hl-urJ"/>
+                                                            <outlet property="onCardTimeSeperator" destination="z14-9E-i80" id="zeA-u6-t7E"/>
                                                             <outlet property="onCardTimeView" destination="BBT-JJ-Gwn" id="qW1-BO-lIl"/>
+                                                            <outlet property="onCardToTimeLabel" destination="U7X-2Y-Igk" id="lRC-7l-sBO"/>
                                                             <outlet property="taskCatLabel" destination="lZ7-LS-U1l" id="6r9-Qo-cXK"/>
                                                             <outlet property="taskDescLabel" destination="40c-HQ-x2K" id="gR1-1a-Nzg"/>
                                                             <outlet property="taskLengthLabel" destination="zfb-jh-Uqn" id="Zs5-oG-Uo7"/>
                                                             <outlet property="taskTitleLabel" destination="tsg-ow-pkx" id="7e8-bR-qMx"/>
-                                                            <outlet property="toTimeLabel" destination="4eZ-cw-bU7" id="h3s-3z-8JE"/>
-                                                            <outlet property="topCardTimeView" destination="DxF-gK-65z" id="3kO-6M-tpJ"/>
+                                                            <outlet property="topCardTimeView" destination="DxF-gK-65z" id="e4u-bj-RmT"/>
+                                                            <outlet property="topFromTimeLabel" destination="gla-BJ-kQi" id="VxV-E1-iB7"/>
+                                                            <outlet property="topFromTimeSeperator" destination="hfx-1v-PeB" id="4ba-9c-1A1"/>
+                                                            <outlet property="topToTimeLabel" destination="mGv-Ro-fJe" id="mc9-tG-1U1"/>
                                                         </connections>
                                                     </tableViewCell>
                                                 </prototypes>

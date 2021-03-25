@@ -96,33 +96,51 @@ extension GlobalTaskSettingsVC : UITableViewDelegate, UITableViewDataSource {
     }
     
     func updateSettings(for tableCards: inout [PlanCard], at index: Int) {
-        if onClickTVIsOn[0] {
-            tableCards[index].OnClickcardDisplay = .showHrsLeft
-        } else if onClickTVIsOn[1]{
-            tableCards[index].OnClickcardDisplay = .showHrsLeft2
-        } else if onClickTVIsOn[2] {
-            tableCards[index].OnClickcardDisplay = .showHrsCard
-        } else if onClickTVIsOn[3] {
-            tableCards[index].OnClickcardDisplay = .showHrsTop
-        }
-        if onClickTVIsOn[4] {
-            tableCards[index].OnClickcardDisplay = .expandDesc
-        }
-        if onClickTVIsOn[5] {
-            isOnClickSettingsApplyToAll = true
+        if (!(onClickTVIsOn[0] || onClickTVIsOn[1] || onClickTVIsOn[2] || onClickTVIsOn[3] || onClickTVIsOn[4])) {
+            tableCards[index].OnClickcardDisplay = .defualt
+        } else {
+            if onClickTVIsOn[0] {
+                tableCards[index].OnClickcardDisplay = .showHrsLeft
+            } else if onClickTVIsOn[1]{
+                tableCards[index].OnClickcardDisplay = .showHrsLeft2
+            } else if onClickTVIsOn[2] {
+                tableCards[index].OnClickcardDisplay = .showHrsOnCard
+            } else if onClickTVIsOn[3] {
+                tableCards[index].OnClickcardDisplay = .showHrsTop
+            }
         }
         
-        if alwaysOnTVIsOn[0] {
-            tableCards[index].AlwaysOncardDisplay = .showHrsLeft
-        } else if alwaysOnTVIsOn[1] {
-            tableCards[index].AlwaysOncardDisplay = .showHrsLeft2
-        } else if alwaysOnTVIsOn[2] {
-            tableCards[index].AlwaysOncardDisplay = .showHrsCard
-        } else if alwaysOnTVIsOn[3] {
-            tableCards[index].AlwaysOncardDisplay = .showHrsTop
+        if onClickTVIsOn[4] {
+            tableCards[index].isOnClickExpandable = true
+        } else {
+            tableCards[index].isOnClickExpandable = false
         }
+        
+        if onClickTVIsOn[5] {
+            isOnClickSettingsApplyToAll = true
+        } else {
+            isOnClickSettingsApplyToAll = false
+        }
+        
+        
+        if (!(alwaysOnTVIsOn[0] || alwaysOnTVIsOn[1] || alwaysOnTVIsOn[2] || alwaysOnTVIsOn[3] || alwaysOnTVIsOn[4])) {
+            tableCards[index].AlwaysOncardDisplay = .defualt
+        } else {
+            if alwaysOnTVIsOn[0] {
+                tableCards[index].AlwaysOncardDisplay = .showHrsLeft
+            } else if alwaysOnTVIsOn[1] {
+                tableCards[index].AlwaysOncardDisplay = .showHrsLeft2
+            } else if alwaysOnTVIsOn[2] {
+                tableCards[index].AlwaysOncardDisplay = .showHrsOnCard
+            } else if alwaysOnTVIsOn[3] {
+                tableCards[index].AlwaysOncardDisplay = .showHrsTop
+            }
+        }
+        
         if alwaysOnTVIsOn[4] {
-            tableCards[index].AlwaysOncardDisplay = .expandDesc
+            tableCards[index].isAlwaysExpandable = true
+        } else {
+            tableCards[index].isAlwaysExpandable = false
         }
     }
     

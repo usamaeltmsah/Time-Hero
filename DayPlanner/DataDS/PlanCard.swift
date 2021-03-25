@@ -22,12 +22,16 @@ struct PlanCard : Hashable, Codable {
     
     var OnClickcardDisplay: DisplayType!
     var AlwaysOncardDisplay: DisplayType!
+    var isClicked: Bool! = false
     
     var onClickSettings: [Bool]!
     var alwaysOnSettings: [Bool]!
     
+    var isOnClickExpandable = false
+    var isAlwaysExpandable = false
+    
     enum CodingKeys: String, CodingKey {
-        case taskTitle, taskCat, taskDesc, taskColor, selectedColorInd, taskTime, taskLenght, hours, minutes, OnClickcardDisplay, AlwaysOncardDisplay, onClickSettings, alwaysOnSettings
+        case taskTitle, taskCat, taskDesc, taskColor, selectedColorInd, taskTime, taskLenght, hours, minutes, OnClickcardDisplay, AlwaysOncardDisplay, onClickSettings, alwaysOnSettings, isOnClickExpandable, isAlwaysExpandable
     }
     
     init(from decoder: Decoder) throws {
@@ -47,6 +51,9 @@ struct PlanCard : Hashable, Codable {
         AlwaysOncardDisplay = try? values.decode(DisplayType.self, forKey: .AlwaysOncardDisplay)
         onClickSettings = try? values.decode([Bool].self, forKey: .onClickSettings)
         alwaysOnSettings = try? values.decode([Bool].self, forKey: .alwaysOnSettings)
+        
+//        isOnClickExpandable = try values.decode(Bool.self, forKey: .isOnClickExpandable)
+//        isAlwaysExpandable = try values.decode(Bool.self, forKey: .isAlwaysExpandable)
     }
     
     init(taskTitle: String, taskCat: String, taskDesc: String?, taskColor: UIColor?, taskTime: Date?, hours: Int?, minutes: Int?) {
@@ -80,6 +87,9 @@ struct PlanCard : Hashable, Codable {
         try? container.encode(AlwaysOncardDisplay, forKey: .AlwaysOncardDisplay)
         try? container.encode(onClickSettings, forKey: .onClickSettings)
         try? container.encode(alwaysOnSettings, forKey: .alwaysOnSettings)
+        
+//        try? container.encode(isOnClickExpandable, forKey: .isOnClickExpandable)
+//        try? container.encode(isAlwaysExpandable, forKey: .isAlwaysExpandable)
     }
     
     func getTaskLen() -> String {
@@ -95,7 +105,7 @@ struct PlanCard : Hashable, Codable {
         return taskLength
     }
     
-    func getStringDate() -> String {
+    func getFromTime() -> String {
         return taskTime.dateString(with: "HH:mm")
     }
     
@@ -110,7 +120,7 @@ struct PlanCard : Hashable, Codable {
             toDate?.addTimeInterval(TimeInterval(mins * 60))
         }
         
-        return toDate?.dateString(with: "HH:mm") ?? getStringDate()
+        return toDate?.dateString(with: "HH:mm") ?? getFromTime()
     }
 }
 

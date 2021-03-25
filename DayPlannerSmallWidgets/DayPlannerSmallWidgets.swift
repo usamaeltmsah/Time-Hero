@@ -97,7 +97,7 @@ struct DayPlannerSmallWidgetsEntryView : View {
                             Text(card.getTaskLen()).font(Font.system(size: 14, weight: .semibold, design: .default))
                         }
                         
-                        Text("\(card.getStringDate()) - \(card.getToTime())").font(Font.system(size: 14, weight: .semibold, design: .default))
+                        Text("\(card.getFromTime()) - \(card.getToTime())").font(Font.system(size: 14, weight: .semibold, design: .default))
                     }.foregroundColor(.white).padding(EdgeInsets(top: 10, leading: -20, bottom: 10, trailing: 10))
                 } else {
                     Color(#colorLiteral(red: 0.4509803922, green: 0.5607843137, blue: 0.937254902, alpha: 1))
@@ -156,7 +156,7 @@ struct DayPlannerSmallWidgetsEntryView : View {
                                             }
                                         }.padding(EdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10))
                                         Spacer()
-                                        Text("\(card.getStringDate()) - \(card.getToTime())").font(Font.system(size: 14, weight: .semibold, design: .default)).padding(EdgeInsets(top: 12, leading: 0, bottom: 0, trailing: 13))
+                                        Text("\(card.getFromTime()) - \(card.getToTime())").font(Font.system(size: 14, weight: .semibold, design: .default)).padding(EdgeInsets(top: 12, leading: 0, bottom: 0, trailing: 13))
                                     }.padding(EdgeInsets(top: 0, leading: 15, bottom: 0, trailing: 0))
                                 }
                             }.cornerRadius(15).frame(height: 80)
