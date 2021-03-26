@@ -96,7 +96,7 @@ extension GlobalTaskSettingsVC : UITableViewDelegate, UITableViewDataSource {
     }
     
     func updateSettings(for tableCards: inout [PlanCard], at index: Int) {
-        if (!(onClickTVIsOn[0] || onClickTVIsOn[1] || onClickTVIsOn[2] || onClickTVIsOn[3] || onClickTVIsOn[4])) {
+        if (!(onClickTVIsOn[0] || onClickTVIsOn[1] || onClickTVIsOn[2] || onClickTVIsOn[3])) {
             tableCards[index].OnClickcardDisplay = .defualt
         } else {
             if onClickTVIsOn[0] {
@@ -115,13 +115,6 @@ extension GlobalTaskSettingsVC : UITableViewDelegate, UITableViewDataSource {
         } else {
             tableCards[index].isOnClickExpandable = false
         }
-        
-        if onClickTVIsOn[5] {
-            isOnClickSettingsApplyToAll = true
-        } else {
-            isOnClickSettingsApplyToAll = false
-        }
-        
         
         if (!(alwaysOnTVIsOn[0] || alwaysOnTVIsOn[1] || alwaysOnTVIsOn[2] || alwaysOnTVIsOn[3] || alwaysOnTVIsOn[4])) {
             tableCards[index].AlwaysOncardDisplay = .defualt
@@ -142,13 +135,27 @@ extension GlobalTaskSettingsVC : UITableViewDelegate, UITableViewDataSource {
         } else {
             tableCards[index].isAlwaysExpandable = false
         }
+        
+        if onClickTVIsOn[5] {
+            isSettingsApplyToAll = true
+            OnClickGlobalSettings = tableCards[index].onClickSettings
+            alwaysGlobalSettings = tableCards[index].alwaysOnSettings
+            
+            onClickGlobalDisplayCard = tableCards[index].OnClickcardDisplay
+            alwaysGlobalDisplayCard = tableCards[index].AlwaysOncardDisplay
+        } else {
+            isSettingsApplyToAll = false
+            
+            onClickGlobalDisplayCard = nil
+            alwaysGlobalDisplayCard = nil
+        }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if tableView == onClickTV {
             onClickTVIsOn[indexPath.row].toggle()
             
-            if indexPath.row > 2 && indexPath.row < 5 {
+            if indexPath.row >= 2 && indexPath.row < 5 {
                 alwaysOnTVIsOn[indexPath.row] = false
                 alwaysOnTV.reloadRows(at: [IndexPath(row: indexPath.row, section: 0)], with: .none)
             }
@@ -171,7 +178,7 @@ extension GlobalTaskSettingsVC : UITableViewDelegate, UITableViewDataSource {
         } else {
             alwaysOnTVIsOn[indexPath.row].toggle()
             
-            if indexPath.row > 2 && indexPath.row < 5 {
+            if indexPath.row >= 2 && indexPath.row < 5 {
                 onClickTVIsOn[indexPath.row] = false
                 onClickTV.reloadRows(at: [IndexPath(row: indexPath.row, section: 0)], with: .none)
             }

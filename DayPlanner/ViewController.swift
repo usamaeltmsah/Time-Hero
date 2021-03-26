@@ -87,6 +87,16 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource, UITableVi
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if indexPath.row < currentDayUnDoneCards.count {
+            if isSettingsApplyToAll {
+                currentDayUnDoneCards[indexPath.row].onClickSettings = OnClickGlobalSettings
+                currentDayUnDoneCards[indexPath.row].alwaysOnSettings = alwaysGlobalSettings
+                
+                currentDayUnDoneCards[indexPath.row].OnClickcardDisplay = onClickGlobalDisplayCard
+                currentDayUnDoneCards[indexPath.row].AlwaysOncardDisplay = alwaysGlobalDisplayCard
+                
+                currentDayUnDoneCards[indexPath.row].isOnClickExpandable = currentDayUnDoneCards[indexPath.row].onClickSettings[4]
+                currentDayUnDoneCards[indexPath.row].isAlwaysExpandable = currentDayUnDoneCards[indexPath.row].alwaysOnSettings[4]
+            }
             let card = currentDayUnDoneCards[indexPath.row]
             if let cell = dayPlansTV.dequeueReusableCell(withIdentifier: "DayPlanCardWithLeftTVCell") as? DayPlanCardWithLeftTopOnCardTVCell {
                 
@@ -108,6 +118,7 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource, UITableVi
                 cell.topFromTimeLabel.text = card.getFromTime()
                 cell.topToTimeLabel.text = card.getToTime()
                 cell.topFromTimeLabel.textColor = card.taskColor
+                cell.topFromTimeSeperator.textColor = card.taskColor
                 cell.topToTimeLabel.textColor = card.taskColor
                 
                 if card.isAlwaysExpandable {
@@ -145,6 +156,10 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource, UITableVi
                 case .showHrsTop:
                     cell.leftCardTimeView.isHidden = true
                     cell.topCardTimeView.isHidden = false
+                    cell.onCardTimeView.isHidden = true
+                case .defualt:
+                    cell.leftCardTimeView.isHidden = true
+                    cell.topCardTimeView.isHidden = true
                     cell.onCardTimeView.isHidden = true
                 default:
                     break
@@ -218,7 +233,7 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource, UITableVi
                         } else {
                             cell.leftCardTimeView.isHidden = false
                         }
-                        if card.AlwaysOncardDisplay != .showHrsTop {
+                        if card.AlwaysOncardDisplay != .showHrsOnCard {
                             cell.onCardTimeView.isHidden = true
                         } else {
                             cell.onCardTimeView.isHidden = false
@@ -244,7 +259,7 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource, UITableVi
             }
         }
         
-        return DayPlanCardTVCell()
+        return DayPlanCardWithLeftTopOnCardTVCell()
     }
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
@@ -307,12 +322,6 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource, UITableVi
         if indexPath.row < currentDayUnDoneCards.count {
             dayPlansTV.performBatchUpdates({
                 currentDayUnDoneCards[indexPath.row].isClicked.toggle()
-//                let card = currentDayUnDoneCards[indexPath.row]
-//                if card.AlwaysOncardDisplay != .expandDesc {
-//                    currentDayUnDoneCards[indexPath.row].OnClickcardDisplay = .expandDesc
-//                } else {
-//                    currentDayUnDoneCards[indexPath.row].OnClickcardDisplay = .defualt
-//                }
             }, completion: {_ in
                 self.dayPlansTV.reloadRows(at: [indexPath], with: .automatic)
             })
