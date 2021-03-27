@@ -26,6 +26,10 @@ var currentDayDoneCards = [PlanCard]()  {
     }
 }
 
+var colorButtons = [UIButton]()
+
+let arrowsImages = ["redarrow", "bluearrow", "blackarrow", "orange", "purplearrow", "greenarrow"]
+
 var isSettingsApplyToAll = false
 
 var OnClickGlobalSettings = [Bool]()

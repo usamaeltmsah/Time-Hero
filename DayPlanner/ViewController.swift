@@ -121,6 +121,8 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource, UITableVi
                 cell.topFromTimeSeperator.textColor = card.taskColor
                 cell.topToTimeLabel.textColor = card.taskColor
                 
+                cell.left2TimeSeperator.image = UIImage(named: arrowsImages[card.selectedColorInd])
+                
                 if card.isAlwaysExpandable {
                     cell.taskDescLabel.isHidden = false
                 } else {
@@ -136,6 +138,9 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource, UITableVi
                     cell.left1TimeSeperator.isHidden = false
                     cell.left2TimeSeperator.isHidden = true
                     
+                    cell.leftFromTimeLabel.font = UIFont(name: "Poppins-Medium", size: 12)
+                    cell.leftToTimeLabel.font = UIFont(name: "Poppins-Medium", size: 12)
+                    
                     cell.leftFromTimeLabel.textColor = .black
                     cell.left1TimeSeperator.textColor = .black
                     cell.leftToTimeLabel.textColor = .black
@@ -146,8 +151,10 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource, UITableVi
                     cell.left1TimeSeperator.isHidden = true
                     cell.left2TimeSeperator.isHidden = false
                     
+                    cell.leftFromTimeLabel.font = UIFont(name: "Poppins-Bold", size: 14)
+                    cell.leftToTimeLabel.font = UIFont(name: "Poppins-Bold", size: 14)
+                    
                     cell.leftFromTimeLabel.textColor = card.taskColor
-                    cell.left2TimeSeperator.textColor = card.taskColor
                     cell.leftToTimeLabel.textColor = card.taskColor
                 case .showHrsOnCard:
                     cell.leftCardTimeView.isHidden = true
@@ -176,6 +183,8 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource, UITableVi
                     
                     switch card.OnClickcardDisplay {
                     case .showHrsLeft:
+                        cell.leftFromTimeLabel.font = UIFont(name: "Poppins-Medium", size: 12)
+                        cell.leftToTimeLabel.font = UIFont(name: "Poppins-Medium", size: 12)
                         cell.leftCardTimeView.isHidden = false
                         if card.AlwaysOncardDisplay != .showHrsOnCard {
                             cell.onCardTimeView.isHidden = true
@@ -196,6 +205,8 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource, UITableVi
                         cell.left1TimeSeperator.textColor = .black
                         cell.leftToTimeLabel.textColor = .black
                     case .showHrsLeft2:
+                        cell.leftFromTimeLabel.font = UIFont(name: "Poppins-Bold", size: 14)
+                        cell.leftToTimeLabel.font = UIFont(name: "Poppins-Bold", size: 14)
                         cell.leftCardTimeView.isHidden = false
                         if card.AlwaysOncardDisplay != .showHrsOnCard {
                             cell.onCardTimeView.isHidden = true
@@ -211,7 +222,6 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource, UITableVi
                         cell.left2TimeSeperator.isHidden = false
                         
                         cell.leftFromTimeLabel.textColor = card.taskColor
-                        cell.left2TimeSeperator.textColor = card.taskColor
                         cell.leftToTimeLabel.textColor = card.taskColor
                     case .showHrsOnCard:
                         cell.onCardTimeView.isHidden = false
