@@ -20,13 +20,18 @@ struct PlanCard : Hashable, Codable {
     var hours: Int!
     var minutes: Int!
     
-    var cardDisplay: DisplayType!
+    var OnClickcardDisplay: DisplayType!
+    var AlwaysOncardDisplay: DisplayType!
+    var isClicked = false
     
     var onClickSettings: [Bool]!
     var alwaysOnSettings: [Bool]!
     
+    var isOnClickExpandable = false
+    var isAlwaysExpandable = false
+    
     enum CodingKeys: String, CodingKey {
-        case taskTitle, taskCat, taskDesc, taskColor, selectedColorInd, taskTime, taskLenght, hours, minutes, cardDisplay, onClickSettings, alwaysOnSettings
+        case taskTitle, taskCat, taskDesc, taskColor, selectedColorInd, taskTime, taskLenght, hours, minutes, OnClickcardDisplay, AlwaysOncardDisplay, onClickSettings, alwaysOnSettings, isClicked, isOnClickExpandable, isAlwaysExpandable
     }
     
     init(from decoder: Decoder) throws {
@@ -42,9 +47,14 @@ struct PlanCard : Hashable, Codable {
         hours = try? values.decode(Int.self, forKey: .hours)
         minutes = try? values.decode(Int.self, forKey: .minutes)
         taskLenght = try values.decode(String.self, forKey: .taskLenght)
-        cardDisplay = try? values.decode(DisplayType.self, forKey: .cardDisplay)
+        OnClickcardDisplay = try? values.decode(DisplayType.self, forKey: .OnClickcardDisplay)
+        AlwaysOncardDisplay = try? values.decode(DisplayType.self, forKey: .AlwaysOncardDisplay)
         onClickSettings = try? values.decode([Bool].self, forKey: .onClickSettings)
         alwaysOnSettings = try? values.decode([Bool].self, forKey: .alwaysOnSettings)
+        
+        isClicked = try values.decode(Bool.self, forKey: .isClicked)
+        isOnClickExpandable = try values.decode(Bool.self, forKey: .isOnClickExpandable)
+        isAlwaysExpandable = try values.decode(Bool.self, forKey: .isAlwaysExpandable)
     }
     
     init(taskTitle: String, taskCat: String, taskDesc: String?, taskColor: UIColor?, taskTime: Date?, hours: Int?, minutes: Int?) {
@@ -74,9 +84,14 @@ struct PlanCard : Hashable, Codable {
         try? container.encode(hours, forKey: .hours)
         try? container.encode(minutes, forKey: .minutes)
         try container.encode(taskLenght, forKey: .taskLenght)
-        try? container.encode(cardDisplay, forKey: .cardDisplay)
+        try? container.encode(OnClickcardDisplay, forKey: .OnClickcardDisplay)
+        try? container.encode(AlwaysOncardDisplay, forKey: .AlwaysOncardDisplay)
         try? container.encode(onClickSettings, forKey: .onClickSettings)
         try? container.encode(alwaysOnSettings, forKey: .alwaysOnSettings)
+        
+        try container.encode(isClicked, forKey: .isClicked)
+        try container.encode(isOnClickExpandable, forKey: .isOnClickExpandable)
+        try container.encode(isAlwaysExpandable, forKey: .isAlwaysExpandable)
     }
     
     func getTaskLen() -> String {
@@ -92,7 +107,7 @@ struct PlanCard : Hashable, Codable {
         return taskLength
     }
     
-    func getStringDate() -> String {
+    func getFromTime() -> String {
         return taskTime.dateString(with: "HH:mm")
     }
     
@@ -107,7 +122,7 @@ struct PlanCard : Hashable, Codable {
             toDate?.addTimeInterval(TimeInterval(mins * 60))
         }
         
-        return toDate?.dateString(with: "HH:mm") ?? getStringDate()
+        return toDate?.dateString(with: "HH:mm") ?? getFromTime()
     }
 }
 

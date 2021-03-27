@@ -85,28 +85,167 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource, UITableVi
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-
+        
         if indexPath.row < currentDayUnDoneCards.count {
+            if isSettingsApplyToAll {
+                currentDayUnDoneCards[indexPath.row].onClickSettings = OnClickGlobalSettings
+                currentDayUnDoneCards[indexPath.row].alwaysOnSettings = alwaysGlobalSettings
+                
+                currentDayUnDoneCards[indexPath.row].OnClickcardDisplay = onClickGlobalDisplayCard
+                currentDayUnDoneCards[indexPath.row].AlwaysOncardDisplay = alwaysGlobalDisplayCard
+                
+                currentDayUnDoneCards[indexPath.row].isOnClickExpandable = currentDayUnDoneCards[indexPath.row].onClickSettings[4]
+                currentDayUnDoneCards[indexPath.row].isAlwaysExpandable = currentDayUnDoneCards[indexPath.row].alwaysOnSettings[4]
+            }
             let card = currentDayUnDoneCards[indexPath.row]
-            if card.cardDisplay == .expandDesc {
-                if let cell = dayPlansTV.dequeueReusableCell(withIdentifier: "ExpandDescriptionCell") as? ExpandDescriptionTVCell {
-                    cell.cardView.backgroundColor = card.taskColor
-                    cell.taskTitleLabel.text = card.taskTitle
-                    cell.taskLengthLabel.text = card.taskLenght
-                    cell.taskCatLabel.text = card.taskCat
-                    cell.fromTimeLabel.text = card.getStringDate()
-                    cell.toTimeLabel.text = card.getToTime()
-                    cell.taskDescLabel.text = card.taskDesc
-                    return cell
+            if let cell = dayPlansTV.dequeueReusableCell(withIdentifier: "DayPlanCardWithLeftTVCell") as? DayPlanCardWithLeftTopOnCardTVCell {
+                
+                cell.cardView.backgroundColor = card.taskColor
+                cell.taskTitleLabel.text = card.taskTitle
+                cell.taskLengthLabel.text = card.taskLenght
+                cell.taskCatLabel.text = card.taskCat
+                cell.taskDescLabel.text = card.taskDesc
+                
+                cell.leftFromTimeLabel.text = card.getFromTime()
+                cell.leftToTimeLabel.text = card.getToTime()
+                                
+                cell.leftFromTimeLabel.text = card.getFromTime()
+                cell.leftToTimeLabel.text = card.getToTime()
+                
+                cell.onCardFromTimeLabel.text = card.getFromTime()
+                cell.onCardToTimeLabel.text = card.getToTime()
+                
+                cell.topFromTimeLabel.text = card.getFromTime()
+                cell.topToTimeLabel.text = card.getToTime()
+                cell.topFromTimeLabel.textColor = card.taskColor
+                cell.topFromTimeSeperator.textColor = card.taskColor
+                cell.topToTimeLabel.textColor = card.taskColor
+                
+                if card.isAlwaysExpandable {
+                    cell.taskDescLabel.isHidden = false
+                } else {
+                    cell.taskDescLabel.isHidden = true
                 }
-            } else {
-                if let cell = dayPlansTV.dequeueReusableCell(withIdentifier: "PlanCardCell") as? DayPlanCardTVCell {
-                    cell.cardView.backgroundColor = card.taskColor
-                    cell.cardTitle.text = card.taskTitle
-                    cell.cardTtimeLength.text = card.taskLenght
-                    cell.cardCategory.text = card.taskCat
-                    return cell
+                
+                // Apply always on changes
+                switch card.AlwaysOncardDisplay {
+                case .showHrsLeft:
+                    cell.leftCardTimeView.isHidden = false
+                    cell.onCardTimeView.isHidden = true
+                    cell.topCardTimeView.isHidden = true
+                    cell.left1TimeSeperator.isHidden = false
+                    cell.left2TimeSeperator.isHidden = true
+                    
+                    cell.leftFromTimeLabel.textColor = .black
+                    cell.left1TimeSeperator.textColor = .black
+                    cell.leftToTimeLabel.textColor = .black
+                case .showHrsLeft2:
+                    cell.leftCardTimeView.isHidden = false
+                    cell.topCardTimeView.isHidden = true
+                    cell.onCardTimeView.isHidden = true
+                    cell.left1TimeSeperator.isHidden = true
+                    cell.left2TimeSeperator.isHidden = false
+                    
+                    cell.leftFromTimeLabel.textColor = card.taskColor
+                    cell.left2TimeSeperator.textColor = card.taskColor
+                    cell.leftToTimeLabel.textColor = card.taskColor
+                case .showHrsOnCard:
+                    cell.leftCardTimeView.isHidden = true
+                    cell.topCardTimeView.isHidden = true
+                    cell.onCardTimeView.isHidden = false
+                case .showHrsTop:
+                    cell.leftCardTimeView.isHidden = true
+                    cell.topCardTimeView.isHidden = false
+                    cell.onCardTimeView.isHidden = true
+                case .defualt:
+                    cell.leftCardTimeView.isHidden = true
+                    cell.topCardTimeView.isHidden = true
+                    cell.onCardTimeView.isHidden = true
+                default:
+                    break
                 }
+                
+                if card.isClicked {
+                    // Apply on click changes
+                    
+                    if card.isOnClickExpandable {
+                        cell.taskDescLabel.isHidden = false
+                    } else if !card.isAlwaysExpandable {
+                        cell.taskDescLabel.isHidden = true
+                    }
+                    
+                    switch card.OnClickcardDisplay {
+                    case .showHrsLeft:
+                        cell.leftCardTimeView.isHidden = false
+                        if card.AlwaysOncardDisplay != .showHrsOnCard {
+                            cell.onCardTimeView.isHidden = true
+                        } else {
+                            cell.onCardTimeView.isHidden = false
+                        }
+                        if card.AlwaysOncardDisplay != .showHrsTop {
+                            cell.topCardTimeView.isHidden = true
+                        } else {
+                            cell.topCardTimeView.isHidden = false
+                        }
+                        
+                        cell.left1TimeSeperator.isHidden = false
+                        
+                        cell.left2TimeSeperator.isHidden = true
+                        
+                        cell.leftFromTimeLabel.textColor = .black
+                        cell.left1TimeSeperator.textColor = .black
+                        cell.leftToTimeLabel.textColor = .black
+                    case .showHrsLeft2:
+                        cell.leftCardTimeView.isHidden = false
+                        if card.AlwaysOncardDisplay != .showHrsOnCard {
+                            cell.onCardTimeView.isHidden = true
+                        } else {
+                            cell.onCardTimeView.isHidden = false
+                        }
+                        if card.AlwaysOncardDisplay != .showHrsTop {
+                            cell.topCardTimeView.isHidden = true
+                        } else {
+                            cell.topCardTimeView.isHidden = false
+                        }
+                        cell.left1TimeSeperator.isHidden = true
+                        cell.left2TimeSeperator.isHidden = false
+                        
+                        cell.leftFromTimeLabel.textColor = card.taskColor
+                        cell.left2TimeSeperator.textColor = card.taskColor
+                        cell.leftToTimeLabel.textColor = card.taskColor
+                    case .showHrsOnCard:
+                        cell.onCardTimeView.isHidden = false
+                        
+                        if card.AlwaysOncardDisplay != .showHrsLeft && card.AlwaysOncardDisplay != .showHrsLeft2 {
+                            cell.leftCardTimeView.isHidden = true
+                        } else {
+                            cell.leftCardTimeView.isHidden = false
+                        }
+                        if card.AlwaysOncardDisplay != .showHrsTop {
+                            cell.topCardTimeView.isHidden = true
+                        } else {
+                            cell.topCardTimeView.isHidden = false
+                        }
+                    case .showHrsTop:
+                        cell.topCardTimeView.isHidden = false
+                        if card.AlwaysOncardDisplay != .showHrsLeft && card.AlwaysOncardDisplay != .showHrsLeft2 {
+                            cell.leftCardTimeView.isHidden = true
+                        } else {
+                            cell.leftCardTimeView.isHidden = false
+                        }
+                        if card.AlwaysOncardDisplay != .showHrsOnCard {
+                            cell.onCardTimeView.isHidden = true
+                        } else {
+                            cell.onCardTimeView.isHidden = false
+                        }
+                    default:
+                        break
+                    }
+                } else {
+                    
+                }
+                
+                return cell
             }
         } else if indexPath.row < currentDayUnDoneCards.count + currentDayDoneCards.count {
             let card = currentDayDoneCards[indexPath.row - currentDayUnDoneCards.count]
@@ -120,7 +259,7 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource, UITableVi
             }
         }
         
-        return DayPlanCardTVCell()
+        return DayPlanCardWithLeftTopOnCardTVCell()
     }
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
@@ -180,19 +319,13 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource, UITableVi
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.row < currentDayUnDoneCards.count + currentDayDoneCards.count {
-            
+        if indexPath.row < currentDayUnDoneCards.count {
             dayPlansTV.performBatchUpdates({
-                let card = currentDayUnDoneCards[indexPath.row]
-                if card.cardDisplay != .expandDesc {
-                    currentDayUnDoneCards[indexPath.row].cardDisplay = .expandDesc
-                } else {
-                    currentDayUnDoneCards[indexPath.row].cardDisplay = .defualt
-                }
+                currentDayUnDoneCards[indexPath.row].isClicked.toggle()
             }, completion: {_ in
                 self.dayPlansTV.reloadRows(at: [indexPath], with: .automatic)
             })
-        } else {
+        } else if indexPath.row == currentDayUnDoneCards.count + currentDayDoneCards.count {
             if let vc = storyboard?.instantiateViewController(identifier: "addCardNavBar") as? NewTaskNC {
                 vc.deleg = self
                 present(vc, animated: true)
@@ -230,11 +363,5 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource, UITableVi
         currentDayUnDoneCards.insert(mover, at: destinationIndexPath.row)
         daysPlans[selectedDayInd] = [currentDayUnDoneCards, currentDayDoneCards]
         tableView.reloadData()
-    }
-}
-
-extension Date {
-    func dayNumberOfWeek() -> Int? {
-        return Calendar.current.dateComponents([.weekday], from: self).weekday
     }
 }

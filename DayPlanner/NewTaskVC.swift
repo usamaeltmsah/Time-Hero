@@ -123,6 +123,9 @@ class NewTaskVC: UIViewController, UITextFieldDelegate {
         card.onClickSettings = [false, false, false, true, true, false]
         card.alwaysOnSettings = [false, false, false, true, false]
         
+        card.OnClickcardDisplay = .defualt
+        card.AlwaysOncardDisplay = .defualt
+        
         card.taskLenght = card.getTaskLen()
         currentDayUnDoneCards.insert(card, at: 0)
     }

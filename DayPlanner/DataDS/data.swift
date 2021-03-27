@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import WidgetKit
 
 
 var selectedDayInd: Int! = 0
@@ -28,12 +28,19 @@ var currentDayDoneCards = [PlanCard]()  {
 
 var isSettingsApplyToAll = false
 
+var OnClickGlobalSettings = [Bool]()
+var alwaysGlobalSettings = [Bool]()
+
+var onClickGlobalDisplayCard: DisplayType!
+var alwaysGlobalDisplayCard: DisplayType!
+
 func saveData() {
     let jsonEncoder = JSONEncoder()
-            
+    let defaults = UserDefaults(suiteName: "group.usamaWidgetCache")
+    
     if let savedData = try? jsonEncoder.encode(daysPlans) {
-        let defaults = UserDefaults.standard
-        defaults.set(savedData, forKey: "daysPlans")
+        defaults?.set(savedData, forKey: "daysPlans")
+        WidgetCenter.shared.reloadAllTimelines()
     } else {
         print("Failed to save data")
     }
@@ -42,9 +49,9 @@ func saveData() {
 
 
 func loadData() -> Bool {
-    let defaults = UserDefaults.standard
+    let defaults = UserDefaults(suiteName: "group.usamaWidgetCache")
             
-    if let data = defaults.object(forKey: "daysPlans") as? Data {
+    if let data = defaults?.object(forKey: "daysPlans") as? Data {
         let jsonDecoder = JSONDecoder()
         
         do {
@@ -54,5 +61,11 @@ func loadData() -> Bool {
             print("Couldn't load the cards!")
         }
     }
-            return false
+    return false
+}
+
+extension Date {
+    func dayNumberOfWeek() -> Int? {
+        return Calendar.current.dateComponents([.weekday], from: self).weekday
+    }
 }
