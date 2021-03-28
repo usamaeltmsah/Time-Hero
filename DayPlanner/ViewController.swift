@@ -22,6 +22,8 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
     var selectedDay: UIButton!
     var daysButtons = [UIButton]()
     
+    var prevSelectedDayInd: Int! = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -35,6 +37,8 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
                 selectedDayInd = 6
             }
         }
+        
+        prevSelectedDayInd = selectedDayInd
         
         dayPlansTV.delegate = self
         dayPlansTV.dataSource = self
@@ -78,7 +82,15 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
         selectedDayInd = daysButtons.firstIndex(of: selectedDay)
         currentDayUnDoneCards = daysPlans[selectedDayInd]?[0] ?? []
         currentDayDoneCards = daysPlans[selectedDayInd]?[1] ?? []
-        dayPlansTV.reloadData()
+        let range = NSMakeRange(0, self.dayPlansTV.numberOfSections)
+        let sections = NSIndexSet(indexesIn: range)
+        if selectedDayInd > prevSelectedDayInd {
+            self.dayPlansTV.reloadSections(sections as IndexSet, with: .left)
+        } else if selectedDayInd < prevSelectedDayInd {
+            self.dayPlansTV.reloadSections(sections as IndexSet, with: .right)
+        }
+
+        prevSelectedDayInd = selectedDayInd
     }
     
 }
@@ -332,7 +344,7 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource, UITableVi
                 currentDayDoneCards.remove(at: ind)
                 tableView.reloadData()
             }
-            unDoneAction.backgroundColor = .red
+            unDoneAction.backgroundColor = #colorLiteral(red: 0.9490196078, green: 0.5019607843, blue: 0.537254902, alpha: 1)
 
             return UISwipeActionsConfiguration(actions: [unDoneAction])
         }
