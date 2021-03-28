@@ -58,6 +58,15 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
         
         currentDayUnDoneCards = daysPlans[selectedDayInd]?[0] ?? []
         currentDayDoneCards = daysPlans[selectedDayInd]?[1] ?? []
+        
+        for i in 0 ..< 7 {
+            if i == selectedDayInd {
+                continue
+            }
+            
+            daysPlans[i]?[1].removeAll()
+        }
+        
         dayButtonClicked(daysButtons[selectedDayInd])
         dayPlansTV.dragInteractionEnabled = true
     }
