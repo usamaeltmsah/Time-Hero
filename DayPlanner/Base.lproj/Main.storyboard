@@ -237,7 +237,7 @@
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                     </subviews>
-                                                                    <color key="backgroundColor" red="0.83741801979999997" green="0.83743780850000005" blue="0.83742713930000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.10000000000000001" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                                     <constraints>
                                                                         <constraint firstItem="xrf-5A-l6a" firstAttribute="centerY" secondItem="F5j-Pa-Xh9" secondAttribute="centerY" id="N62-1M-geq"/>
                                                                         <constraint firstAttribute="height" constant="90" id="auE-LX-Suc"/>
@@ -388,13 +388,13 @@
                                                                                                             <nil key="highlightedColor"/>
                                                                                                         </label>
                                                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Morning Routine" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lZ7-LS-U1l">
-                                                                                                            <rect key="frame" x="0.0" y="93.5" width="99" height="17"/>
+                                                                                                            <rect key="frame" x="0.0" y="105" width="99" height="17"/>
                                                                                                             <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="12"/>
                                                                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                                             <nil key="highlightedColor"/>
                                                                                                         </label>
-                                                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Go to the agency and make 5 calls to potential buyers." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="40c-HQ-x2K">
-                                                                                                            <rect key="frame" x="0.0" y="181.5" width="227" height="34"/>
+                                                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="40c-HQ-x2K">
+                                                                                                            <rect key="frame" x="0.0" y="204" width="0.0" height="0.0"/>
                                                                                                             <fontDescription key="fontDescription" name="Poppins-Light" family="Poppins" pointSize="12"/>
                                                                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                                             <nil key="highlightedColor"/>
@@ -814,7 +814,7 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </textField>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="H" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Q0-Bu-Zro">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="h" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Q0-Bu-Zro">
                                                         <rect key="frame" x="41" y="12.5" width="15" height="20.5"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="15" id="yDU-pM-QdS"/>
@@ -1208,13 +1208,13 @@
     </scenes>
     <designables>
         <designable name="8gA-Wk-dlr">
-            <size key="intrinsicContentSize" width="346" height="42.80078125"/>
+            <size key="intrinsicContentSize" width="205.5" height="34"/>
         </designable>
         <designable name="bAs-jM-Wnu">
-            <size key="intrinsicContentSize" width="346" height="42.80078125"/>
+            <size key="intrinsicContentSize" width="63" height="34"/>
         </designable>
         <designable name="jdx-eB-OId">
-            <size key="intrinsicContentSize" width="346" height="42.80078125"/>
+            <size key="intrinsicContentSize" width="101.5" height="34"/>
         </designable>
     </designables>
     <resources>

@@ -25,6 +25,9 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.dayPlansTV.contentInset = UIEdgeInsets(top: 20,left: 0,bottom: 0,right: 0)
+
+        
         if let dayNum = Date().dayNumberOfWeek() {
             if dayNum - 1 >= 0 {
                 selectedDayInd = dayNum - 1
@@ -43,6 +46,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
         if loadData() {
             print("Data Loaded Successfully!")
         } else {
+            print("Failed to load data!!")
             for i in 0 ..< 7 {
                 daysPlans[i] = Array(repeating: [PlanCard](), count: 2)
             }
@@ -97,14 +101,20 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource, UITableVi
                 currentDayUnDoneCards[indexPath.row].isOnClickExpandable = currentDayUnDoneCards[indexPath.row].onClickSettings[4]
                 currentDayUnDoneCards[indexPath.row].isAlwaysExpandable = currentDayUnDoneCards[indexPath.row].alwaysOnSettings[4]
             }
-            let card = currentDayUnDoneCards[indexPath.row]
+            var card = currentDayUnDoneCards[indexPath.row]
             if let cell = dayPlansTV.dequeueReusableCell(withIdentifier: "DayPlanCardWithLeftTVCell") as? DayPlanCardWithLeftTopOnCardTVCell {
                 
                 cell.cardView.backgroundColor = card.taskColor
                 cell.taskTitleLabel.text = card.taskTitle
                 cell.taskLengthLabel.text = card.taskLenght
                 cell.taskCatLabel.text = card.taskCat
-                cell.taskDescLabel.text = card.taskDesc
+                
+                if !(card.taskDesc?.isEmpty ?? false) {
+                    card.hasDescription = true
+                    cell.taskDescLabel.text = card.taskDesc
+                } else {
+                    card.hasDescription = false
+                }
                 
                 cell.leftFromTimeLabel.text = card.getFromTime()
                 cell.leftToTimeLabel.text = card.getToTime()
@@ -123,7 +133,7 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource, UITableVi
                 
                 cell.left2TimeSeperator.image = UIImage(named: arrowsImages[card.selectedColorInd])
                 
-                if card.isAlwaysExpandable {
+                if card.isAlwaysExpandable && card.hasDescription {
                     cell.taskDescLabel.isHidden = false
                 } else {
                     cell.taskDescLabel.isHidden = true
@@ -175,7 +185,7 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource, UITableVi
                 if card.isClicked {
                     // Apply on click changes
                     
-                    if card.isOnClickExpandable {
+                    if card.isOnClickExpandable && card.hasDescription {
                         cell.taskDescLabel.isHidden = false
                     } else if !card.isAlwaysExpandable {
                         cell.taskDescLabel.isHidden = true

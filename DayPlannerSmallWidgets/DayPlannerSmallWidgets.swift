@@ -200,6 +200,6 @@ struct DayPlannerSmallWidgets: Widget {
 struct DayPlannerSmallWidgets_Previews: PreviewProvider {
     static var previews: some View {
         DayPlannerSmallWidgetsEntryView(entry: SimpleEntry(date: Date(), undoneCards: [], configuration: ConfigurationIntent()))
-            .previewContext(WidgetPreviewContext(family: .systemLarge))
+            .previewContext(WidgetPreviewContext(family: .systemSmall))
     }
 }
