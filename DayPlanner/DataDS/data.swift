@@ -12,12 +12,15 @@ import WidgetKit
 var selectedDayInd: Int! = 0
 
 // daysPlans: is a dictionary that holds the day index, and 1D array which contains allCards (Done and not done).
-var daysPlans = [Int:[[PlanCard]]]()
+var daysPlans = [Int:[[PlanCard]]]() {
+    didSet {
+        saveData()
+    }
+}
 
 var currentDayUnDoneCards = [PlanCard]() {
     didSet {
         daysPlans[selectedDayInd, default: []][0] = currentDayUnDoneCards
-        saveData()
     }
 }
 var currentDayDoneCards = [PlanCard]()  {

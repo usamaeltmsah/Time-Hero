@@ -23,6 +23,7 @@ struct Provider: IntentTimelineProvider {
     }
 
     func getTimeline(for configuration: ConfigurationIntent, in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
+        print(UIFont.familyNames)
         var entries: [SimpleEntry] = []
         
         if let dayNum = Date().dayNumberOfWeek() {
@@ -76,7 +77,7 @@ struct DayPlannerSmallWidgetsEntryView : View {
             VStack {
                 Spacer()
                     .frame(height: 12)
-                Text("Upcoming Task").font(Font.system(size: 14, weight: .semibold, design: .default)).foregroundColor(Color(red: 100/255, green: 94/255, blue: 94/255, opacity: 1))
+                Text("Upcoming Task").font(Font(UIFont(name: "Poppins", size: 14) ?? UIFont.systemFont(ofSize: 14, weight: .semibold))).fontWeight(.semibold).foregroundColor(Color(red: 100/255, green: 94/255, blue: 94/255, opacity: 1))
                 
                 ZStack {
     //                GeometryReader { geo in
@@ -90,16 +91,15 @@ struct DayPlannerSmallWidgetsEntryView : View {
                         
                         Color(card.taskColor)
                         VStack(alignment: .leading, spacing: 5) {
-                            Text(card.taskTitle).font(Font.system(size: 14, weight: .semibold, design: .default))
+                            Text(card.taskTitle).font(Font(UIFont(name: "Poppins", size: 14) ?? UIFont.systemFont(ofSize: 14))).fontWeight(.semibold)
                             
-                            Text(card.taskCat).font(Font.system(size: 10, weight: .medium, design: .default))
-                            
+                            Text(card.taskCat).font(Font(UIFont(name: "Poppins", size: 10) ?? UIFont.systemFont(ofSize: 10))).fontWeight(.medium)
                             HStack(alignment: .center, spacing: 5) {
                                 Image(systemName: "clock").foregroundColor(.white)
-                                Text(card.getTaskLen()).font(Font.system(size: 14, weight: .semibold, design: .default))
+                                Text(card.getTaskLen()).font(Font(UIFont(name: "Poppins", size: 14) ?? UIFont.systemFont(ofSize: 14))).fontWeight(.semibold)
                             }
                             
-                            Text("\(card.getFromTime()) - \(card.getToTime())").font(Font.system(size: 14, weight: .semibold, design: .default))
+                            Text("\(card.getFromTime()) - \(card.getToTime())").font(Font(UIFont(name: "Poppins", size: 14) ?? UIFont.systemFont(ofSize: 14))).fontWeight(.semibold)
                         }.foregroundColor(.white).padding(EdgeInsets(top: 10, leading: -20, bottom: 10, trailing: 10))
                     } else {
                         Color(#colorLiteral(red: 0.4509803922, green: 0.5607843137, blue: 0.937254902, alpha: 1))
@@ -107,7 +107,7 @@ struct DayPlannerSmallWidgetsEntryView : View {
                         VStack(alignment: .center, spacing: 5) {
                             HStack(alignment: .center) {
                                 Spacer()
-                                Text("No Tasks Left for Today!").font(Font.system(size: 18, weight: .bold, design: .default)).foregroundColor(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1))).multilineTextAlignment(.center)
+                                Text("No Tasks Left for Today!").font(.custom("Poppins-Bold", size: 14)).fontWeight(.bold).foregroundColor(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1))).multilineTextAlignment(.center).lineSpacing(/*@START_MENU_TOKEN@*/5.0/*@END_MENU_TOKEN@*/)
                                 Spacer()
                             }
                             Image("WhiteLogo").resizable().frame(width: 20, height: 20, alignment: .center).cornerRadius(10)
