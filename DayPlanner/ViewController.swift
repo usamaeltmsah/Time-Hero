@@ -65,17 +65,19 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
     @IBAction func dayButtonClicked(_ sender: UIButton) {
         selectedDay = sender
         
-        selectedDay.layer.cornerRadius = 25
+        selectedDay.layer.cornerRadius = 17.5
         selectedDay.backgroundColor = .white
-        selectedDay.setTitleColor(.systemIndigo, for: .normal)
-        selectedDay.titleLabel?.font = .boldSystemFont(ofSize: 25)
+        
+        selectedDay.setTitleColor(#colorLiteral(red: 0.4509803922, green: 0.5607843137, blue: 0.937254902, alpha: 1), for: .normal)
+        selectedDay.titleLabel?.font = UIFont(name: "Poppins-Bold", size: 18)
+        selectedDay.titleLabel?.textAlignment = .center
         
         for day in daysButtons {
             if day != selectedDay {
                 day.layer.cornerRadius = 0
                 day.backgroundColor = .clear
                 day.setTitleColor(.white, for: .normal)
-                day.titleLabel?.font = .systemFont(ofSize: 20)
+                day.titleLabel?.font = UIFont(name: "Poppins-Medium", size: 18)
             }
         }
         
