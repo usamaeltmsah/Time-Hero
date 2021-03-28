@@ -64,6 +64,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
                 continue
             }
             
+            daysPlans[i]?[0] += daysPlans[i]?[1] ?? []
             daysPlans[i]?[1].removeAll()
         }
         
