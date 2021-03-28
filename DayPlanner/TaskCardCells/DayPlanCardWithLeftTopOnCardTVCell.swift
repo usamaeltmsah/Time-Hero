@@ -43,5 +43,11 @@ class DayPlanCardWithLeftTopOnCardTVCell: UITableViewCell {
         onCardToTimeLabel.font = UIFont(name: "Poppins-SemiBold", size: 16)
         
     }
+    
+    func animate() {
+        UIView.animate(withDuration: 0.5, delay: 0.5, usingSpringWithDamping: 0.8, initialSpringVelocity: 1, options: .curveEaseIn, animations: {
+            self.contentView.layoutIfNeeded()
+        })
+    }
 
 }

@@ -211,6 +211,7 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource, UITableVi
                     
                     if card.isOnClickExpandable && card.hasDescription {
                         cell.taskDescLabel.isHidden = false
+                        cell.animate()
                     } else if !card.isAlwaysExpandable {
                         cell.taskDescLabel.isHidden = true
                     }
@@ -343,7 +344,14 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource, UITableVi
             let doneAction = UIContextualAction(style: .normal, title: "Done") {  (_, _, _) in
                 currentDayDoneCards.insert(currentDayUnDoneCards[indexPath.row], at: 0)
                 currentDayUnDoneCards.remove(at: indexPath.row)
-                tableView.reloadData()
+                UIView.transition(with: tableView, duration: 0.35, options: .transitionCrossDissolve, animations: { self.dayPlansTV.moveRow(at: indexPath, to: IndexPath(row: currentDayUnDoneCards.count, section: 0)) }, completion: {_ in
+                    self.dayPlansTV.reloadData()
+                })
+//                self.dayPlansTV.reloadData()
+//                let goal = currentDayUnDoneCards[indexPath.row]
+//                self.dayPlansTV.moveRow(at: indexPath, to: IndexPath(row: currentDayUnDoneCards.count, section: 0))
+//                currentDayUnDoneCards.remove(at: indexPath.row)
+//                currentDayDoneCards.append(goal)
             }
             
             doneAction.backgroundColor = UIColor(hexString: "#A9DE91FF")
@@ -354,8 +362,10 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource, UITableVi
                 let ind = indexPath.row - currentDayUnDoneCards.count
                 currentDayUnDoneCards.insert(currentDayDoneCards[ind], at: 0)
                 currentDayDoneCards.remove(at: ind)
-                tableView.reloadData()
-            }
+
+                UIView.transition(with: tableView, duration: 0.35, options: .transitionCrossDissolve, animations: { self.dayPlansTV.moveRow(at: indexPath, to: IndexPath(row: 0, section: 0)) }, completion: {_ in
+                    self.dayPlansTV.reloadData()
+                })            }
             unDoneAction.backgroundColor = #colorLiteral(red: 0.9490196078, green: 0.5019607843, blue: 0.537254902, alpha: 1)
 
             return UISwipeActionsConfiguration(actions: [unDoneAction])
@@ -364,11 +374,15 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource, UITableVi
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row < currentDayUnDoneCards.count {
-            dayPlansTV.performBatchUpdates({
-                currentDayUnDoneCards[indexPath.row].isClicked.toggle()
-            }, completion: {_ in
-                self.dayPlansTV.reloadRows(at: [indexPath], with: .automatic)
-            })
+            tableView.beginUpdates()
+            currentDayUnDoneCards[indexPath.row].isClicked.toggle()
+            tableView.reloadRows(at: [indexPath], with: .none)
+            tableView.endUpdates()
+//            dayPlansTV.performBatchUpdates({
+//                currentDayUnDoneCards[indexPath.row].isClicked.toggle()
+//            }, completion: {_ in
+//                self.dayPlansTV.reloadRows(at: [indexPath], with: .automatic)
+//            })
         } else if indexPath.row == currentDayUnDoneCards.count + currentDayDoneCards.count {
             if let vc = storyboard?.instantiateViewController(identifier: "addCardNavBar") as? NewTaskNC {
                 vc.deleg = self
