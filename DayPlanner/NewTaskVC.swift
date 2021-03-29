@@ -121,8 +121,8 @@ class NewTaskVC: UIViewController, UITextFieldDelegate {
         card.taskColor = selectedColor
         card.selectedColorInd = selectedColorInd
         
-        card.onClickSettings = [false, false, false, true, true, false]
-        card.alwaysOnSettings = [false, false, false, true, false]
+//        card.onClickSettings = [false, false, false, false, false]
+//        card.alwaysOnSettings = [false, false, false, false, false]
         
         card.OnClickcardDisplay = .defualt
         card.AlwaysOncardDisplay = .defualt

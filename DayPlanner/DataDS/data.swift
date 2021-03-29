@@ -33,18 +33,23 @@ var colorButtons = [UIButton]()
 
 let arrowsImages = ["redarrow", "bluearrow", "blackarrow", "orange", "purplearrow", "greenarrow"]
 
-var isSettingsApplyToAll = false
+var setData = SettingsData()
 
-var OnClickGlobalSettings = [Bool]()
-var alwaysGlobalSettings = [Bool]()
+struct SettingsData: Codable {
+//    var isSettingsApplyToAll = false
 
-var onClickGlobalDisplayCard: DisplayType!
-var alwaysGlobalDisplayCard: DisplayType!
+    var OnClickGlobalSettings: [Bool] = [false, false, false, false, false]
+    var alwaysGlobalSettings: [Bool] = [false, false, false, false, false]
+
+    var onClickGlobalDisplayCard: DisplayType! = .defualt
+    var alwaysGlobalDisplayCard: DisplayType! = .defualt
+}
 
 func saveData() {
     let jsonEncoder = JSONEncoder()
     let defaults = UserDefaults(suiteName: "group.usamaWidgetCache")
     
+    saveSettings()
     if let savedData = try? jsonEncoder.encode(daysPlans) {
         defaults?.set(savedData, forKey: "daysPlans")
         WidgetCenter.shared.reloadAllTimelines()
@@ -55,9 +60,20 @@ func saveData() {
 }
 
 
+func saveSettings() {
+    let jsonEncoder = JSONEncoder()
+    let defaults = UserDefaults.standard
+    
+    if let savedData = try? jsonEncoder.encode(setData) {
+        defaults.set(savedData, forKey: "settingData")
+    } else {
+        print("Failed to save data")
+    }
+}
+
 func loadData() -> Bool {
     let defaults = UserDefaults(suiteName: "group.usamaWidgetCache")
-            
+        loadSettings()
     if let data = defaults?.object(forKey: "daysPlans") as? Data {
         let jsonDecoder = JSONDecoder()
         
@@ -69,6 +85,20 @@ func loadData() -> Bool {
         }
     }
     return false
+}
+
+func loadSettings() {
+    let defaults = UserDefaults.standard
+    
+    if let data = defaults.object(forKey: "settingData") as? Data {
+        let jsonDecoder = JSONDecoder()
+        
+        do {
+            setData = try jsonDecoder.decode(SettingsData.self, from: data)
+        } catch {
+            print("Couldn't load the settings!")
+        }
+    }
 }
 
 extension Date {

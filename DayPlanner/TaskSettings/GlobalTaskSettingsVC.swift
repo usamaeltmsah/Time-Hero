@@ -13,7 +13,7 @@ class GlobalTaskSettingsVC: UIViewController {
     
     @IBOutlet var onClickSwitchButton: UISwitch!
     @IBOutlet var alwaysOnSwitchButton: UISwitch!
-    var onClickTVTitles: [String] = ["Show Task Time on Left", "Show Task Time on Left 2.0", "Show Task Time on Card", "Show Hours on Top", "Show Task Description", "Apply on All Cards on Click"]
+    var onClickTVTitles: [String] = ["Show Task Time on Left", "Show Task Time on Left 2.0", "Show Task Time on Card", "Show Hours on Top", "Show Task Description"]
     var onClickTVIsOn = [Bool]()
     
     // Always on means that it will be with no click.
@@ -34,13 +34,17 @@ class GlobalTaskSettingsVC: UIViewController {
         
         alwaysOnTV.delegate = self
         alwaysOnTV.dataSource = self
-        if let onClickSet = delegate.card.onClickSettings {
-            onClickTVIsOn = onClickSet
-        }
+//        if let onClickSet = delegate.card.onClickSettings {
+//            onClickTVIsOn = onClickSet
+//        }
         
-        if let alwaysSet = delegate.card.alwaysOnSettings {
-            alwaysOnTVIsOn = alwaysSet
-        }
+        onClickTVIsOn = setData.OnClickGlobalSettings
+        
+//        if let alwaysSet = delegate.card.alwaysOnSettings {
+//            alwaysOnTVIsOn = alwaysSet
+//        }
+        
+        alwaysOnTVIsOn = setData.alwaysGlobalSettings
     }
     
     
@@ -80,14 +84,17 @@ extension GlobalTaskSettingsVC : UITableViewDelegate, UITableViewDataSource {
     
     @objc func saveTaskSettings() {
         if delegate.cardInd < currentDayUnDoneCards.count {
-            currentDayUnDoneCards[delegate.cardInd].onClickSettings = onClickTVIsOn
-            currentDayUnDoneCards[delegate.cardInd].alwaysOnSettings = alwaysOnTVIsOn
-            
+//            currentDayUnDoneCards[delegate.cardInd].onClickSettings = onClickTVIsOn
+//            currentDayUnDoneCards[delegate.cardInd].alwaysOnSettings = alwaysOnTVIsOn
+            setData.OnClickGlobalSettings = onClickTVIsOn
+            setData.alwaysGlobalSettings = alwaysOnTVIsOn
             updateSettings(for: &currentDayUnDoneCards, at: delegate.cardInd)
         } else {
             let ind = delegate.cardInd - currentDayUnDoneCards.count
-            currentDayDoneCards[ind].onClickSettings = onClickTVIsOn
-            currentDayDoneCards[ind].alwaysOnSettings = alwaysOnTVIsOn
+//            currentDayDoneCards[ind].onClickSettings = onClickTVIsOn
+//            currentDayDoneCards[ind].alwaysOnSettings = alwaysOnTVIsOn
+            setData.OnClickGlobalSettings = onClickTVIsOn
+            setData.alwaysGlobalSettings = alwaysOnTVIsOn
             
             updateSettings(for: &currentDayDoneCards, at: ind)
         }
@@ -136,19 +143,19 @@ extension GlobalTaskSettingsVC : UITableViewDelegate, UITableViewDataSource {
             tableCards[index].isAlwaysExpandable = false
         }
         
-        if onClickTVIsOn[5] {
-            isSettingsApplyToAll = true
-            OnClickGlobalSettings = tableCards[index].onClickSettings
-            alwaysGlobalSettings = tableCards[index].alwaysOnSettings
-            
-            onClickGlobalDisplayCard = tableCards[index].OnClickcardDisplay
-            alwaysGlobalDisplayCard = tableCards[index].AlwaysOncardDisplay
-        } else {
-            isSettingsApplyToAll = false
-            
-            onClickGlobalDisplayCard = nil
-            alwaysGlobalDisplayCard = nil
-        }
+//        if onClickTVIsOn[5] {
+//            setData.isSettingsApplyToAll = true
+//            setData.OnClickGlobalSettings = tableCards[index].onClickSettings
+//            setData.alwaysGlobalSettings = tableCards[index].alwaysOnSettings
+
+            setData.onClickGlobalDisplayCard = tableCards[index].OnClickcardDisplay
+            setData.alwaysGlobalDisplayCard = tableCards[index].AlwaysOncardDisplay
+//        } else {
+//            setData.isSettingsApplyToAll = false
+//
+//            setData.onClickGlobalDisplayCard = nil
+//            setData.alwaysGlobalDisplayCard = nil
+//        }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

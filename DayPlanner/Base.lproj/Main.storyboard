@@ -40,17 +40,17 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Flx-po-eZh">
-                                        <rect key="frame" x="69.5" y="0.0" width="275" height="100"/>
+                                        <rect key="frame" x="59" y="0.0" width="296" height="100"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="CMy-PT-CAc">
-                                                <rect key="frame" x="0.0" y="55" width="275" height="35"/>
+                                                <rect key="frame" x="0.0" y="52" width="296" height="38"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ka4-97-bhC">
-                                                        <rect key="frame" x="0.0" y="0.0" width="35" height="35"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="38" height="38"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="width" constant="35" id="EIR-3d-s8f"/>
-                                                            <constraint firstAttribute="height" constant="35" id="V2M-32-zrc"/>
+                                                            <constraint firstAttribute="width" constant="38" id="EIR-3d-s8f"/>
+                                                            <constraint firstAttribute="height" constant="38" id="V2M-32-zrc"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="18"/>
                                                         <state key="normal" title="S">
@@ -58,7 +58,7 @@
                                                         </state>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                <real key="value" value="17.5"/>
+                                                                <real key="value" value="20"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
@@ -66,10 +66,10 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PSQ-If-rqZ">
-                                                        <rect key="frame" x="40" y="0.0" width="35" height="35"/>
+                                                        <rect key="frame" x="43" y="0.0" width="38" height="38"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="35" id="ICX-qj-QPY"/>
-                                                            <constraint firstAttribute="width" constant="35" id="d4F-zv-M5Z"/>
+                                                            <constraint firstAttribute="height" constant="38" id="ICX-qj-QPY"/>
+                                                            <constraint firstAttribute="width" constant="38" id="d4F-zv-M5Z"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="18"/>
                                                         <state key="normal" title="M">
@@ -80,10 +80,10 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CuQ-Rb-rpz">
-                                                        <rect key="frame" x="80" y="0.0" width="35" height="35"/>
+                                                        <rect key="frame" x="86" y="0.0" width="38" height="38"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="width" constant="35" id="BkA-yg-cF1"/>
-                                                            <constraint firstAttribute="height" constant="35" id="s7E-uU-sBo"/>
+                                                            <constraint firstAttribute="width" constant="38" id="BkA-yg-cF1"/>
+                                                            <constraint firstAttribute="height" constant="38" id="s7E-uU-sBo"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="18"/>
                                                         <state key="normal" title="T">
@@ -94,10 +94,10 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xo8-xH-m5H">
-                                                        <rect key="frame" x="120" y="0.0" width="35" height="35"/>
+                                                        <rect key="frame" x="129" y="0.0" width="38" height="38"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="35" id="TNL-PT-EcP"/>
-                                                            <constraint firstAttribute="width" constant="35" id="sUL-ZG-dpH"/>
+                                                            <constraint firstAttribute="height" constant="38" id="TNL-PT-EcP"/>
+                                                            <constraint firstAttribute="width" constant="38" id="sUL-ZG-dpH"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="18"/>
                                                         <state key="normal" title="W">
@@ -108,10 +108,10 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hs6-Ci-rAW">
-                                                        <rect key="frame" x="160" y="0.0" width="35" height="35"/>
+                                                        <rect key="frame" x="172" y="0.0" width="38" height="38"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="35" id="4R9-gZ-D4Z"/>
-                                                            <constraint firstAttribute="width" constant="35" id="u9g-aS-Nd1"/>
+                                                            <constraint firstAttribute="height" constant="38" id="4R9-gZ-D4Z"/>
+                                                            <constraint firstAttribute="width" constant="38" id="u9g-aS-Nd1"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="18"/>
                                                         <state key="normal" title="T">
@@ -122,10 +122,10 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7f2-NV-M9L">
-                                                        <rect key="frame" x="200" y="0.0" width="35" height="35"/>
+                                                        <rect key="frame" x="215" y="0.0" width="38" height="38"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="width" constant="35" id="APK-4U-aIC"/>
-                                                            <constraint firstAttribute="height" constant="35" id="oeT-la-rV3"/>
+                                                            <constraint firstAttribute="width" constant="38" id="APK-4U-aIC"/>
+                                                            <constraint firstAttribute="height" constant="38" id="oeT-la-rV3"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="18"/>
                                                         <state key="normal" title="F">
@@ -136,10 +136,10 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PJf-ll-E0J">
-                                                        <rect key="frame" x="240" y="0.0" width="35" height="35"/>
+                                                        <rect key="frame" x="258" y="0.0" width="38" height="38"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="width" constant="35" id="Yvg-0k-mWq"/>
-                                                            <constraint firstAttribute="height" constant="35" id="vGs-U8-8F3"/>
+                                                            <constraint firstAttribute="width" constant="38" id="Yvg-0k-mWq"/>
+                                                            <constraint firstAttribute="height" constant="38" id="vGs-U8-8F3"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="18"/>
                                                         <state key="normal" title="S">
@@ -865,7 +865,7 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </textField>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="M" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bt9-ia-VJs">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="m" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bt9-ia-VJs">
                                                         <rect key="frame" x="41" y="4.5" width="15" height="20.5"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="15" id="tDN-aR-R8O"/>
@@ -1054,11 +1054,11 @@
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="50" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bIZ-i6-2nM">
-                                        <rect key="frame" x="0.0" y="49" width="362" height="300"/>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="50" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bIZ-i6-2nM">
+                                        <rect key="frame" x="0.0" y="49" width="362" height="250"/>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="300" id="fMe-cb-wUL"/>
+                                            <constraint firstAttribute="height" constant="250" id="fMe-cb-wUL"/>
                                         </constraints>
                                         <color key="sectionIndexBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <prototypes>
@@ -1113,13 +1113,13 @@
                                         </userDefinedRuntimeAttributes>
                                     </tableView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ALWAYS-ON" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JtG-tj-TA1">
-                                        <rect key="frame" x="0.0" y="379" width="74" height="14"/>
+                                        <rect key="frame" x="0.0" y="329" width="74" height="14"/>
                                         <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="12"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="50" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3TX-G7-Jz8">
-                                        <rect key="frame" x="0.0" y="398" width="362" height="250"/>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="50" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3TX-G7-Jz8">
+                                        <rect key="frame" x="0.0" y="348" width="362" height="250"/>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="250" id="pSl-Uz-e7j"/>

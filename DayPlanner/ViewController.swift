@@ -75,7 +75,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
     @IBAction func dayButtonClicked(_ sender: UIButton) {
         selectedDay = sender
         
-        selectedDay.layer.cornerRadius = 17.5
+        selectedDay.layer.cornerRadius = 19
         selectedDay.backgroundColor = .white
         
         selectedDay.setTitleColor(#colorLiteral(red: 0.4509803922, green: 0.5607843137, blue: 0.937254902, alpha: 1), for: .normal)
@@ -115,16 +115,20 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource, UITableVi
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if indexPath.row < currentDayUnDoneCards.count {
-            if isSettingsApplyToAll {
-                currentDayUnDoneCards[indexPath.row].onClickSettings = OnClickGlobalSettings
-                currentDayUnDoneCards[indexPath.row].alwaysOnSettings = alwaysGlobalSettings
+//            if setData.isSettingsApplyToAll {
+//                currentDayUnDoneCards[indexPath.row].onClickSettings = setData.OnClickGlobalSettings
+//                currentDayUnDoneCards[indexPath.row].alwaysOnSettings = setData.alwaysGlobalSettings
                 
-                currentDayUnDoneCards[indexPath.row].OnClickcardDisplay = onClickGlobalDisplayCard
-                currentDayUnDoneCards[indexPath.row].AlwaysOncardDisplay = alwaysGlobalDisplayCard
+                currentDayUnDoneCards[indexPath.row].OnClickcardDisplay = setData.onClickGlobalDisplayCard
+                currentDayUnDoneCards[indexPath.row].AlwaysOncardDisplay = setData.alwaysGlobalDisplayCard
                 
-                currentDayUnDoneCards[indexPath.row].isOnClickExpandable = currentDayUnDoneCards[indexPath.row].onClickSettings[4]
-                currentDayUnDoneCards[indexPath.row].isAlwaysExpandable = currentDayUnDoneCards[indexPath.row].alwaysOnSettings[4]
-            }
+//                currentDayUnDoneCards[indexPath.row].isOnClickExpandable = currentDayUnDoneCards[indexPath.row].onClickSettings[4]
+//                currentDayUnDoneCards[indexPath.row].isAlwaysExpandable = currentDayUnDoneCards[indexPath.row].alwaysOnSettings[4]
+            currentDayUnDoneCards[indexPath.row].isOnClickExpandable = setData.OnClickGlobalSettings[4]
+            currentDayUnDoneCards[indexPath.row].isAlwaysExpandable = setData.alwaysGlobalSettings[4]
+//            } else {
+//                currentDayUnDoneCards[indexPath.row].onClickSettings[5] = false
+//            }
             var card = currentDayUnDoneCards[indexPath.row]
             if let cell = dayPlansTV.dequeueReusableCell(withIdentifier: "DayPlanCardWithLeftTVCell") as? DayPlanCardWithLeftTopOnCardTVCell {
                 
@@ -211,7 +215,7 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource, UITableVi
                     
                     if card.isOnClickExpandable && card.hasDescription {
                         cell.taskDescLabel.isHidden = false
-                        cell.animate()
+//                        cell.animate()
                     } else if !card.isAlwaysExpandable {
                         cell.taskDescLabel.isHidden = true
                     }

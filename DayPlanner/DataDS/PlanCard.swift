@@ -26,8 +26,8 @@ struct PlanCard : Hashable, Codable {
     var AlwaysOncardDisplay: DisplayType!
     var isClicked = false
     
-    var onClickSettings: [Bool]!
-    var alwaysOnSettings: [Bool]!
+//    var onClickSettings: [Bool]!
+//    var alwaysOnSettings: [Bool]!
     
     var isOnClickExpandable = false
     var isAlwaysExpandable = false
@@ -52,8 +52,8 @@ struct PlanCard : Hashable, Codable {
         taskLenght = try? values?.decode(String.self, forKey: .taskLenght)
         OnClickcardDisplay = try? values?.decode(DisplayType.self, forKey: .OnClickcardDisplay)
         AlwaysOncardDisplay = try? values?.decode(DisplayType.self, forKey: .AlwaysOncardDisplay)
-        onClickSettings = try? values?.decode([Bool].self, forKey: .onClickSettings)
-        alwaysOnSettings = try? values?.decode([Bool].self, forKey: .alwaysOnSettings)
+//        onClickSettings = try? values?.decode([Bool].self, forKey: .onClickSettings)
+//        alwaysOnSettings = try? values?.decode([Bool].self, forKey: .alwaysOnSettings)
         
         isClicked = ((try values?.decode(Bool.self, forKey: .isClicked)) != nil)
         isOnClickExpandable = ((try values?.decode(Bool.self, forKey: .isOnClickExpandable)) != nil)
@@ -90,8 +90,8 @@ struct PlanCard : Hashable, Codable {
         try container.encode(taskLenght, forKey: .taskLenght)
         try? container.encode(OnClickcardDisplay, forKey: .OnClickcardDisplay)
         try? container.encode(AlwaysOncardDisplay, forKey: .AlwaysOncardDisplay)
-        try? container.encode(onClickSettings, forKey: .onClickSettings)
-        try? container.encode(alwaysOnSettings, forKey: .alwaysOnSettings)
+//        try? container.encode(onClickSettings, forKey: .onClickSettings)
+//        try? container.encode(alwaysOnSettings, forKey: .alwaysOnSettings)
         
         try? container.encode(isClicked, forKey: .isClicked)
         try? container.encode(isOnClickExpandable, forKey: .isOnClickExpandable)
@@ -101,11 +101,11 @@ struct PlanCard : Hashable, Codable {
     func getTaskLen() -> String {
         var taskLength = ""
         if let hr = hours {
-            taskLength += "\(hr)H "
+            taskLength += "\(hr)h "
         }
         
         if let mn = minutes {
-            taskLength += "\(mn)M"
+            taskLength += "\(mn)m"
         }
         
         return taskLength
