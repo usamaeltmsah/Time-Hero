@@ -323,7 +323,7 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource, UITableVi
                 self?.editPlan(index: indexPath.row, plan: currentDayDoneCards[indexPath.row - currentDayUnDoneCards.count])
             }
         }
-        editAction.backgroundColor = UIColor(hexString: "#8E8E93FF")
+        editAction.backgroundColor = #colorLiteral(red: 0.5568627451, green: 0.5568627451, blue: 0.5764705882, alpha: 1)
         
         return UISwipeActionsConfiguration(actions: [editAction])
     }
@@ -358,7 +358,7 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource, UITableVi
 //                currentDayDoneCards.append(goal)
             }
             
-            doneAction.backgroundColor = UIColor(hexString: "#A9DE91FF")
+            doneAction.backgroundColor = #colorLiteral(red: 0.662745098, green: 0.8705882353, blue: 0.568627451, alpha: 1)
 
             return UISwipeActionsConfiguration(actions: [doneAction])
         } else {
@@ -378,10 +378,16 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource, UITableVi
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row < currentDayUnDoneCards.count {
-            tableView.beginUpdates()
-            currentDayUnDoneCards[indexPath.row].isClicked.toggle()
-            tableView.reloadRows(at: [indexPath], with: .none)
-            tableView.endUpdates()
+            for val in setData.OnClickGlobalSettings {
+                if val == true {
+                    tableView.beginUpdates()
+                    currentDayUnDoneCards[indexPath.row].isClicked.toggle()
+                    tableView.reloadRows(at: [indexPath], with: .none)
+                    tableView.endUpdates()
+                    break
+                }
+            }
+            
 //            dayPlansTV.performBatchUpdates({
 //                currentDayUnDoneCards[indexPath.row].isClicked.toggle()
 //            }, completion: {_ in
