@@ -17,6 +17,10 @@
 		192895A92607EA2500EC96FC /* DisplayType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 198C45AA26060E4200461F27 /* DisplayType.swift */; };
 		192895AC2607EA2800EC96FC /* data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1989FA1026013AA50008E943 /* data.swift */; };
 		192895AF2607EA2A00EC96FC /* PlanCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194BAAF825FECF3B00129C23 /* PlanCard.swift */; };
+		193879EB261291A6004A15E0 /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 196DCD29261010AC0021F937 /* Poppins-SemiBold.ttf */; };
+		193879EE261291AA004A15E0 /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 196DCD28261010AC0021F937 /* Poppins-Regular.ttf */; };
+		193879F1261291B6004A15E0 /* Poppins-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 196DCD1E261010A90021F937 /* Poppins-Bold.ttf */; };
+		193879F2261291B6004A15E0 /* Poppins-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 196DCD26261010AB0021F937 /* Poppins-Medium.ttf */; };
 		194BAAF225FECD9800129C23 /* DoneCardTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194BAAF125FECD9800129C23 /* DoneCardTVCell.swift */; };
 		194BAAF925FECF3B00129C23 /* PlanCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194BAAF825FECF3B00129C23 /* PlanCard.swift */; };
 		1964F6E925FC3F5500DC694B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1964F6E825FC3F5500DC694B /* AppDelegate.swift */; };
@@ -391,7 +395,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				193879EE261291AA004A15E0 /* Poppins-Regular.ttf in Resources */,
 				192895962607D7A300EC96FC /* Assets.xcassets in Resources */,
+				193879EB261291A6004A15E0 /* Poppins-SemiBold.ttf in Resources */,
+				193879F1261291B6004A15E0 /* Poppins-Bold.ttf in Resources */,
+				193879F2261291B6004A15E0 /* Poppins-Medium.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
