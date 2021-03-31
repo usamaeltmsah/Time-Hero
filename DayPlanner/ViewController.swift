@@ -38,7 +38,11 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
             }
         }
         
-        prevSelectedDayInd = selectedDayInd
+        if selectedDayInd - 1 >= 0 {
+            prevSelectedDayInd = selectedDayInd - 1
+        } else {
+            prevSelectedDayInd = 6
+        }
         
         dayPlansTV.delegate = self
         dayPlansTV.dataSource = self
@@ -58,16 +62,19 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
         
         currentDayUnDoneCards = daysPlans[selectedDayInd]?[0] ?? []
         currentDayDoneCards = daysPlans[selectedDayInd]?[1] ?? []
-        
-        // Reset the done cards of the previous days in the week
-        for i in 0 ..< selectedDayInd {
+//        for i in 0 ..< selectedDayInd {
 //            if i == selectedDayInd {
 //                continue
 //            }
-            
-            daysPlans[i]?[0] += daysPlans[i]?[1] ?? []
-            daysPlans[i]?[1].removeAll()
+        // Reset the done cards of the previous day in the week
+        if setData.isAppOpenedForDay[prevSelectedDayInd] ?? false {
+            daysPlans[prevSelectedDayInd]?[0] += daysPlans[prevSelectedDayInd]?[1] ?? []
+            daysPlans[prevSelectedDayInd]?[1].removeAll()
         }
+            
+        setData.isAppOpenedForDay[selectedDayInd] = true
+        setData.isAppOpenedForDay[prevSelectedDayInd] = false
+//        }
         
         dayButtonClicked(daysButtons[selectedDayInd])
         dayPlansTV.dragInteractionEnabled = true

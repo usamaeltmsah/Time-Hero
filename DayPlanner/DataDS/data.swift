@@ -45,6 +45,8 @@ struct SettingsData: Codable {
 
     var onClickGlobalDisplayCard: DisplayType! = .defualt
     var alwaysGlobalDisplayCard: DisplayType! = .defualt
+    
+    var isAppOpenedForDay: [Int:Bool] = [0:false, 1:false, 2:false, 3:false, 4:false, 5:false, 6:false]
 }
 
 func saveData() {
@@ -104,6 +106,22 @@ func loadSettings() {
 }
 
 extension Date {
+    static var yesterday: Date { return Date().dayBefore }
+    var startOfDay: Date {
+        return Calendar.current.startOfDay(for: self)
+    }
+    var endOfDay: Date {
+        var components = DateComponents()
+        components.day = 1
+        components.second = -1
+        return Calendar.current.date(byAdding: components, to: startOfDay)!
+    }
+    var dayBefore: Date {
+        return Calendar.current.date(byAdding: .day, value: -1, to: noon)!
+    }
+    var noon: Date {
+        return Calendar.current.date(bySettingHour: 12, minute: 0, second: 0, of: self)!
+    }
     func dayNumberOfWeek() -> Int? {
         return Calendar.current.dateComponents([.weekday], from: self).weekday
     }
