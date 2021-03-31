@@ -38,6 +38,8 @@ var setData = SettingsData()
 struct SettingsData: Codable {
 //    var isSettingsApplyToAll = false
 
+    var isClicked: Bool! = false
+    
     var OnClickGlobalSettings: [Bool] = [false, false, false, false, false]
     var alwaysGlobalSettings: [Bool] = [false, false, false, false, false]
 

@@ -210,7 +210,7 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource, UITableVi
                     break
                 }
                 
-                if card.isClicked {
+                if setData.isClicked {
                     // Apply on click changes
                     
                     if card.isOnClickExpandable && card.hasDescription {
@@ -381,8 +381,9 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource, UITableVi
             for val in setData.OnClickGlobalSettings {
                 if val == true {
                     tableView.beginUpdates()
-                    currentDayUnDoneCards[indexPath.row].isClicked.toggle()
-                    tableView.reloadRows(at: [indexPath], with: .none)
+                    setData.isClicked.toggle()
+                    tableView.reloadData()
+//                    tableView.reloadRows(at: [indexPath], with: .none)
                     tableView.endUpdates()
                     break
                 }
