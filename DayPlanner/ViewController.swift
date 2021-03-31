@@ -59,10 +59,11 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
         currentDayUnDoneCards = daysPlans[selectedDayInd]?[0] ?? []
         currentDayDoneCards = daysPlans[selectedDayInd]?[1] ?? []
         
-        for i in 0 ..< 7 {
-            if i == selectedDayInd {
-                continue
-            }
+        // Reset the done cards of the previous days in the week
+        for i in 0 ..< selectedDayInd {
+//            if i == selectedDayInd {
+//                continue
+//            }
             
             daysPlans[i]?[0] += daysPlans[i]?[1] ?? []
             daysPlans[i]?[1].removeAll()
