@@ -99,6 +99,8 @@ extension GlobalTaskSettingsVC : UITableViewDelegate, UITableViewDataSource {
             updateSettings(for: &currentDayDoneCards, at: ind)
         }
         
+        saveSettings()
+        
         dismiss(animated: true, completion: nil)
     }
     

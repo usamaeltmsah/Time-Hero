@@ -388,11 +388,20 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource, UITableVi
         if indexPath.row < currentDayUnDoneCards.count {
             for val in setData.OnClickGlobalSettings {
                 if val == true {
-                    tableView.beginUpdates()
-                    setData.isClicked.toggle()
-                    tableView.reloadData()
+//                    UIView.setAnimationsEnabled(false)
+//                    UIView.animate(withDuration: 0.3) {
+//                        tableView.performBatchUpdates(nil)
+//                    }
+//                    tableView.beginUpdates()
 //                    tableView.reloadRows(at: [indexPath], with: .none)
-                    tableView.endUpdates()
+//                    tableView.endUpdates()
+//                    UIView.setAnimationsEnabled(true)
+//                    tableView.beginUpdates()
+                    setData.isClicked.toggle()
+                    saveSettings()
+                    tableView.reloadData()
+//                    tableView.reloadRows(at: [indexPath], with: .automatic)
+//                    tableView.endUpdates()
                     break
                 }
             }
@@ -410,6 +419,16 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource, UITableVi
         }
         
     }
+    
+//    @objc func reloadAllUnDoneCards(in tableView: UITableView) {
+//        UIView.animate(withDuration: 0.3) {
+//            tableView.performBatchUpdates(nil)
+//        }
+//        for i in 0 ..< currentDayUnDoneCards.count {
+//            let indexPath = IndexPath(row: i, section: 0)
+//            tableView.reloadRows(at: [indexPath], with: .none)
+//        }
+//    }
     
     func tableView(_ tableView: UITableView, itemsForBeginning session: UIDragSession, at indexPath: IndexPath) -> [UIDragItem] {
         guard indexPath.row < currentDayUnDoneCards.count else {
