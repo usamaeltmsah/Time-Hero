@@ -125,7 +125,7 @@ extension GlobalTaskSettingsVC : UITableViewDelegate, UITableViewDataSource {
             tableCards[index].isOnClickExpandable = false
         }
         
-        if (!(alwaysOnTVIsOn[0] || alwaysOnTVIsOn[1] || alwaysOnTVIsOn[2] || alwaysOnTVIsOn[3] || alwaysOnTVIsOn[4])) {
+        if (!(alwaysOnTVIsOn[0] || alwaysOnTVIsOn[1] || alwaysOnTVIsOn[2] || alwaysOnTVIsOn[3])) {
             tableCards[index].AlwaysOncardDisplay = .defualt
         } else {
             if alwaysOnTVIsOn[0] {

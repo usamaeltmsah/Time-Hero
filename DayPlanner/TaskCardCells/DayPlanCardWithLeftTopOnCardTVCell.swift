@@ -13,7 +13,6 @@ class DayPlanCardWithLeftTopOnCardTVCell: UITableViewCell {
     @IBOutlet var leftFromTimeLabel: UILabel!
     @IBOutlet var left1TimeSeperator: UILabel!
     @IBOutlet var left2TimeSeperator: UIImageView!
-//    @IBOutlet var left2TimeSeperator: UILabel!
     @IBOutlet var leftToTimeLabel: UILabel!
     @IBOutlet var topFromTimeLabel: UILabel!
     @IBOutlet var topFromTimeSeperator: UILabel!
