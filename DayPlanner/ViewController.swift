@@ -22,8 +22,13 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
     var selectedDay: UIButton!
     var daysButtons = [UIButton]()
     
+    var prevSelectedDayInd: Int! = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.dayPlansTV.contentInset = UIEdgeInsets(top: 20,left: 0,bottom: 0,right: 0)
+
         
         if let dayNum = Date().dayNumberOfWeek() {
             if dayNum - 1 >= 0 {
@@ -31,6 +36,12 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
             } else {
                 selectedDayInd = 6
             }
+        }
+        
+        if selectedDayInd - 1 >= 0 {
+            prevSelectedDayInd = selectedDayInd - 1
+        } else {
+            prevSelectedDayInd = 6
         }
         
         dayPlansTV.delegate = self
@@ -43,6 +54,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
         if loadData() {
             print("Data Loaded Successfully!")
         } else {
+            print("Failed to load data!!")
             for i in 0 ..< 7 {
                 daysPlans[i] = Array(repeating: [PlanCard](), count: 2)
             }
@@ -50,6 +62,20 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
         
         currentDayUnDoneCards = daysPlans[selectedDayInd]?[0] ?? []
         currentDayDoneCards = daysPlans[selectedDayInd]?[1] ?? []
+//        for i in 0 ..< selectedDayInd {
+//            if i == selectedDayInd {
+//                continue
+//            }
+        // Reset the done cards of the previous day in the week
+        if setData.isAppOpenedForDay[prevSelectedDayInd] ?? false {
+            daysPlans[prevSelectedDayInd]?[0] += daysPlans[prevSelectedDayInd]?[1] ?? []
+            daysPlans[prevSelectedDayInd]?[1].removeAll()
+        }
+            
+        setData.isAppOpenedForDay[selectedDayInd] = true
+        setData.isAppOpenedForDay[prevSelectedDayInd] = false
+//        }
+        
         dayButtonClicked(daysButtons[selectedDayInd])
         dayPlansTV.dragInteractionEnabled = true
     }
@@ -57,24 +83,34 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
     @IBAction func dayButtonClicked(_ sender: UIButton) {
         selectedDay = sender
         
-        selectedDay.layer.cornerRadius = 25
+        selectedDay.layer.cornerRadius = 19
         selectedDay.backgroundColor = .white
-        selectedDay.setTitleColor(.systemIndigo, for: .normal)
-        selectedDay.titleLabel?.font = .boldSystemFont(ofSize: 25)
+        
+        selectedDay.setTitleColor(#colorLiteral(red: 0.4509803922, green: 0.5607843137, blue: 0.937254902, alpha: 1), for: .normal)
+        selectedDay.titleLabel?.font = UIFont(name: "Poppins-Bold", size: 18)
+        selectedDay.titleLabel?.textAlignment = .center
         
         for day in daysButtons {
             if day != selectedDay {
                 day.layer.cornerRadius = 0
                 day.backgroundColor = .clear
                 day.setTitleColor(.white, for: .normal)
-                day.titleLabel?.font = .systemFont(ofSize: 20)
+                day.titleLabel?.font = UIFont(name: "Poppins-Medium", size: 18)
             }
         }
         
         selectedDayInd = daysButtons.firstIndex(of: selectedDay)
         currentDayUnDoneCards = daysPlans[selectedDayInd]?[0] ?? []
         currentDayDoneCards = daysPlans[selectedDayInd]?[1] ?? []
-        dayPlansTV.reloadData()
+        let range = NSMakeRange(0, self.dayPlansTV.numberOfSections)
+        let sections = NSIndexSet(indexesIn: range)
+        if selectedDayInd > prevSelectedDayInd {
+            self.dayPlansTV.reloadSections(sections as IndexSet, with: .left)
+        } else if selectedDayInd < prevSelectedDayInd {
+            self.dayPlansTV.reloadSections(sections as IndexSet, with: .right)
+        }
+
+        prevSelectedDayInd = selectedDayInd
     }
     
 }
@@ -87,24 +123,34 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource, UITableVi
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if indexPath.row < currentDayUnDoneCards.count {
-            if isSettingsApplyToAll {
-                currentDayUnDoneCards[indexPath.row].onClickSettings = OnClickGlobalSettings
-                currentDayUnDoneCards[indexPath.row].alwaysOnSettings = alwaysGlobalSettings
+//            if setData.isSettingsApplyToAll {
+//                currentDayUnDoneCards[indexPath.row].onClickSettings = setData.OnClickGlobalSettings
+//                currentDayUnDoneCards[indexPath.row].alwaysOnSettings = setData.alwaysGlobalSettings
                 
-                currentDayUnDoneCards[indexPath.row].OnClickcardDisplay = onClickGlobalDisplayCard
-                currentDayUnDoneCards[indexPath.row].AlwaysOncardDisplay = alwaysGlobalDisplayCard
+                currentDayUnDoneCards[indexPath.row].OnClickcardDisplay = setData.onClickGlobalDisplayCard
+                currentDayUnDoneCards[indexPath.row].AlwaysOncardDisplay = setData.alwaysGlobalDisplayCard
                 
-                currentDayUnDoneCards[indexPath.row].isOnClickExpandable = currentDayUnDoneCards[indexPath.row].onClickSettings[4]
-                currentDayUnDoneCards[indexPath.row].isAlwaysExpandable = currentDayUnDoneCards[indexPath.row].alwaysOnSettings[4]
-            }
-            let card = currentDayUnDoneCards[indexPath.row]
+//                currentDayUnDoneCards[indexPath.row].isOnClickExpandable = currentDayUnDoneCards[indexPath.row].onClickSettings[4]
+//                currentDayUnDoneCards[indexPath.row].isAlwaysExpandable = currentDayUnDoneCards[indexPath.row].alwaysOnSettings[4]
+            currentDayUnDoneCards[indexPath.row].isOnClickExpandable = setData.OnClickGlobalSettings[4]
+            currentDayUnDoneCards[indexPath.row].isAlwaysExpandable = setData.alwaysGlobalSettings[4]
+//            } else {
+//                currentDayUnDoneCards[indexPath.row].onClickSettings[5] = false
+//            }
+            var card = currentDayUnDoneCards[indexPath.row]
             if let cell = dayPlansTV.dequeueReusableCell(withIdentifier: "DayPlanCardWithLeftTVCell") as? DayPlanCardWithLeftTopOnCardTVCell {
                 
                 cell.cardView.backgroundColor = card.taskColor
                 cell.taskTitleLabel.text = card.taskTitle
                 cell.taskLengthLabel.text = card.taskLenght
                 cell.taskCatLabel.text = card.taskCat
-                cell.taskDescLabel.text = card.taskDesc
+                
+                if !(card.taskDesc?.isEmpty ?? false) {
+                    card.hasDescription = true
+                    cell.taskDescLabel.text = card.taskDesc
+                } else {
+                    card.hasDescription = false
+                }
                 
                 cell.leftFromTimeLabel.text = card.getFromTime()
                 cell.leftToTimeLabel.text = card.getToTime()
@@ -121,7 +167,9 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource, UITableVi
                 cell.topFromTimeSeperator.textColor = card.taskColor
                 cell.topToTimeLabel.textColor = card.taskColor
                 
-                if card.isAlwaysExpandable {
+                cell.left2TimeSeperator.image = UIImage(named: arrowsImages[card.selectedColorInd])
+                
+                if card.isAlwaysExpandable && card.hasDescription {
                     cell.taskDescLabel.isHidden = false
                 } else {
                     cell.taskDescLabel.isHidden = true
@@ -136,6 +184,9 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource, UITableVi
                     cell.left1TimeSeperator.isHidden = false
                     cell.left2TimeSeperator.isHidden = true
                     
+                    cell.leftFromTimeLabel.font = UIFont(name: "Poppins-Medium", size: 12)
+                    cell.leftToTimeLabel.font = UIFont(name: "Poppins-Medium", size: 12)
+                    
                     cell.leftFromTimeLabel.textColor = .black
                     cell.left1TimeSeperator.textColor = .black
                     cell.leftToTimeLabel.textColor = .black
@@ -146,8 +197,10 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource, UITableVi
                     cell.left1TimeSeperator.isHidden = true
                     cell.left2TimeSeperator.isHidden = false
                     
+                    cell.leftFromTimeLabel.font = UIFont(name: "Poppins-Bold", size: 14)
+                    cell.leftToTimeLabel.font = UIFont(name: "Poppins-Bold", size: 14)
+                    
                     cell.leftFromTimeLabel.textColor = card.taskColor
-                    cell.left2TimeSeperator.textColor = card.taskColor
                     cell.leftToTimeLabel.textColor = card.taskColor
                 case .showHrsOnCard:
                     cell.leftCardTimeView.isHidden = true
@@ -165,17 +218,20 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource, UITableVi
                     break
                 }
                 
-                if card.isClicked {
+                if setData.isClicked {
                     // Apply on click changes
                     
-                    if card.isOnClickExpandable {
+                    if card.isOnClickExpandable && card.hasDescription {
                         cell.taskDescLabel.isHidden = false
+//                        cell.animate()
                     } else if !card.isAlwaysExpandable {
                         cell.taskDescLabel.isHidden = true
                     }
                     
                     switch card.OnClickcardDisplay {
                     case .showHrsLeft:
+                        cell.leftFromTimeLabel.font = UIFont(name: "Poppins-Medium", size: 12)
+                        cell.leftToTimeLabel.font = UIFont(name: "Poppins-Medium", size: 12)
                         cell.leftCardTimeView.isHidden = false
                         if card.AlwaysOncardDisplay != .showHrsOnCard {
                             cell.onCardTimeView.isHidden = true
@@ -196,6 +252,8 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource, UITableVi
                         cell.left1TimeSeperator.textColor = .black
                         cell.leftToTimeLabel.textColor = .black
                     case .showHrsLeft2:
+                        cell.leftFromTimeLabel.font = UIFont(name: "Poppins-Bold", size: 14)
+                        cell.leftToTimeLabel.font = UIFont(name: "Poppins-Bold", size: 14)
                         cell.leftCardTimeView.isHidden = false
                         if card.AlwaysOncardDisplay != .showHrsOnCard {
                             cell.onCardTimeView.isHidden = true
@@ -211,7 +269,6 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource, UITableVi
                         cell.left2TimeSeperator.isHidden = false
                         
                         cell.leftFromTimeLabel.textColor = card.taskColor
-                        cell.left2TimeSeperator.textColor = card.taskColor
                         cell.leftToTimeLabel.textColor = card.taskColor
                     case .showHrsOnCard:
                         cell.onCardTimeView.isHidden = false
@@ -274,7 +331,7 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource, UITableVi
                 self?.editPlan(index: indexPath.row, plan: currentDayDoneCards[indexPath.row - currentDayUnDoneCards.count])
             }
         }
-        editAction.backgroundColor = UIColor(hexString: "#8E8E93FF")
+        editAction.backgroundColor = #colorLiteral(red: 0.5568627451, green: 0.5568627451, blue: 0.5764705882, alpha: 1)
         
         return UISwipeActionsConfiguration(actions: [editAction])
     }
@@ -299,10 +356,17 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource, UITableVi
             let doneAction = UIContextualAction(style: .normal, title: "Done") {  (_, _, _) in
                 currentDayDoneCards.insert(currentDayUnDoneCards[indexPath.row], at: 0)
                 currentDayUnDoneCards.remove(at: indexPath.row)
-                tableView.reloadData()
+                UIView.transition(with: tableView, duration: 0.35, options: .transitionCrossDissolve, animations: { self.dayPlansTV.moveRow(at: indexPath, to: IndexPath(row: currentDayUnDoneCards.count, section: 0)) }, completion: {_ in
+                    self.dayPlansTV.reloadData()
+                })
+//                self.dayPlansTV.reloadData()
+//                let goal = currentDayUnDoneCards[indexPath.row]
+//                self.dayPlansTV.moveRow(at: indexPath, to: IndexPath(row: currentDayUnDoneCards.count, section: 0))
+//                currentDayUnDoneCards.remove(at: indexPath.row)
+//                currentDayDoneCards.append(goal)
             }
             
-            doneAction.backgroundColor = UIColor(hexString: "#A9DE91FF")
+            doneAction.backgroundColor = #colorLiteral(red: 0.662745098, green: 0.8705882353, blue: 0.568627451, alpha: 1)
 
             return UISwipeActionsConfiguration(actions: [doneAction])
         } else {
@@ -310,9 +374,11 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource, UITableVi
                 let ind = indexPath.row - currentDayUnDoneCards.count
                 currentDayUnDoneCards.insert(currentDayDoneCards[ind], at: 0)
                 currentDayDoneCards.remove(at: ind)
-                tableView.reloadData()
-            }
-            unDoneAction.backgroundColor = .red
+
+                UIView.transition(with: tableView, duration: 0.35, options: .transitionCrossDissolve, animations: { self.dayPlansTV.moveRow(at: indexPath, to: IndexPath(row: 0, section: 0)) }, completion: {_ in
+                    self.dayPlansTV.reloadData()
+                })            }
+            unDoneAction.backgroundColor = #colorLiteral(red: 0.9490196078, green: 0.5019607843, blue: 0.537254902, alpha: 1)
 
             return UISwipeActionsConfiguration(actions: [unDoneAction])
         }
@@ -320,11 +386,31 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource, UITableVi
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row < currentDayUnDoneCards.count {
-            dayPlansTV.performBatchUpdates({
-                currentDayUnDoneCards[indexPath.row].isClicked.toggle()
-            }, completion: {_ in
-                self.dayPlansTV.reloadRows(at: [indexPath], with: .automatic)
-            })
+            for val in setData.OnClickGlobalSettings {
+                if val == true {
+//                    UIView.setAnimationsEnabled(false)
+//                    UIView.animate(withDuration: 0.3) {
+//                        tableView.performBatchUpdates(nil)
+//                    }
+//                    tableView.beginUpdates()
+//                    tableView.reloadRows(at: [indexPath], with: .none)
+//                    tableView.endUpdates()
+//                    UIView.setAnimationsEnabled(true)
+//                    tableView.beginUpdates()
+                    setData.isClicked.toggle()
+                    saveSettings()
+                    tableView.reloadData()
+//                    tableView.reloadRows(at: [indexPath], with: .automatic)
+//                    tableView.endUpdates()
+                    break
+                }
+            }
+            
+//            dayPlansTV.performBatchUpdates({
+//                currentDayUnDoneCards[indexPath.row].isClicked.toggle()
+//            }, completion: {_ in
+//                self.dayPlansTV.reloadRows(at: [indexPath], with: .automatic)
+//            })
         } else if indexPath.row == currentDayUnDoneCards.count + currentDayDoneCards.count {
             if let vc = storyboard?.instantiateViewController(identifier: "addCardNavBar") as? NewTaskNC {
                 vc.deleg = self
@@ -333,6 +419,16 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource, UITableVi
         }
         
     }
+    
+//    @objc func reloadAllUnDoneCards(in tableView: UITableView) {
+//        UIView.animate(withDuration: 0.3) {
+//            tableView.performBatchUpdates(nil)
+//        }
+//        for i in 0 ..< currentDayUnDoneCards.count {
+//            let indexPath = IndexPath(row: i, section: 0)
+//            tableView.reloadRows(at: [indexPath], with: .none)
+//        }
+//    }
     
     func tableView(_ tableView: UITableView, itemsForBeginning session: UIDragSession, at indexPath: IndexPath) -> [UIDragItem] {
         guard indexPath.row < currentDayUnDoneCards.count else {

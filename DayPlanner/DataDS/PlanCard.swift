@@ -12,6 +12,8 @@ struct PlanCard : Hashable, Codable {
     var taskCat: String!
     var taskDesc: String?
     
+    var hasDescription: Bool!
+    
     var selectedColorInd: Int!
     var taskColor: UIColor!
     
@@ -24,37 +26,38 @@ struct PlanCard : Hashable, Codable {
     var AlwaysOncardDisplay: DisplayType!
     var isClicked = false
     
-    var onClickSettings: [Bool]!
-    var alwaysOnSettings: [Bool]!
+//    var onClickSettings: [Bool]!
+//    var alwaysOnSettings: [Bool]!
     
     var isOnClickExpandable = false
     var isAlwaysExpandable = false
     
     enum CodingKeys: String, CodingKey {
-        case taskTitle, taskCat, taskDesc, taskColor, selectedColorInd, taskTime, taskLenght, hours, minutes, OnClickcardDisplay, AlwaysOncardDisplay, onClickSettings, alwaysOnSettings, isClicked, isOnClickExpandable, isAlwaysExpandable
+        case taskTitle, taskCat, taskDesc, hasDescription, taskColor, selectedColorInd, taskTime, taskLenght, hours, minutes, OnClickcardDisplay, AlwaysOncardDisplay, onClickSettings, alwaysOnSettings, isClicked, isOnClickExpandable, isAlwaysExpandable
     }
     
     init(from decoder: Decoder) throws {
-        let values = try decoder.container(keyedBy: CodingKeys.self)
+        let values = try? decoder.container(keyedBy: CodingKeys.self)
 
-       taskTitle = try values.decode(String.self, forKey: .taskTitle)
-        taskCat = try values.decode(String.self, forKey: .taskCat)
-        taskDesc = try values.decode(String.self, forKey: .taskDesc)
-        taskColor = try values.decode(MyColor.self, forKey: .taskColor).uiColor
-        selectedColorInd = try values.decode(Int.self, forKey: .selectedColorInd)
-        taskTime = try values.decode(Date.self, forKey: .taskTime)
+        taskTitle = try? values?.decode(String.self, forKey: .taskTitle)
+        taskCat = try? values?.decode(String.self, forKey: .taskCat)
+        taskDesc = try? values?.decode(String.self, forKey: .taskDesc)
+        hasDescription = try? values?.decode(Bool.self, forKey: .hasDescription)
+        taskColor = try? values?.decode(MyColor.self, forKey: .taskColor).uiColor
+        selectedColorInd = try? values?.decode(Int.self, forKey: .selectedColorInd)
+        taskTime = try? values?.decode(Date.self, forKey: .taskTime)
         
-        hours = try? values.decode(Int.self, forKey: .hours)
-        minutes = try? values.decode(Int.self, forKey: .minutes)
-        taskLenght = try values.decode(String.self, forKey: .taskLenght)
-        OnClickcardDisplay = try? values.decode(DisplayType.self, forKey: .OnClickcardDisplay)
-        AlwaysOncardDisplay = try? values.decode(DisplayType.self, forKey: .AlwaysOncardDisplay)
-        onClickSettings = try? values.decode([Bool].self, forKey: .onClickSettings)
-        alwaysOnSettings = try? values.decode([Bool].self, forKey: .alwaysOnSettings)
+        hours = try? values?.decode(Int.self, forKey: .hours)
+        minutes = try? values?.decode(Int.self, forKey: .minutes)
+        taskLenght = try? values?.decode(String.self, forKey: .taskLenght)
+        OnClickcardDisplay = try? values?.decode(DisplayType.self, forKey: .OnClickcardDisplay)
+        AlwaysOncardDisplay = try? values?.decode(DisplayType.self, forKey: .AlwaysOncardDisplay)
+//        onClickSettings = try? values?.decode([Bool].self, forKey: .onClickSettings)
+//        alwaysOnSettings = try? values?.decode([Bool].self, forKey: .alwaysOnSettings)
         
-        isClicked = try values.decode(Bool.self, forKey: .isClicked)
-        isOnClickExpandable = try values.decode(Bool.self, forKey: .isOnClickExpandable)
-        isAlwaysExpandable = try values.decode(Bool.self, forKey: .isAlwaysExpandable)
+        isClicked = ((try values?.decode(Bool.self, forKey: .isClicked)) != nil)
+        isOnClickExpandable = ((try values?.decode(Bool.self, forKey: .isOnClickExpandable)) != nil)
+        isAlwaysExpandable = ((try values?.decode(Bool.self, forKey: .isAlwaysExpandable)) != nil)
     }
     
     init(taskTitle: String, taskCat: String, taskDesc: String?, taskColor: UIColor?, taskTime: Date?, hours: Int?, minutes: Int?) {
@@ -74,34 +77,35 @@ struct PlanCard : Hashable, Codable {
     func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
 
-        try container.encode(taskTitle, forKey: .taskTitle)
-        try container.encode(taskCat, forKey: .taskCat)
-        try container.encode(taskDesc, forKey: .taskDesc)
-        try container.encode(MyColor(uiColor: taskColor), forKey: .taskColor)
-        try container.encode(selectedColorInd, forKey: .selectedColorInd)
-        try container.encode(taskTime, forKey: .taskTime)
+        try? container.encode(taskTitle, forKey: .taskTitle)
+        try? container.encode(taskCat, forKey: .taskCat)
+        try? container.encode(taskDesc, forKey: .taskDesc)
+        try? container.encode(MyColor(uiColor: taskColor), forKey: .taskColor)
+        try? container.encode(hasDescription, forKey: .hasDescription)
+        try? container.encode(selectedColorInd, forKey: .selectedColorInd)
+        try? container.encode(taskTime, forKey: .taskTime)
         
         try? container.encode(hours, forKey: .hours)
         try? container.encode(minutes, forKey: .minutes)
         try container.encode(taskLenght, forKey: .taskLenght)
         try? container.encode(OnClickcardDisplay, forKey: .OnClickcardDisplay)
         try? container.encode(AlwaysOncardDisplay, forKey: .AlwaysOncardDisplay)
-        try? container.encode(onClickSettings, forKey: .onClickSettings)
-        try? container.encode(alwaysOnSettings, forKey: .alwaysOnSettings)
+//        try? container.encode(onClickSettings, forKey: .onClickSettings)
+//        try? container.encode(alwaysOnSettings, forKey: .alwaysOnSettings)
         
-        try container.encode(isClicked, forKey: .isClicked)
-        try container.encode(isOnClickExpandable, forKey: .isOnClickExpandable)
-        try container.encode(isAlwaysExpandable, forKey: .isAlwaysExpandable)
+        try? container.encode(isClicked, forKey: .isClicked)
+        try? container.encode(isOnClickExpandable, forKey: .isOnClickExpandable)
+        try? container.encode(isAlwaysExpandable, forKey: .isAlwaysExpandable)
     }
     
     func getTaskLen() -> String {
         var taskLength = ""
         if let hr = hours {
-            taskLength += "\(hr)H "
+            taskLength += "\(hr)h "
         }
         
         if let mn = minutes {
-            taskLength += "\(mn)M"
+            taskLength += "\(mn)m"
         }
         
         return taskLength

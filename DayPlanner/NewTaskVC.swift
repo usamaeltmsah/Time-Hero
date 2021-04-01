@@ -23,7 +23,6 @@ class NewTaskVC: UIViewController, UITextFieldDelegate {
     @IBOutlet var color5: UIButton!
     @IBOutlet var color6: UIButton!
     
-    var colorButtons = [UIButton]()
     var selectedColorInd: Int!
     var selectedColor: UIColor!
     
@@ -34,6 +33,8 @@ class NewTaskVC: UIViewController, UITextFieldDelegate {
     @IBOutlet var deleteTaskButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        datePicker.setValue(UIColor.black, forKey: "textColor")
         
         navigationController?.isNavigationBarHidden = false
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(savePlan))
@@ -120,8 +121,8 @@ class NewTaskVC: UIViewController, UITextFieldDelegate {
         card.taskColor = selectedColor
         card.selectedColorInd = selectedColorInd
         
-        card.onClickSettings = [false, false, false, true, true, false]
-        card.alwaysOnSettings = [false, false, false, true, false]
+//        card.onClickSettings = [false, false, false, false, false]
+//        card.alwaysOnSettings = [false, false, false, false, false]
         
         card.OnClickcardDisplay = .defualt
         card.AlwaysOncardDisplay = .defualt
