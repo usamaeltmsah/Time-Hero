@@ -75,7 +75,7 @@ struct DayPlannerSmallWidgetsEntryView : View {
             VStack {
                 ZStack {
                     Color(#colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0))
-                    Text("Upcoming Task").font(.custom("Poppins-Semibold", size: 14)).foregroundColor(Color(#colorLiteral(red: 0.3215686275, green: 0.3058823529, blue: 0.3058823529, alpha: 0.85))).frame(alignment: .center)
+                    Text("Upcoming Task").font(.custom("Poppins-Semibold", size: 14)).foregroundColor(Color(#colorLiteral(red: 0.3215686275, green: 0.3058823529, blue: 0.3058823529, alpha: 0.85))).frame(alignment: .center).padding(.trailing, 0.5)
                 }
             }.frame(height: 35)
                 
@@ -124,7 +124,7 @@ struct DayPlannerSmallWidgetsEntryView : View {
                 VStack {
                     ZStack {
                         Color(#colorLiteral(red: 0.4509803922, green: 0.5607843137, blue: 0.937254902, alpha: 1))
-                        HStack(alignment: .center, spacing: 10) {
+                        HStack(alignment: .center, spacing: 20) {
                             VStack(alignment: .leading, spacing: -8) {
                                 Text("TIME").font(.custom("Poppins-Bold", size: 18))
                                 HStack(alignment: .center, spacing: 1) {
