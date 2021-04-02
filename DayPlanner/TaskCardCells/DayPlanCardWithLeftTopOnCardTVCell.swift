@@ -27,6 +27,7 @@ class DayPlanCardWithLeftTopOnCardTVCell: UITableViewCell {
     @IBOutlet var leftCardTimeView: UIView!
     @IBOutlet var topCardTimeView: UIView!
     @IBOutlet var onCardTimeView: UIStackView!
+    @IBOutlet var cardContentStackView: UIStackView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
