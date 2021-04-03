@@ -19,6 +19,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
     
     @IBOutlet var dayPlansTV: UITableView!
     
+    @IBOutlet var navBarView: UIView!
     var selectedDay: UIButton!
     var daysButtons = [UIButton]()
     
@@ -26,7 +27,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.view.bringSubviewToFront(navBarView)
         self.dayPlansTV.contentInset = UIEdgeInsets(top: 20,left: 0,bottom: 0,right: 0)
 
         

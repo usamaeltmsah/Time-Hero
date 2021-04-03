@@ -71,45 +71,42 @@ struct DayPlannerSmallWidgetsEntryView : View {
 }
     
     func samllWidgetDesign(entry: Provider.Entry) -> some View {
-        ZStack {
-            Color(#colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0))
+        VStack(spacing: 0) {
             VStack {
-                Spacer().frame(height: 12)
-                Text("Upcoming Task").font(Font(UIFont(name: "Poppins-Semibold", size: 14) ?? UIFont.systemFont(ofSize: 14, weight: .semibold))).foregroundColor(Color(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.85)))
-                
                 ZStack {
-    //                GeometryReader { geo in
-    //    //                Image("background").resizable().aspectRatio(contentMode: .fill).frame(width: geo.size.width, height: geo.size.height, alignment: .center)
-    //                }
-                    
-                    let cards = entry.undoneCards
-                    
-                    if !cards.isEmpty {
-                        let card = cards[0]
-                        
-                        Color(card.taskColor)
-                        HStack {
-                            VStack(alignment: .leading, spacing: 5) {
-                                Text(card.taskTitle).font(Font(UIFont(name: "Poppins-Semibold", size: 14) ?? UIFont.systemFont(ofSize: 14))).fontWeight(.semibold)
-                                
-                                Text(card.taskCat).font(Font(UIFont(name: "Poppins-Medium", size: 10) ?? UIFont.systemFont(ofSize: 10))).fontWeight(.medium)
-                                HStack(alignment: .center, spacing: 5) {
-                                    Image(systemName: "clock").foregroundColor(.white)
-                                    Text(card.getTaskLen()).font(Font(UIFont(name: "Poppins-Semibold", size: 14) ?? UIFont.systemFont(ofSize: 14))).fontWeight(.semibold)
-                                }
-                                
-                                Text("\(card.getFromTime()) - \(card.getToTime())").font(Font(UIFont(name: "Poppins-Semibold", size: 14) ?? UIFont.systemFont(ofSize: 14))).fontWeight(.semibold)
+                    Color(#colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0))
+                    Text("Upcoming Task").font(.custom("Poppins-Semibold", size: 14)).foregroundColor(Color(#colorLiteral(red: 0.3215686275, green: 0.3058823529, blue: 0.3058823529, alpha: 0.85))).frame(alignment: .center).padding(.trailing, 0.5)
+                }
+            }.frame(height: 35)
+                
+            ZStack {
+                let cards = entry.undoneCards
+                if !cards.isEmpty {
+                    let card = cards[0]
+
+                    Color(card.taskColor)
+                    HStack {
+                        VStack(alignment: .leading, spacing: 5) {
+                            Text(card.taskTitle).font(Font(UIFont(name: "Poppins-Semibold", size: 14) ?? UIFont.systemFont(ofSize: 14))).fontWeight(.semibold)
+
+                            Text(card.taskCat).font(Font(UIFont(name: "Poppins-Medium", size: 10) ?? UIFont.systemFont(ofSize: 10))).fontWeight(.medium)
+                            HStack(alignment: .center, spacing: 6) {
+                                Image(systemName: "clock").foregroundColor(.white)
+                                Text(card.getTaskLen()).font(Font(UIFont(name: "Poppins-Semibold", size: 14) ?? UIFont.systemFont(ofSize: 14))).fontWeight(.semibold)
                             }
-                            
+
+                            Text("\(card.getFromTime()) - \(card.getToTime())").font(Font(UIFont(name: "Poppins-Semibold", size: 14) ?? UIFont.systemFont(ofSize: 14))).fontWeight(.semibold)
+                        }
+
+                        Spacer()
+                    }.foregroundColor(.white).padding(EdgeInsets(top: 5, leading: 15, bottom: 10, trailing: 5))
+                } else {
+                    Color(#colorLiteral(red: 0.4509803922, green: 0.5607843137, blue: 0.937254902, alpha: 1))
+
+                    VStack(alignment: .center, spacing: 6) {
+                        HStack(alignment: .center, spacing: 20) {
                             Spacer()
-                        }.foregroundColor(.white).padding(EdgeInsets(top: 5, leading: 15, bottom: 10, trailing: 5))
-                    } else {
-                        Color(#colorLiteral(red: 0.4509803922, green: 0.5607843137, blue: 0.937254902, alpha: 1))
-                        
-                        VStack(alignment: .center, spacing: 5) {
-                            HStack(alignment: .center) {
-                                Spacer()
-                                Text("No Tasks Left for Today!").font(.custom("Poppins-Bold", size: 12)).fontWeight(.bold).foregroundColor(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1))).multilineTextAlignment(.center).lineSpacing(/*@START_MENU_TOKEN@*/5.0/*@END_MENU_TOKEN@*/)
+                            Text("No Tasks Left for Today!").font(.custom("Poppins-Bold", size: 12)).fontWeight(.bold).foregroundColor(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1))).multilineTextAlignment(.center).lineSpacing(/*@START_MENU_TOKEN@*/5.0/*@END_MENU_TOKEN@*/)
                                 Spacer()
                             }
                             Image("WhiteLogo").resizable().frame(width: 20, height: 20, alignment: .center).cornerRadius(10)
@@ -121,69 +118,70 @@ struct DayPlannerSmallWidgetsEntryView : View {
     }
 
     func largeWidgetDesign(entry: Provider.Entry) -> some View {
-        ZStack {
-            Color(#colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0))
-            VStack {
-                ZStack {
-                    Color(#colorLiteral(red: 0.4509803922, green: 0.5607843137, blue: 0.937254902, alpha: 1))
-                    HStack(alignment: .center, spacing: 10) {
-                        VStack(alignment: .leading, spacing: -8) {
-                            Text("TIME").font(.custom("Poppins-Bold", size: 18))
-                            HStack(alignment: .center, spacing: 1) {
-                                Text("HER").font(.custom("Poppins-Bold", size: 18))
-                                Image("WhiteLogo").resizable().frame(width: 15, height: 15, alignment: .center)
-    // Image("LargeWidgetLogo").resizable().frame(width: 50, height: 50, alignment: .center)
+        GeometryReader { geo in
+            ZStack {
+                Color(#colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0))
+                VStack {
+                    ZStack {
+                        Color(#colorLiteral(red: 0.4509803922, green: 0.5607843137, blue: 0.937254902, alpha: 1))
+                        HStack(alignment: .center, spacing: 20) {
+                            VStack(alignment: .leading, spacing: -8) {
+                                Text("TIME").font(.custom("Poppins-Bold", size: 18))
+                                HStack(alignment: .center, spacing: 1) {
+                                    Text("HER").font(.custom("Poppins-Bold", size: 18))
+                                    Image("WhiteLogo").resizable().frame(width: 15, height: 15, alignment: .center)
+        // Image("LargeWidgetLogo").resizable().frame(width: 50, height: 50, alignment: .center)
+                                }
                             }
+                            
+                            Rectangle().fill(Color.white).frame(width: 0.5).edgesIgnoringSafeArea(.vertical)
+                            
+                            Text("Today’s Upcoming Tasks:").font(.custom("Poppins-Bold", size: 14))
                         }
-                        
-                        Rectangle().fill(Color.white).frame(width: 0.5).edgesIgnoringSafeArea(.vertical)
-                        
-                        Text("Today’s Upcoming Tasks:").font(.custom("Poppins-Bold", size: 14))
-                    }
-                }.frame(height: 60, alignment: .top)
-                
-                VStack(alignment: .leading) {
-                    let cards = entry.undoneCards
+                    }.frame(height: geo.size.height / 5, alignment: .top)
+                    Spacer().frame(height: 12)
+                    VStack(alignment: .center, spacing: 2) {
+//                        Spacer()
+                        let cards = entry.undoneCards
+                        if !cards.isEmpty {
+                            let count = cards.count
+                            ForEach(0 ..< 3) {i in
+                                if i < count, let card = cards[i] {
+                                    VStack(alignment: .leading) {
+                                        ZStack {
+                                            Color(card.taskColor)
+                                            HStack(alignment: .top) {
+                                                VStack(alignment: .leading, spacing: geo.size.height * 0.01) {
+                                                    Text(card.taskTitle).font(.custom("Poppins-SemiBold", size: 14))
 
-                    if !cards.isEmpty {
-                        let count = cards.count
-                        ForEach(0 ..< 3) {i in
-                            if i < count, let card = cards[i] {
-                                VStack(alignment: .leading) {
-                                    ZStack {
-                                        Color(card.taskColor)
-                                        HStack(alignment: .top) {
-                                            VStack(alignment: .leading, spacing: 5) {
-                                                Text(card.taskTitle).font(.custom("Poppins-SemiBold", size: 14))
+                                                    Text(card.taskCat).font(.custom("Poppins-Medium", size: 10))
 
-                                                Text(card.taskCat).font(.custom("Poppins-Medium", size: 10))
-
-                                                HStack(alignment: .center, spacing: 5) {
-                                                    Image(systemName: "clock").foregroundColor(.white)
-                                                    Text(card.getTaskLen()).font(.custom("Poppins-SemiBold", size: 14))
-                                                }
-                                            }.padding(EdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10))
-                                            Spacer()
-                                            Text("\(card.getFromTime()) - \(card.getToTime())").font(.custom("Poppins-SemiBold", size: 14)).padding(EdgeInsets(top: 12, leading: 0, bottom: 0, trailing: 13))
-                                        }.padding(EdgeInsets(top: 0, leading: 15, bottom: 0, trailing: 0))
-                                    }
-                                }.cornerRadius(15).frame(height: 75).padding(EdgeInsets(top: 6, leading: 10, bottom: 6, trailing: 10))
+                                                    HStack(alignment: .center, spacing: 5) {
+                                                        Image(systemName: "clock").foregroundColor(.white)
+                                                        Text(card.getTaskLen()).font(.custom("Poppins-SemiBold", size: 14))
+                                                    }
+                                                }.padding(EdgeInsets(top: geo.size.height * 0.03, leading: geo.size.height * 0.03, bottom: geo.size.height * 0.03, trailing: geo.size.height * 0.03))
+                                                Spacer()
+                                                Text("\(card.getFromTime()) - \(card.getToTime())").font(.custom("Poppins-SemiBold", size: 14)).padding(EdgeInsets(top: 12, leading: 0, bottom: 0, trailing: 13))
+                                            }.padding(EdgeInsets(top: 0, leading: 15, bottom: 0, trailing: 0))
+                                        }
+                                    }.cornerRadius(15).frame(height: geo.size.height/4.3).padding(EdgeInsets(top: 0, leading: 10, bottom: geo.size.height * 0.015, trailing: 10))
+                                }
                             }
+                            
+                            Spacer()
+                        } else {
+                            Spacer()
+                            HStack(spacing: 12){
+                                Text("No Tasks For Today!").font(.custom("Poppins-Bold", size: 19)).foregroundColor(Color(#colorLiteral(red: 0.4509803922, green: 0.5607843137, blue: 0.937254902, alpha: 1)))
+                                    Image("BlueCheckmark").resizable().frame(width: 30, height: 30, alignment: .center).cornerRadius(15)
+                            }
+                            Spacer()
                         }
-                        Spacer()
-                    } else {
-                        Spacer()
-                        HStack(spacing: 12){
-                            Text("No Tasks For Today!").font(.custom("Poppins-Bold", size: 19)).foregroundColor(Color(#colorLiteral(red: 0.4509803922, green: 0.5607843137, blue: 0.937254902, alpha: 1)))
-                                Image("BlueCheckmark").resizable().frame(width: 30, height: 30, alignment: .center).cornerRadius(15)
-                        }
-                        Spacer()
-                    }
-                }
-            }.foregroundColor(.white)
+                    }.frame(alignment: .top)
+                }.foregroundColor(.white).frame(alignment: .top)
+            }
         }
-        
-    }
     }
     
 @main
