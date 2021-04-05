@@ -3,4 +3,4 @@ This project has tasks for 7 days and everyday the task page will be switched au
 
 
 ## DEMO
-[![Day Planner Demo](Images/demo)](https://www.youtube.com/watch?v=Lk2TXxJ44co&t=1s)
+[![Day Planner Demo](/Images/demo.png)](https://www.youtube.com/watch?v=Lk2TXxJ44co&t=1s)
