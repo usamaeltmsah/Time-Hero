@@ -3,10 +3,16 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		191B4D18291C0860005235A7 /* DoneCardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191B4D16291C0860005235A7 /* DoneCardTableViewCell.swift */; };
+		191B4D19291C0860005235A7 /* DoneCardTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 191B4D17291C0860005235A7 /* DoneCardTableViewCell.xib */; };
+		191B4D1C291C086E005235A7 /* AddTaskTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 191B4D1A291C086E005235A7 /* AddTaskTableViewCell.xib */; };
+		191B4D1D291C086E005235A7 /* AddTaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191B4D1B291C086E005235A7 /* AddTaskTableViewCell.swift */; };
+		191B4D22291C094C005235A7 /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191B4D20291C094C005235A7 /* SettingsTableViewCell.swift */; };
+		191B4D23291C094C005235A7 /* SettingsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 191B4D21291C094C005235A7 /* SettingsTableViewCell.xib */; };
 		1928958E2607D7A000EC96FC /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1928958D2607D7A000EC96FC /* WidgetKit.framework */; };
 		192895902607D7A000EC96FC /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1928958F2607D7A000EC96FC /* SwiftUI.framework */; };
 		192895932607D7A000EC96FC /* DayPlannerSmallWidgets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192895922607D7A000EC96FC /* DayPlannerSmallWidgets.swift */; };
@@ -56,6 +62,7 @@
 		196DCDD0261016330021F937 /* Poppins-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 196DCD22261010AA0021F937 /* Poppins-SemiBoldItalic.ttf */; };
 		196DCDD1261016330021F937 /* Poppins-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 196DCD21261010AA0021F937 /* Poppins-MediumItalic.ttf */; };
 		196DCDD2261016330021F937 /* Poppins-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 196DCD20261010AA0021F937 /* Poppins-LightItalic.ttf */; };
+		1974A1FB291BEE90006B1B86 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1974A1FA291BEE90006B1B86 /* R.generated.swift */; };
 		1989FA1126013AA50008E943 /* data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1989FA1026013AA50008E943 /* data.swift */; };
 		198C459D2605F3F900461F27 /* DayPlanCardWithLeftTopOnCardTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 198C459C2605F3F900461F27 /* DayPlanCardWithLeftTopOnCardTVCell.swift */; };
 		198C45AB26060E4200461F27 /* DisplayType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 198C45AA26060E4200461F27 /* DisplayType.swift */; };
@@ -64,6 +71,10 @@
 		19CDDBF125FD7C0E00686C09 /* AlwaysOnTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19CDDBF025FD7C0E00686C09 /* AlwaysOnTVCell.swift */; };
 		19CDDBF825FD885900686C09 /* NewTaskVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19CDDBF725FD885900686C09 /* NewTaskVC.swift */; };
 		19DFCC7B2602537E00F00EC7 /* NewTaskNC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DFCC7A2602537E00F00EC7 /* NewTaskNC.swift */; };
+		19E7D92A291C0A5E00504213 /* DayPlanCardLeftTopOnCardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E7D928291C0A5E00504213 /* DayPlanCardLeftTopOnCardTableViewCell.swift */; };
+		19E7D92B291C0A5E00504213 /* DayPlanCardLeftTopOnCardTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19E7D929291C0A5E00504213 /* DayPlanCardLeftTopOnCardTableViewCell.xib */; };
+		9B9749DE48A5994F428A75A4 /* Pods_DayPlanner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FEE7F855E4E6C7C5806C425 /* Pods_DayPlanner.framework */; };
+		DD239F4DA75419E36FF82F69 /* Pods_DayPlannerSmallWidgetsExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 858DBDDF9A7D8B73F73C54A7 /* Pods_DayPlannerSmallWidgetsExtension.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +102,13 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		16E6F2DFD79408925892624A /* Pods-DayPlanner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DayPlanner.release.xcconfig"; path = "Target Support Files/Pods-DayPlanner/Pods-DayPlanner.release.xcconfig"; sourceTree = "<group>"; };
+		191B4D16291C0860005235A7 /* DoneCardTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoneCardTableViewCell.swift; sourceTree = "<group>"; };
+		191B4D17291C0860005235A7 /* DoneCardTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DoneCardTableViewCell.xib; sourceTree = "<group>"; };
+		191B4D1A291C086E005235A7 /* AddTaskTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddTaskTableViewCell.xib; sourceTree = "<group>"; };
+		191B4D1B291C086E005235A7 /* AddTaskTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTaskTableViewCell.swift; sourceTree = "<group>"; };
+		191B4D20291C094C005235A7 /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
+		191B4D21291C094C005235A7 /* SettingsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsTableViewCell.xib; sourceTree = "<group>"; };
 		1928958B2607D7A000EC96FC /* DayPlannerSmallWidgetsExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = DayPlannerSmallWidgetsExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		1928958D2607D7A000EC96FC /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		1928958F2607D7A000EC96FC /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
@@ -140,6 +158,7 @@
 		196DCD2A261010AC0021F937 /* Poppins-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Thin.ttf"; sourceTree = "<group>"; };
 		196DCD2B261010AD0021F937 /* Poppins-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ThinItalic.ttf"; sourceTree = "<group>"; };
 		196DCD2C261010AD0021F937 /* Poppins-ExtraLightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ExtraLightItalic.ttf"; sourceTree = "<group>"; };
+		1974A1FA291BEE90006B1B86 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		1989FA1026013AA50008E943 /* data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = data.swift; sourceTree = "<group>"; };
 		198C459C2605F3F900461F27 /* DayPlanCardWithLeftTopOnCardTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayPlanCardWithLeftTopOnCardTVCell.swift; sourceTree = "<group>"; };
 		198C45AA26060E4200461F27 /* DisplayType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayType.swift; sourceTree = "<group>"; };
@@ -148,6 +167,13 @@
 		19CDDBF025FD7C0E00686C09 /* AlwaysOnTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlwaysOnTVCell.swift; sourceTree = "<group>"; };
 		19CDDBF725FD885900686C09 /* NewTaskVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskVC.swift; sourceTree = "<group>"; };
 		19DFCC7A2602537E00F00EC7 /* NewTaskNC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskNC.swift; sourceTree = "<group>"; };
+		19E7D928291C0A5E00504213 /* DayPlanCardLeftTopOnCardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayPlanCardLeftTopOnCardTableViewCell.swift; sourceTree = "<group>"; };
+		19E7D929291C0A5E00504213 /* DayPlanCardLeftTopOnCardTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DayPlanCardLeftTopOnCardTableViewCell.xib; sourceTree = "<group>"; };
+		28D54646ED27F1048CD094FF /* Pods-DayPlannerSmallWidgetsExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DayPlannerSmallWidgetsExtension.release.xcconfig"; path = "Target Support Files/Pods-DayPlannerSmallWidgetsExtension/Pods-DayPlannerSmallWidgetsExtension.release.xcconfig"; sourceTree = "<group>"; };
+		3FEE7F855E4E6C7C5806C425 /* Pods_DayPlanner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DayPlanner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		858DBDDF9A7D8B73F73C54A7 /* Pods_DayPlannerSmallWidgetsExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DayPlannerSmallWidgetsExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A98ED04BE62A6DAA932BD312 /* Pods-DayPlannerSmallWidgetsExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DayPlannerSmallWidgetsExtension.debug.xcconfig"; path = "Target Support Files/Pods-DayPlannerSmallWidgetsExtension/Pods-DayPlannerSmallWidgetsExtension.debug.xcconfig"; sourceTree = "<group>"; };
+		B00004E704895734D6C4420E /* Pods-DayPlanner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DayPlanner.debug.xcconfig"; path = "Target Support Files/Pods-DayPlanner/Pods-DayPlanner.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +183,7 @@
 			files = (
 				192895902607D7A000EC96FC /* SwiftUI.framework in Frameworks */,
 				1928958E2607D7A000EC96FC /* WidgetKit.framework in Frameworks */,
+				DD239F4DA75419E36FF82F69 /* Pods_DayPlannerSmallWidgetsExtension.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -164,17 +191,39 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B9749DE48A5994F428A75A4 /* Pods_DayPlanner.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		191B4D1E291C08EF005235A7 /* CardsCells */ = {
+			isa = PBXGroup;
+			children = (
+				19E7D927291C0A5100504213 /* DayPlanCardLeftTopOnCardTableViewCell */,
+				19FB896C291BE63500C1E19C /* AddTaskTableViewCell */,
+				19FB8967291BE5FC00C1E19C /* DoneCardTableViewCell */,
+			);
+			path = CardsCells;
+			sourceTree = "<group>";
+		};
+		191B4D1F291C0931005235A7 /* SettingsTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				191B4D20291C094C005235A7 /* SettingsTableViewCell.swift */,
+				191B4D21291C094C005235A7 /* SettingsTableViewCell.xib */,
+			);
+			path = SettingsTableViewCell;
+			sourceTree = "<group>";
+		};
 		1928958C2607D7A000EC96FC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				1928958D2607D7A000EC96FC /* WidgetKit.framework */,
 				1928958F2607D7A000EC96FC /* SwiftUI.framework */,
+				3FEE7F855E4E6C7C5806C425 /* Pods_DayPlanner.framework */,
+				858DBDDF9A7D8B73F73C54A7 /* Pods_DayPlannerSmallWidgetsExtension.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -199,6 +248,7 @@
 				192895912607D7A000EC96FC /* DayPlannerSmallWidgets */,
 				1928958C2607D7A000EC96FC /* Frameworks */,
 				1964F6E625FC3F5500DC694B /* Products */,
+				DD0E4BE943427870D20996B8 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -214,6 +264,10 @@
 		1964F6E725FC3F5500DC694B /* DayPlanner */ = {
 			isa = PBXGroup;
 			children = (
+				1974A1FA291BEE90006B1B86 /* R.generated.swift */,
+				19FB8962291BE54F00C1E19C /* Models */,
+				19FB8963291BE55400C1E19C /* Views */,
+				19FB8964291BE55E00C1E19C /* ViewModels */,
 				19FBCB33260F876B00549396 /* Fonts */,
 				192895A62607E76000EC96FC /* DayPlanner.entitlements */,
 				198C45A126060BDF00461F27 /* TaskCardCells */,
@@ -246,6 +300,13 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		1974A1FC291BF4CB006B1B86 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
 		198C45A126060BDF00461F27 /* TaskCardCells */ = {
 			isa = PBXGroup;
 			children = (
@@ -274,6 +335,65 @@
 				19CDDBF025FD7C0E00686C09 /* AlwaysOnTVCell.swift */,
 			);
 			path = TaskSettings;
+			sourceTree = "<group>";
+		};
+		19E7D927291C0A5100504213 /* DayPlanCardLeftTopOnCardTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				19E7D928291C0A5E00504213 /* DayPlanCardLeftTopOnCardTableViewCell.swift */,
+				19E7D929291C0A5E00504213 /* DayPlanCardLeftTopOnCardTableViewCell.xib */,
+			);
+			path = DayPlanCardLeftTopOnCardTableViewCell;
+			sourceTree = "<group>";
+		};
+		19FB8962291BE54F00C1E19C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		19FB8963291BE55400C1E19C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1974A1FC291BF4CB006B1B86 /* Storyboards */,
+				19FB8965291BE5DA00C1E19C /* TableViewCells */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		19FB8964291BE55E00C1E19C /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		19FB8965291BE5DA00C1E19C /* TableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				191B4D1F291C0931005235A7 /* SettingsTableViewCell */,
+				191B4D1E291C08EF005235A7 /* CardsCells */,
+			);
+			path = TableViewCells;
+			sourceTree = "<group>";
+		};
+		19FB8967291BE5FC00C1E19C /* DoneCardTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				191B4D16291C0860005235A7 /* DoneCardTableViewCell.swift */,
+				191B4D17291C0860005235A7 /* DoneCardTableViewCell.xib */,
+			);
+			path = DoneCardTableViewCell;
+			sourceTree = "<group>";
+		};
+		19FB896C291BE63500C1E19C /* AddTaskTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				191B4D1B291C086E005235A7 /* AddTaskTableViewCell.swift */,
+				191B4D1A291C086E005235A7 /* AddTaskTableViewCell.xib */,
+			);
+			path = AddTaskTableViewCell;
 			sourceTree = "<group>";
 		};
 		19FBCB33260F876B00549396 /* Fonts */ = {
@@ -315,6 +435,17 @@
 			path = ../../../../../../../../Documents/DayPlanner/DayPlanner/Fonts/Poppins;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		DD0E4BE943427870D20996B8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B00004E704895734D6C4420E /* Pods-DayPlanner.debug.xcconfig */,
+				16E6F2DFD79408925892624A /* Pods-DayPlanner.release.xcconfig */,
+				A98ED04BE62A6DAA932BD312 /* Pods-DayPlannerSmallWidgetsExtension.debug.xcconfig */,
+				28D54646ED27F1048CD094FF /* Pods-DayPlannerSmallWidgetsExtension.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -322,6 +453,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 192895A02607D7A300EC96FC /* Build configuration list for PBXNativeTarget "DayPlannerSmallWidgetsExtension" */;
 			buildPhases = (
+				B75C091C10D5992BB0100A56 /* [CP] Check Pods Manifest.lock */,
 				192895872607D7A000EC96FC /* Sources */,
 				192895882607D7A000EC96FC /* Frameworks */,
 				192895892607D7A000EC96FC /* Resources */,
@@ -339,10 +471,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1964F6F925FC3F5800DC694B /* Build configuration list for PBXNativeTarget "DayPlanner" */;
 			buildPhases = (
+				17346CE44CBFDF8186ED2006 /* [CP] Check Pods Manifest.lock */,
+				1974A1F7291BECA7006B1B86 /* R Script */,
 				1964F6E125FC3F5500DC694B /* Sources */,
 				1964F6E225FC3F5500DC694B /* Frameworks */,
 				1964F6E325FC3F5500DC694B /* Resources */,
 				1928959D2607D7A300EC96FC /* Embed App Extensions */,
+				123B9596A52B16E95003DB64 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -419,6 +554,7 @@
 				196DCDC8261016330021F937 /* OFL.txt in Resources */,
 				196DCDC2261016330021F937 /* Poppins-ThinItalic.ttf in Resources */,
 				196DCDCF261016330021F937 /* Poppins-Light.ttf in Resources */,
+				191B4D19291C0860005235A7 /* DoneCardTableViewCell.xib in Resources */,
 				196DCDCE261016330021F937 /* Poppins-ExtraBold.ttf in Resources */,
 				196DCDC9261016330021F937 /* Poppins-Bold.ttf in Resources */,
 				196DCDCC261016330021F937 /* Poppins-Italic.ttf in Resources */,
@@ -426,13 +562,100 @@
 				196DCDC0261016330021F937 /* Poppins-BoldItalic.ttf in Resources */,
 				196DCDCB261016330021F937 /* Poppins-ExtraLightItalic.ttf in Resources */,
 				196DCDC1261016330021F937 /* Poppins-Black.ttf in Resources */,
+				191B4D1C291C086E005235A7 /* AddTaskTableViewCell.xib in Resources */,
+				191B4D23291C094C005235A7 /* SettingsTableViewCell.xib in Resources */,
 				196DCDD1261016330021F937 /* Poppins-MediumItalic.ttf in Resources */,
+				19E7D92B291C0A5E00504213 /* DayPlanCardLeftTopOnCardTableViewCell.xib in Resources */,
 				196DCDC6261016330021F937 /* Poppins-Regular.ttf in Resources */,
 				196DCDD2261016330021F937 /* Poppins-LightItalic.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		123B9596A52B16E95003DB64 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DayPlanner/Pods-DayPlanner-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DayPlanner/Pods-DayPlanner-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DayPlanner/Pods-DayPlanner-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		17346CE44CBFDF8186ED2006 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DayPlanner-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1974A1F7291BECA7006B1B86 /* R Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "R Script";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				$SRCROOT/R.generated.swift,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/R.generated.swift\"\n";
+		};
+		B75C091C10D5992BB0100A56 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DayPlannerSmallWidgetsExtension-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		192895872607D7A000EC96FC /* Sources */ = {
@@ -453,6 +676,7 @@
 			files = (
 				1964F71D25FC55F900DC694B /* AddTaskTVCell.swift in Sources */,
 				19CDDBEE25FD7A4B00686C09 /* OnClickTVCell.swift in Sources */,
+				191B4D22291C094C005235A7 /* SettingsTableViewCell.swift in Sources */,
 				192895992607D7A300EC96FC /* DayPlannerSmallWidgets.intentdefinition in Sources */,
 				1964F70A25FC454200DC694B /* EXTInternet.swift in Sources */,
 				1964F6ED25FC3F5500DC694B /* ViewController.swift in Sources */,
@@ -468,9 +692,13 @@
 				19CDDBEB25FD789800686C09 /* GlobalTaskSettingsVC.swift in Sources */,
 				1964F6EB25FC3F5500DC694B /* SceneDelegate.swift in Sources */,
 				1964F71425FC461A00DC694B /* Shared.swift in Sources */,
+				1974A1FB291BEE90006B1B86 /* R.generated.swift in Sources */,
 				19CDDBF125FD7C0E00686C09 /* AlwaysOnTVCell.swift in Sources */,
+				191B4D1D291C086E005235A7 /* AddTaskTableViewCell.swift in Sources */,
 				1964F70D25FC454E00DC694B /* EXTAlert.swift in Sources */,
 				1964F71725FC462800DC694B /* SalmanLocalize.swift in Sources */,
+				191B4D18291C0860005235A7 /* DoneCardTableViewCell.swift in Sources */,
+				19E7D92A291C0A5E00504213 /* DayPlanCardLeftTopOnCardTableViewCell.swift in Sources */,
 				1989FA1126013AA50008E943 /* data.swift in Sources */,
 				194BAAF225FECD9800129C23 /* DoneCardTVCell.swift in Sources */,
 			);
@@ -508,6 +736,7 @@
 /* Begin XCBuildConfiguration section */
 		1928959E2607D7A300EC96FC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A98ED04BE62A6DAA932BD312 /* Pods-DayPlannerSmallWidgetsExtension.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
@@ -533,6 +762,7 @@
 		};
 		1928959F2607D7A300EC96FC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 28D54646ED27F1048CD094FF /* Pods-DayPlannerSmallWidgetsExtension.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
@@ -674,6 +904,7 @@
 		};
 		1964F6FA25FC3F5800DC694B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B00004E704895734D6C4420E /* Pods-DayPlanner.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -695,6 +926,7 @@
 		};
 		1964F6FB25FC3F5800DC694B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 16E6F2DFD79408925892624A /* Pods-DayPlanner.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
