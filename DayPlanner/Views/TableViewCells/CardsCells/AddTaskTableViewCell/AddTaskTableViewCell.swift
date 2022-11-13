@@ -9,6 +9,8 @@ import UIKit
 
 class AddTaskTableViewCell: UITableViewCell {
 
+    @IBOutlet var view: UIView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

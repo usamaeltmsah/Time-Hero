@@ -26,7 +26,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="45"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wake Up &amp; Eat" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="whB-7t-hc4">
-                                <rect key="frame" x="30" y="11.333333333333334" width="118" height="22.333333333333329"/>
+                                <rect key="frame" x="30.000000000000007" y="13.333333333333334" width="107.66666666666669" height="18.666666666666664"/>
                                 <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="16"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -73,7 +73,7 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
-                <outlet property="taskTitle" destination="whB-7t-hc4" id="2c2-mJ-wtL"/>
+                <outlet property="taskTitle" destination="whB-7t-hc4" id="yCw-L8-9zl"/>
             </connections>
             <point key="canvasLocation" x="5" y="-11"/>
         </tableViewCell>

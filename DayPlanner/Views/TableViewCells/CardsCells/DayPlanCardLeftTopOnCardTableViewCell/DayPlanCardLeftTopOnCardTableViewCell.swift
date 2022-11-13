@@ -24,7 +24,7 @@ class DayPlanCardLeftTopOnCardTableViewCell: UITableViewCell {
     @IBOutlet var taskCatLabel: UILabel!
     @IBOutlet var taskDescLabel: UILabel!
     @IBOutlet var taskLengthLabel: UILabel!
-    @IBOutlet var leftCardTimeView: UIView!
+    @IBOutlet var leftCardTimeView: UIStackView!
     @IBOutlet var topCardTimeView: UIView!
     @IBOutlet var onCardTimeView: UIStackView!
     @IBOutlet var cardContentStackView: UIStackView!

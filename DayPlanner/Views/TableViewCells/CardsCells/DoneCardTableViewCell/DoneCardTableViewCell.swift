@@ -9,6 +9,8 @@ import UIKit
 
 class DoneCardTableViewCell: UITableViewCell {
     
+    @IBOutlet var taskTitle: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

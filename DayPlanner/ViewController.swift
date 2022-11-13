@@ -49,6 +49,8 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
         dayPlansTV.dataSource = self
         dayPlansTV.dragDelegate = self
         dayPlansTV.dropDelegate = self
+
+        dayPlansTV.register(UINib(resource: R.nib.dayPlanCardLeftTopOnCardTableViewCell), forCellReuseIdentifier: R.nib.dayPlanCardLeftTopOnCardTableViewCell.identifier)
         
         daysButtons = [sundayButton, mondayButton, tuesdayButton, wednesdayButton, thuresdayButton, fridayButton, saturdayButton]
         
@@ -139,8 +141,7 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource, UITableVi
 //                currentDayUnDoneCards[indexPath.row].onClickSettings[5] = false
 //            }
             var card = currentDayUnDoneCards[indexPath.row]
-            if let cell = dayPlansTV.dequeueReusableCell(withIdentifier: "DayPlanCardWithLeftTVCell") as? DayPlanCardWithLeftTopOnCardTVCell {
-                
+            if let cell = dayPlansTV.dequeueReusableCell(withIdentifier: R.nib.dayPlanCardLeftTopOnCardTableViewCell.identifier) as? DayPlanCardLeftTopOnCardTableViewCell {
                 cell.cardView.backgroundColor = card.taskColor
                 cell.taskTitleLabel.text = card.taskTitle
                 cell.taskLengthLabel.text = card.taskLenght
