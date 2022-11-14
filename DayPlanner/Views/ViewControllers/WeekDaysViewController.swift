@@ -22,8 +22,6 @@ class WeekDaysViewController: UIViewController, UINavigationControllerDelegate {
     private var daysButtons = [UIButton]()
     private var selectedDayButton: UIButton?
     
-    private var weekViewModel = WeekViewModel()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.bringSubviewToFront(navBarView)

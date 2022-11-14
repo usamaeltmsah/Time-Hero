@@ -67,8 +67,6 @@
 		19A9234129227DD000D20EF7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19A9233F29227DD000D20EF7 /* LaunchScreen.storyboard */; };
 		19C9869D29228A5600231ACB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 192895952607D7A300EC96FC /* Assets.xcassets */; };
 		19C9869E29228B6900231ACB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1964F6F125FC3F5800DC694B /* Assets.xcassets */; };
-		19C986A029228C0500231ACB /* WeekViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C9869F29228C0500231ACB /* WeekViewModel.swift */; };
-		19C986A229228C5D00231ACB /* DayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C986A129228C5D00231ACB /* DayViewModel.swift */; };
 		19CDDBEB25FD789800686C09 /* GlobalTaskSettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19CDDBEA25FD789800686C09 /* GlobalTaskSettingsVC.swift */; };
 		19CDDBF825FD885900686C09 /* AddNewTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19CDDBF725FD885900686C09 /* AddNewTaskViewController.swift */; };
 		19DFCC7B2602537E00F00EC7 /* NewTaskNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DFCC7A2602537E00F00EC7 /* NewTaskNavigationController.swift */; };
@@ -161,8 +159,6 @@
 		19A923382922672000D20EF7 /* CardsSettings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CardsSettings.storyboard; sourceTree = "<group>"; };
 		19A9233B292270C500D20EF7 /* SettingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingModel.swift; sourceTree = "<group>"; };
 		19A9234029227DD000D20EF7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		19C9869F29228C0500231ACB /* WeekViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekViewModel.swift; sourceTree = "<group>"; };
-		19C986A129228C5D00231ACB /* DayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayViewModel.swift; sourceTree = "<group>"; };
 		19CDDBEA25FD789800686C09 /* GlobalTaskSettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalTaskSettingsVC.swift; sourceTree = "<group>"; };
 		19CDDBF725FD885900686C09 /* AddNewTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewTaskViewController.swift; sourceTree = "<group>"; };
 		19DFCC7A2602537E00F00EC7 /* NewTaskNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskNavigationController.swift; sourceTree = "<group>"; };
@@ -267,7 +263,6 @@
 				19A9233E292277CA00D20EF7 /* Resources */,
 				19FB8962291BE54F00C1E19C /* Models */,
 				19FB8963291BE55400C1E19C /* Views */,
-				19FB8964291BE55E00C1E19C /* ViewModels */,
 				192895A62607E76000EC96FC /* DayPlanner.entitlements */,
 				19A9233F29227DD000D20EF7 /* LaunchScreen.storyboard */,
 				1964F6F625FC3F5800DC694B /* Info.plist */,
@@ -355,15 +350,6 @@
 				19A9233A2922699200D20EF7 /* ViewControllers */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		19FB8964291BE55E00C1E19C /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-				19C9869F29228C0500231ACB /* WeekViewModel.swift */,
-				19C986A129228C5D00231ACB /* DayViewModel.swift */,
-			);
-			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		19FB8965291BE5DA00C1E19C /* TableViewCells */ = {
@@ -682,7 +668,6 @@
 				1964F6ED25FC3F5500DC694B /* WeekDaysViewController.swift in Sources */,
 				1964F70325FC451600DC694B /* SkyFloatingLabelTextFieldWithIcon.swift in Sources */,
 				1964F71A25FC479700DC694B /* UIView+Extension.swift in Sources */,
-				19C986A029228C0500231ACB /* WeekViewModel.swift in Sources */,
 				19CDDBF825FD885900686C09 /* AddNewTaskViewController.swift in Sources */,
 				19DFCC7B2602537E00F00EC7 /* NewTaskNavigationController.swift in Sources */,
 				195508B829216B9D005A94C5 /* DataManager.swift in Sources */,
@@ -693,7 +678,6 @@
 				1964F6EB25FC3F5500DC694B /* SceneDelegate.swift in Sources */,
 				1974A1FB291BEE90006B1B86 /* R.generated.swift in Sources */,
 				19A9233C292270C500D20EF7 /* SettingModel.swift in Sources */,
-				19C986A229228C5D00231ACB /* DayViewModel.swift in Sources */,
 				191B4D1D291C086E005235A7 /* AddTaskTableViewCell.swift in Sources */,
 				195508AF2921650B005A94C5 /* PlanCard.swift in Sources */,
 				191B4D18291C0860005235A7 /* DoneCardTableViewCell.swift in Sources */,
