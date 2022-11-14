@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "1964F6E425FC3F5500DC694B"
-               BuildableName = "DayPlanner.app"
-               BlueprintName = "DayPlanner"
-               ReferencedContainer = "container:DayPlanner.xcodeproj">
+               BuildableName = "Time Hero.app"
+               BlueprintName = "Time Hero"
+               ReferencedContainer = "container:Time Hero.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -45,9 +45,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "1964F6E425FC3F5500DC694B"
-            BuildableName = "DayPlanner.app"
-            BlueprintName = "DayPlanner"
-            ReferencedContainer = "container:DayPlanner.xcodeproj">
+            BuildableName = "Time Hero.app"
+            BlueprintName = "Time Hero"
+            ReferencedContainer = "container:Time Hero.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -62,9 +62,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "1964F6E425FC3F5500DC694B"
-            BuildableName = "DayPlanner.app"
-            BlueprintName = "DayPlanner"
-            ReferencedContainer = "container:DayPlanner.xcodeproj">
+            BuildableName = "Time Hero.app"
+            BlueprintName = "Time Hero"
+            ReferencedContainer = "container:Time Hero.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

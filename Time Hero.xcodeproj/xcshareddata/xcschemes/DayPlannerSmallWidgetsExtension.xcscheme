@@ -16,9 +16,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "1928958A2607D7A000EC96FC"
-               BuildableName = "DayPlannerSmallWidgetsExtension.appex"
-               BlueprintName = "DayPlannerSmallWidgetsExtension"
-               ReferencedContainer = "container:DayPlanner.xcodeproj">
+               BuildableName = "Time HeroSmallWidgetsExtension.appex"
+               BlueprintName = "Time HeroSmallWidgetsExtension"
+               ReferencedContainer = "container:Time Hero.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -30,9 +30,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "1964F6E425FC3F5500DC694B"
-               BuildableName = "DayPlanner.app"
-               BlueprintName = "DayPlanner"
-               ReferencedContainer = "container:DayPlanner.xcodeproj">
+               BuildableName = "Time Hero.app"
+               BlueprintName = "Time Hero"
+               ReferencedContainer = "container:Time Hero.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -62,9 +62,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "1964F6E425FC3F5500DC694B"
-            BuildableName = "DayPlanner.app"
-            BlueprintName = "DayPlanner"
-            ReferencedContainer = "container:DayPlanner.xcodeproj">
+            BuildableName = "Time Hero.app"
+            BlueprintName = "Time Hero"
+            ReferencedContainer = "container:Time Hero.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <EnvironmentVariables>
@@ -91,15 +91,16 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES"
+      askForAppToLaunch = "Yes"
       launchAutomaticallySubstyle = "2">
       <BuildableProductRunnable
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "1964F6E425FC3F5500DC694B"
-            BuildableName = "DayPlanner.app"
-            BlueprintName = "DayPlanner"
-            ReferencedContainer = "container:DayPlanner.xcodeproj">
+            BuildableName = "Time Hero.app"
+            BlueprintName = "Time Hero"
+            ReferencedContainer = "container:Time Hero.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

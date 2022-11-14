@@ -19,7 +19,7 @@
 		192895962607D7A300EC96FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 192895952607D7A300EC96FC /* Assets.xcassets */; };
 		192895982607D7A300EC96FC /* DayPlannerSmallWidgets.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 192895942607D7A000EC96FC /* DayPlannerSmallWidgets.intentdefinition */; };
 		192895992607D7A300EC96FC /* DayPlannerSmallWidgets.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 192895942607D7A000EC96FC /* DayPlannerSmallWidgets.intentdefinition */; };
-		1928959C2607D7A300EC96FC /* DayPlannerSmallWidgetsExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 1928958B2607D7A000EC96FC /* DayPlannerSmallWidgetsExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		1928959C2607D7A300EC96FC /* Time HeroSmallWidgetsExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 1928958B2607D7A000EC96FC /* Time HeroSmallWidgetsExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		195508AF2921650B005A94C5 /* PlanCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195508AE2921650B005A94C5 /* PlanCard.swift */; };
 		195508B829216B9D005A94C5 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195508B729216B9D005A94C5 /* DataManager.swift */; };
 		195508BB29216BF9005A94C5 /* SettingsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195508BA29216BF9005A94C5 /* SettingsData.swift */; };
@@ -93,7 +93,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				1928959C2607D7A300EC96FC /* DayPlannerSmallWidgetsExtension.appex in Embed App Extensions */,
+				1928959C2607D7A300EC96FC /* Time HeroSmallWidgetsExtension.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -108,7 +108,7 @@
 		191B4D1B291C086E005235A7 /* AddTaskTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTaskTableViewCell.swift; sourceTree = "<group>"; };
 		191B4D20291C094C005235A7 /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
 		191B4D21291C094C005235A7 /* SettingsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsTableViewCell.xib; sourceTree = "<group>"; };
-		1928958B2607D7A000EC96FC /* DayPlannerSmallWidgetsExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = DayPlannerSmallWidgetsExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		1928958B2607D7A000EC96FC /* Time HeroSmallWidgetsExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Time HeroSmallWidgetsExtension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1928958D2607D7A000EC96FC /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		1928958F2607D7A000EC96FC /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		192895922607D7A000EC96FC /* DayPlannerSmallWidgets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayPlannerSmallWidgets.swift; sourceTree = "<group>"; };
@@ -121,7 +121,7 @@
 		195508B0292166C0005A94C5 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		195508B729216B9D005A94C5 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		195508BA29216BF9005A94C5 /* SettingsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsData.swift; sourceTree = "<group>"; };
-		1964F6E525FC3F5500DC694B /* DayPlanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DayPlanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1964F6E525FC3F5500DC694B /* Time Hero.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Time Hero.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1964F6E825FC3F5500DC694B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1964F6EA25FC3F5500DC694B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		1964F6EC25FC3F5500DC694B /* WeekDaysViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekDaysViewController.swift; sourceTree = "<group>"; };
@@ -249,8 +249,8 @@
 		1964F6E625FC3F5500DC694B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1964F6E525FC3F5500DC694B /* DayPlanner.app */,
-				1928958B2607D7A000EC96FC /* DayPlannerSmallWidgetsExtension.appex */,
+				1964F6E525FC3F5500DC694B /* Time Hero.app */,
+				1928958B2607D7A000EC96FC /* Time HeroSmallWidgetsExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -431,9 +431,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		1928958A2607D7A000EC96FC /* DayPlannerSmallWidgetsExtension */ = {
+		1928958A2607D7A000EC96FC /* Time HeroSmallWidgetsExtension */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 192895A02607D7A300EC96FC /* Build configuration list for PBXNativeTarget "DayPlannerSmallWidgetsExtension" */;
+			buildConfigurationList = 192895A02607D7A300EC96FC /* Build configuration list for PBXNativeTarget "Time HeroSmallWidgetsExtension" */;
 			buildPhases = (
 				B75C091C10D5992BB0100A56 /* [CP] Check Pods Manifest.lock */,
 				192895872607D7A000EC96FC /* Sources */,
@@ -444,14 +444,14 @@
 			);
 			dependencies = (
 			);
-			name = DayPlannerSmallWidgetsExtension;
+			name = "Time HeroSmallWidgetsExtension";
 			productName = DayPlannerSmallWidgetsExtension;
-			productReference = 1928958B2607D7A000EC96FC /* DayPlannerSmallWidgetsExtension.appex */;
+			productReference = 1928958B2607D7A000EC96FC /* Time HeroSmallWidgetsExtension.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
-		1964F6E425FC3F5500DC694B /* DayPlanner */ = {
+		1964F6E425FC3F5500DC694B /* Time Hero */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1964F6F925FC3F5800DC694B /* Build configuration list for PBXNativeTarget "DayPlanner" */;
+			buildConfigurationList = 1964F6F925FC3F5800DC694B /* Build configuration list for PBXNativeTarget "Time Hero" */;
 			buildPhases = (
 				17346CE44CBFDF8186ED2006 /* [CP] Check Pods Manifest.lock */,
 				1974A1F7291BECA7006B1B86 /* R Script */,
@@ -466,9 +466,9 @@
 			dependencies = (
 				1928959B2607D7A300EC96FC /* PBXTargetDependency */,
 			);
-			name = DayPlanner;
+			name = "Time Hero";
 			productName = DayPlanner;
-			productReference = 1964F6E525FC3F5500DC694B /* DayPlanner.app */;
+			productReference = 1964F6E525FC3F5500DC694B /* Time Hero.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -488,7 +488,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 1964F6E025FC3F5500DC694B /* Build configuration list for PBXProject "DayPlanner" */;
+			buildConfigurationList = 1964F6E025FC3F5500DC694B /* Build configuration list for PBXProject "Time Hero" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -501,8 +501,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				1964F6E425FC3F5500DC694B /* DayPlanner */,
-				1928958A2607D7A000EC96FC /* DayPlannerSmallWidgetsExtension */,
+				1964F6E425FC3F5500DC694B /* Time Hero */,
+				1928958A2607D7A000EC96FC /* Time HeroSmallWidgetsExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -690,7 +690,7 @@
 /* Begin PBXTargetDependency section */
 		1928959B2607D7A300EC96FC /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 1928958A2607D7A000EC96FC /* DayPlannerSmallWidgetsExtension */;
+			target = 1928958A2607D7A000EC96FC /* Time HeroSmallWidgetsExtension */;
 			targetProxy = 1928959A2607D7A300EC96FC /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -922,7 +922,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		192895A02607D7A300EC96FC /* Build configuration list for PBXNativeTarget "DayPlannerSmallWidgetsExtension" */ = {
+		192895A02607D7A300EC96FC /* Build configuration list for PBXNativeTarget "Time HeroSmallWidgetsExtension" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1928959E2607D7A300EC96FC /* Debug */,
@@ -931,7 +931,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1964F6E025FC3F5500DC694B /* Build configuration list for PBXProject "DayPlanner" */ = {
+		1964F6E025FC3F5500DC694B /* Build configuration list for PBXProject "Time Hero" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1964F6F725FC3F5800DC694B /* Debug */,
@@ -940,7 +940,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1964F6F925FC3F5800DC694B /* Build configuration list for PBXNativeTarget "DayPlanner" */ = {
+		1964F6F925FC3F5800DC694B /* Build configuration list for PBXNativeTarget "Time Hero" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1964F6FA25FC3F5800DC694B /* Debug */,
