@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SF-Pro-Text-Semibold.otf">
+            <string>SFProText-Semibold</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Global Tasks Settings-->
+        <scene sceneID="DVU-wF-dXd">
+            <objects>
+                <viewController storyboardIdentifier="GlobalTaskSettings" id="AtF-E9-fo7" customClass="GlobalTaskSettingsVC" customModule="DayPlanner" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hD8-t1-Slk">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wG8-qO-mLQ">
+                                <rect key="frame" x="26" y="59" width="341" height="759"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ylJ-Yn-KZA">
+                                        <rect key="frame" x="0.0" y="0.0" width="341" height="812"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ON-CLICK" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9oX-cz-bP3">
+                                                <rect key="frame" x="0.0" y="30" width="61" height="14"/>
+                                                <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="12"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="50" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dvq-CF-mEg">
+                                                <rect key="frame" x="0.0" y="49" width="341" height="250"/>
+                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="250" id="ZhQ-eC-AAA"/>
+                                                </constraints>
+                                                <color key="sectionIndexBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </tableView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ALWAYS-ON" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HcN-E8-rgm">
+                                                <rect key="frame" x="0.0" y="329" width="74" height="14"/>
+                                                <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="12"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="50" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="JhB-EO-tzK">
+                                                <rect key="frame" x="0.0" y="348" width="341" height="250"/>
+                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="250" id="K9o-v8-R2Z"/>
+                                                </constraints>
+                                                <color key="sectionIndexBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </tableView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="9oX-cz-bP3" firstAttribute="top" secondItem="ylJ-Yn-KZA" secondAttribute="top" constant="30" id="GXf-ve-WVJ"/>
+                                            <constraint firstItem="JhB-EO-tzK" firstAttribute="top" secondItem="HcN-E8-rgm" secondAttribute="bottom" constant="5" id="OY9-r7-gsf"/>
+                                            <constraint firstItem="dvq-CF-mEg" firstAttribute="top" secondItem="9oX-cz-bP3" secondAttribute="bottom" constant="5" id="Oqv-fx-HrB"/>
+                                            <constraint firstItem="dvq-CF-mEg" firstAttribute="leading" secondItem="ylJ-Yn-KZA" secondAttribute="leading" id="ezZ-1z-JVb"/>
+                                            <constraint firstItem="JhB-EO-tzK" firstAttribute="leading" secondItem="ylJ-Yn-KZA" secondAttribute="leading" id="frq-GF-AhE"/>
+                                            <constraint firstItem="HcN-E8-rgm" firstAttribute="top" secondItem="dvq-CF-mEg" secondAttribute="bottom" constant="30" id="jha-jL-95y"/>
+                                            <constraint firstAttribute="trailing" secondItem="JhB-EO-tzK" secondAttribute="trailing" id="nmP-c0-tR2"/>
+                                            <constraint firstItem="9oX-cz-bP3" firstAttribute="leading" secondItem="ylJ-Yn-KZA" secondAttribute="leading" id="obX-Ob-Owv"/>
+                                            <constraint firstItem="HcN-E8-rgm" firstAttribute="leading" secondItem="ylJ-Yn-KZA" secondAttribute="leading" id="reK-Z0-Mkg"/>
+                                            <constraint firstAttribute="trailing" secondItem="dvq-CF-mEg" secondAttribute="trailing" id="wJV-fg-fhy"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="ylJ-Yn-KZA" firstAttribute="height" secondItem="7pN-0U-fDO" secondAttribute="height" multiplier="1.07" id="1Yg-1h-DYT"/>
+                                    <constraint firstItem="ylJ-Yn-KZA" firstAttribute="leading" secondItem="ayA-Ne-FW0" secondAttribute="leading" id="MOv-z8-sDq"/>
+                                    <constraint firstItem="ylJ-Yn-KZA" firstAttribute="trailing" secondItem="ayA-Ne-FW0" secondAttribute="trailing" id="SWV-OJ-HAX"/>
+                                    <constraint firstItem="ylJ-Yn-KZA" firstAttribute="width" secondItem="7pN-0U-fDO" secondAttribute="width" id="VVv-5O-BP8"/>
+                                    <constraint firstItem="ylJ-Yn-KZA" firstAttribute="top" secondItem="ayA-Ne-FW0" secondAttribute="top" id="qaY-GV-gm7"/>
+                                    <constraint firstItem="ylJ-Yn-KZA" firstAttribute="bottom" secondItem="ayA-Ne-FW0" secondAttribute="bottom" id="zdG-XB-EU1"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="ayA-Ne-FW0"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="7pN-0U-fDO"/>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="lHA-NJ-w3j"/>
+                        <color key="backgroundColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="wG8-qO-mLQ" firstAttribute="leading" secondItem="lHA-NJ-w3j" secondAttribute="leading" constant="26" id="ETf-rn-uhx"/>
+                            <constraint firstItem="wG8-qO-mLQ" firstAttribute="top" secondItem="lHA-NJ-w3j" secondAttribute="top" id="Pek-qK-doW"/>
+                            <constraint firstItem="wG8-qO-mLQ" firstAttribute="bottom" secondItem="lHA-NJ-w3j" secondAttribute="bottom" id="ZMm-5G-atv"/>
+                            <constraint firstItem="lHA-NJ-w3j" firstAttribute="trailing" secondItem="wG8-qO-mLQ" secondAttribute="trailing" constant="26" id="lA6-fR-T9g"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Global Tasks Settings" id="hHw-1p-Uaw"/>
+                    <connections>
+                        <outlet property="alwaysOnTV" destination="JhB-EO-tzK" id="EyO-7b-aSI"/>
+                        <outlet property="onClickTV" destination="dvq-CF-mEg" id="6aQ-Zr-QsM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rAm-a0-vXb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="608.39694656488552" y="1597.8873239436621"/>
+        </scene>
+    </scenes>
+</document>

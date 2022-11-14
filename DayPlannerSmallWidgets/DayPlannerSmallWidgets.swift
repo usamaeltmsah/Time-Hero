@@ -27,14 +27,14 @@ struct Provider: IntentTimelineProvider {
         
         if let dayNum = Date().dayNumberOfWeek() {
             if dayNum - 1 >= 0 {
-                selectedDayInd = dayNum - 1
+                DataManager.shared.selectedDayInd = dayNum - 1
             } else {
-                selectedDayInd = 6
+                DataManager.shared.selectedDayInd = 6
             }
         }
         
-        if loadData() {
-            cards = daysPlans[selectedDayInd]?[0] ?? []
+        if DataManager.shared.loadData() {
+            cards = DataManager.shared.daysPlans[DataManager.shared.selectedDayInd]?[0] ?? []
             print("Data Loaded!")
         }
         
@@ -84,18 +84,18 @@ struct DayPlannerSmallWidgetsEntryView : View {
                 if !cards.isEmpty {
                     let card = cards[0]
 
-                    Color(card.taskColor)
+                    Color(card.taskColorName ?? "")
                     HStack {
                         VStack(alignment: .leading, spacing: 5) {
-                            Text(card.taskTitle).font(Font(UIFont(name: "Poppins-Semibold", size: 14) ?? UIFont.systemFont(ofSize: 14))).fontWeight(.semibold)
+                            Text(card.taskTitle ?? "").font(Font(UIFont(name: "Poppins-Semibold", size: 14) ?? UIFont.systemFont(ofSize: 14))).fontWeight(.semibold)
 
-                            Text(card.taskCat).font(Font(UIFont(name: "Poppins-Medium", size: 10) ?? UIFont.systemFont(ofSize: 10))).fontWeight(.medium)
+                            Text(card.taskCategory ?? "").font(Font(UIFont(name: "Poppins-Medium", size: 10) ?? UIFont.systemFont(ofSize: 10))).fontWeight(.medium)
                             HStack(alignment: .center, spacing: 6) {
                                 Image(systemName: "clock").foregroundColor(.white)
-                                Text(card.getTaskLen()).font(Font(UIFont(name: "Poppins-Semibold", size: 14) ?? UIFont.systemFont(ofSize: 14))).fontWeight(.semibold)
+                                Text(PlanCard.getTaskLen(for: card) ?? "").font(Font(UIFont(name: "Poppins-Semibold", size: 14) ?? UIFont.systemFont(ofSize: 14))).fontWeight(.semibold)
                             }
 
-                            Text("\(card.getFromTime()) - \(card.getToTime())").font(Font(UIFont(name: "Poppins-Semibold", size: 14) ?? UIFont.systemFont(ofSize: 14))).fontWeight(.semibold)
+                            Text("\(PlanCard.getFormatedFromTime(for: card)) - \(PlanCard.getFormatedToTime(for: card))").font(Font(UIFont(name: "Poppins-Semibold", size: 14) ?? UIFont.systemFont(ofSize: 14))).fontWeight(.semibold)
                         }
 
                         Spacer()
@@ -149,20 +149,20 @@ struct DayPlannerSmallWidgetsEntryView : View {
                                 if i < count, let card = cards[i] {
                                     VStack(alignment: .leading) {
                                         ZStack {
-                                            Color(card.taskColor)
+                                            Color(card.taskColorName ?? "")
                                             HStack(alignment: .top) {
                                                 VStack(alignment: .leading, spacing: geo.size.height * 0.01) {
-                                                    Text(card.taskTitle).font(.custom("Poppins-SemiBold", size: 14))
+                                                    Text(card.taskTitle ?? "").font(.custom("Poppins-SemiBold", size: 14))
 
-                                                    Text(card.taskCat).font(.custom("Poppins-Medium", size: 10))
+                                                    Text(card.taskCategory ?? "").font(.custom("Poppins-Medium", size: 10))
 
                                                     HStack(alignment: .center, spacing: 5) {
                                                         Image(systemName: "clock").foregroundColor(.white)
-                                                        Text(card.getTaskLen()).font(.custom("Poppins-SemiBold", size: 14))
+                                                        Text(PlanCard.getTaskLen(for: card) ?? "").font(.custom("Poppins-SemiBold", size: 14))
                                                     }
                                                 }.padding(EdgeInsets(top: geo.size.height * 0.03, leading: geo.size.height * 0.03, bottom: geo.size.height * 0.03, trailing: geo.size.height * 0.03))
                                                 Spacer()
-                                                Text("\(card.getFromTime()) - \(card.getToTime())").font(.custom("Poppins-SemiBold", size: 14)).padding(EdgeInsets(top: 12, leading: 0, bottom: 0, trailing: 13))
+                                                Text("\(PlanCard.getFormatedFromTime(for: card)) - \(PlanCard.getFormatedToTime(for: card))").font(.custom("Poppins-SemiBold", size: 14)).padding(EdgeInsets(top: 12, leading: 0, bottom: 0, trailing: 13))
                                             }.padding(EdgeInsets(top: 0, leading: 15, bottom: 0, trailing: 0))
                                         }
                                     }.cornerRadius(15).frame(height: geo.size.height/4.3).padding(EdgeInsets(top: 0, leading: 10, bottom: geo.size.height * 0.015, trailing: 10))

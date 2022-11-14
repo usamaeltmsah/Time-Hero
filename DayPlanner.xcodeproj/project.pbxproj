@@ -20,44 +20,15 @@
 		192895982607D7A300EC96FC /* DayPlannerSmallWidgets.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 192895942607D7A000EC96FC /* DayPlannerSmallWidgets.intentdefinition */; };
 		192895992607D7A300EC96FC /* DayPlannerSmallWidgets.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 192895942607D7A000EC96FC /* DayPlannerSmallWidgets.intentdefinition */; };
 		1928959C2607D7A300EC96FC /* DayPlannerSmallWidgetsExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 1928958B2607D7A000EC96FC /* DayPlannerSmallWidgetsExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		192895A92607EA2500EC96FC /* DisplayType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 198C45AA26060E4200461F27 /* DisplayType.swift */; };
-		192895AC2607EA2800EC96FC /* data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1989FA1026013AA50008E943 /* data.swift */; };
-		192895AF2607EA2A00EC96FC /* PlanCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194BAAF825FECF3B00129C23 /* PlanCard.swift */; };
-		194BAAF225FECD9800129C23 /* DoneCardTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194BAAF125FECD9800129C23 /* DoneCardTVCell.swift */; };
-		194BAAF925FECF3B00129C23 /* PlanCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194BAAF825FECF3B00129C23 /* PlanCard.swift */; };
-		1955089B29214720005A94C5 /* Poppins-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 196DCD2A261010AC0021F937 /* Poppins-Thin.ttf */; };
-		1955089C29214720005A94C5 /* Poppins-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 196DCD1E261010A90021F937 /* Poppins-Bold.ttf */; };
-		1955089D29214720005A94C5 /* Poppins-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 196DCD23261010AA0021F937 /* Poppins-ExtraBoldItalic.ttf */; };
-		1955089E29214720005A94C5 /* Poppins-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 196DCD1B261010A80021F937 /* Poppins-Italic.ttf */; };
-		1955089F29214720005A94C5 /* Poppins-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 196DCD22261010AA0021F937 /* Poppins-SemiBoldItalic.ttf */; };
-		195508A029214720005A94C5 /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = 196DCD1A261010A80021F937 /* OFL.txt */; };
-		195508A129214720005A94C5 /* Poppins-ExtraLightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 196DCD2C261010AD0021F937 /* Poppins-ExtraLightItalic.ttf */; };
-		195508A229214720005A94C5 /* Poppins-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 196DCD1F261010A90021F937 /* Poppins-BlackItalic.ttf */; };
-		195508A329214720005A94C5 /* Poppins-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 196DCD25261010AB0021F937 /* Poppins-Light.ttf */; };
-		195508A429214720005A94C5 /* Poppins-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 196DCD26261010AB0021F937 /* Poppins-Medium.ttf */; };
-		195508A529214720005A94C5 /* Poppins-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 196DCD1D261010A90021F937 /* Poppins-BoldItalic.ttf */; };
-		195508A629214720005A94C5 /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 196DCD29261010AC0021F937 /* Poppins-SemiBold.ttf */; };
-		195508A729214720005A94C5 /* Poppins-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 196DCD21261010AA0021F937 /* Poppins-MediumItalic.ttf */; };
-		195508A829214720005A94C5 /* Poppins-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 196DCD24261010AA0021F937 /* Poppins-ExtraLight.ttf */; };
-		195508A929214720005A94C5 /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 196DCD28261010AC0021F937 /* Poppins-Regular.ttf */; };
-		195508AA29214720005A94C5 /* Poppins-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 196DCD2B261010AD0021F937 /* Poppins-ThinItalic.ttf */; };
-		195508AB29214720005A94C5 /* Poppins-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 196DCD20261010AA0021F937 /* Poppins-LightItalic.ttf */; };
-		195508AC29214720005A94C5 /* Poppins-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 196DCD1C261010A90021F937 /* Poppins-Black.ttf */; };
-		195508AD29214720005A94C5 /* Poppins-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 196DCD27261010AB0021F937 /* Poppins-ExtraBold.ttf */; };
+		195508AF2921650B005A94C5 /* PlanCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195508AE2921650B005A94C5 /* PlanCard.swift */; };
+		195508B829216B9D005A94C5 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195508B729216B9D005A94C5 /* DataManager.swift */; };
+		195508BB29216BF9005A94C5 /* SettingsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195508BA29216BF9005A94C5 /* SettingsData.swift */; };
 		1964F6E925FC3F5500DC694B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1964F6E825FC3F5500DC694B /* AppDelegate.swift */; };
 		1964F6EB25FC3F5500DC694B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1964F6EA25FC3F5500DC694B /* SceneDelegate.swift */; };
-		1964F6ED25FC3F5500DC694B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1964F6EC25FC3F5500DC694B /* ViewController.swift */; };
-		1964F6F025FC3F5500DC694B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1964F6EE25FC3F5500DC694B /* Main.storyboard */; };
+		1964F6ED25FC3F5500DC694B /* WeekDaysViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1964F6EC25FC3F5500DC694B /* WeekDaysViewController.swift */; };
 		1964F6F225FC3F5800DC694B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1964F6F125FC3F5800DC694B /* Assets.xcassets */; };
-		1964F6F525FC3F5800DC694B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1964F6F325FC3F5800DC694B /* LaunchScreen.storyboard */; };
-		1964F70325FC451600DC694B /* TextField+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1964F70225FC451600DC694B /* TextField+Extention.swift */; };
-		1964F70725FC453100DC694B /* ExtentionLocalize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1964F70625FC453100DC694B /* ExtentionLocalize.swift */; };
-		1964F70A25FC454200DC694B /* EXTInternet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1964F70925FC454100DC694B /* EXTInternet.swift */; };
-		1964F70D25FC454E00DC694B /* EXTAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1964F70C25FC454E00DC694B /* EXTAlert.swift */; };
-		1964F71425FC461A00DC694B /* Shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1964F71325FC461A00DC694B /* Shared.swift */; };
-		1964F71725FC462800DC694B /* SalmanLocalize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1964F71625FC462800DC694B /* SalmanLocalize.swift */; };
-		1964F71A25FC479700DC694B /* style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1964F71925FC479700DC694B /* style.swift */; };
-		1964F71D25FC55F900DC694B /* AddTaskTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1964F71C25FC55F900DC694B /* AddTaskTVCell.swift */; };
+		1964F70325FC451600DC694B /* SkyFloatingLabelTextFieldWithIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1964F70225FC451600DC694B /* SkyFloatingLabelTextFieldWithIcon.swift */; };
+		1964F71A25FC479700DC694B /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1964F71925FC479700DC694B /* UIView+Extension.swift */; };
 		196DCDC0261016330021F937 /* Poppins-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 196DCD1D261010A90021F937 /* Poppins-BoldItalic.ttf */; };
 		196DCDC1261016330021F937 /* Poppins-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 196DCD1C261010A90021F937 /* Poppins-Black.ttf */; };
 		196DCDC2261016330021F937 /* Poppins-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 196DCD2B261010AD0021F937 /* Poppins-ThinItalic.ttf */; };
@@ -78,14 +49,29 @@
 		196DCDD1261016330021F937 /* Poppins-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 196DCD21261010AA0021F937 /* Poppins-MediumItalic.ttf */; };
 		196DCDD2261016330021F937 /* Poppins-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 196DCD20261010AA0021F937 /* Poppins-LightItalic.ttf */; };
 		1974A1FB291BEE90006B1B86 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1974A1FA291BEE90006B1B86 /* R.generated.swift */; };
-		1989FA1126013AA50008E943 /* data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1989FA1026013AA50008E943 /* data.swift */; };
-		198C459D2605F3F900461F27 /* DayPlanCardWithLeftTopOnCardTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 198C459C2605F3F900461F27 /* DayPlanCardWithLeftTopOnCardTVCell.swift */; };
-		198C45AB26060E4200461F27 /* DisplayType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 198C45AA26060E4200461F27 /* DisplayType.swift */; };
+		198C45AB26060E4200461F27 /* CardDisplayType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 198C45AA26060E4200461F27 /* CardDisplayType.swift */; };
+		19A922FF2921898000D20EF7 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195508B0292166C0005A94C5 /* Date+Extension.swift */; };
+		19A92307292189DF00D20EF7 /* Poppins-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 196DCD26261010AB0021F937 /* Poppins-Medium.ttf */; };
+		19A92313292189DF00D20EF7 /* Poppins-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 196DCD1E261010A90021F937 /* Poppins-Bold.ttf */; };
+		19A92314292189DF00D20EF7 /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 196DCD29261010AC0021F937 /* Poppins-SemiBold.ttf */; };
+		19A9232329218B2400D20EF7 /* PlanCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195508AE2921650B005A94C5 /* PlanCard.swift */; };
+		19A9232429218B3000D20EF7 /* CardDisplayType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 198C45AA26060E4200461F27 /* CardDisplayType.swift */; };
+		19A9232629218BC500D20EF7 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195508B0292166C0005A94C5 /* Date+Extension.swift */; };
+		19A9232B29218ECB00D20EF7 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195508B729216B9D005A94C5 /* DataManager.swift */; };
+		19A9232C29218EE000D20EF7 /* SettingsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195508BA29216BF9005A94C5 /* SettingsData.swift */; };
+		19A9232F29218FE300D20EF7 /* ColorsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A9232E29218FE300D20EF7 /* ColorsData.swift */; };
+		19A92335292266DF00D20EF7 /* WeekDays.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19A92334292266DF00D20EF7 /* WeekDays.storyboard */; };
+		19A923372922670900D20EF7 /* AddNewTask.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19A923362922670900D20EF7 /* AddNewTask.storyboard */; };
+		19A923392922672000D20EF7 /* CardsSettings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19A923382922672000D20EF7 /* CardsSettings.storyboard */; };
+		19A9233C292270C500D20EF7 /* SettingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A9233B292270C500D20EF7 /* SettingModel.swift */; };
+		19A9234129227DD000D20EF7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19A9233F29227DD000D20EF7 /* LaunchScreen.storyboard */; };
+		19C9869D29228A5600231ACB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 192895952607D7A300EC96FC /* Assets.xcassets */; };
+		19C9869E29228B6900231ACB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1964F6F125FC3F5800DC694B /* Assets.xcassets */; };
+		19C986A029228C0500231ACB /* WeekViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C9869F29228C0500231ACB /* WeekViewModel.swift */; };
+		19C986A229228C5D00231ACB /* DayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C986A129228C5D00231ACB /* DayViewModel.swift */; };
 		19CDDBEB25FD789800686C09 /* GlobalTaskSettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19CDDBEA25FD789800686C09 /* GlobalTaskSettingsVC.swift */; };
-		19CDDBEE25FD7A4B00686C09 /* OnClickTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19CDDBED25FD7A4B00686C09 /* OnClickTVCell.swift */; };
-		19CDDBF125FD7C0E00686C09 /* AlwaysOnTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19CDDBF025FD7C0E00686C09 /* AlwaysOnTVCell.swift */; };
-		19CDDBF825FD885900686C09 /* NewTaskVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19CDDBF725FD885900686C09 /* NewTaskVC.swift */; };
-		19DFCC7B2602537E00F00EC7 /* NewTaskNC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DFCC7A2602537E00F00EC7 /* NewTaskNC.swift */; };
+		19CDDBF825FD885900686C09 /* AddNewTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19CDDBF725FD885900686C09 /* AddNewTaskViewController.swift */; };
+		19DFCC7B2602537E00F00EC7 /* NewTaskNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DFCC7A2602537E00F00EC7 /* NewTaskNavigationController.swift */; };
 		19E7D92A291C0A5E00504213 /* DayPlanCardLeftTopOnCardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E7D928291C0A5E00504213 /* DayPlanCardLeftTopOnCardTableViewCell.swift */; };
 		19E7D92B291C0A5E00504213 /* DayPlanCardLeftTopOnCardTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19E7D929291C0A5E00504213 /* DayPlanCardLeftTopOnCardTableViewCell.xib */; };
 		9B9749DE48A5994F428A75A4 /* Pods_DayPlanner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FEE7F855E4E6C7C5806C425 /* Pods_DayPlanner.framework */; };
@@ -133,24 +119,18 @@
 		192895972607D7A300EC96FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		192895A32607E74B00EC96FC /* DayPlannerSmallWidgetsExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DayPlannerSmallWidgetsExtension.entitlements; sourceTree = "<group>"; };
 		192895A62607E76000EC96FC /* DayPlanner.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DayPlanner.entitlements; sourceTree = "<group>"; };
-		194BAAF125FECD9800129C23 /* DoneCardTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoneCardTVCell.swift; sourceTree = "<group>"; };
-		194BAAF825FECF3B00129C23 /* PlanCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanCard.swift; sourceTree = "<group>"; };
+		195508AE2921650B005A94C5 /* PlanCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanCard.swift; sourceTree = "<group>"; };
+		195508B0292166C0005A94C5 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
+		195508B729216B9D005A94C5 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		195508BA29216BF9005A94C5 /* SettingsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsData.swift; sourceTree = "<group>"; };
 		1964F6E525FC3F5500DC694B /* DayPlanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DayPlanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1964F6E825FC3F5500DC694B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1964F6EA25FC3F5500DC694B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		1964F6EC25FC3F5500DC694B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		1964F6EF25FC3F5500DC694B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		1964F6EC25FC3F5500DC694B /* WeekDaysViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekDaysViewController.swift; sourceTree = "<group>"; };
 		1964F6F125FC3F5800DC694B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		1964F6F425FC3F5800DC694B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1964F6F625FC3F5800DC694B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1964F70225FC451600DC694B /* TextField+Extention.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TextField+Extention.swift"; sourceTree = "<group>"; };
-		1964F70625FC453100DC694B /* ExtentionLocalize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtentionLocalize.swift; sourceTree = "<group>"; };
-		1964F70925FC454100DC694B /* EXTInternet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EXTInternet.swift; sourceTree = "<group>"; };
-		1964F70C25FC454E00DC694B /* EXTAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EXTAlert.swift; sourceTree = "<group>"; };
-		1964F71325FC461A00DC694B /* Shared.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shared.swift; sourceTree = "<group>"; };
-		1964F71625FC462800DC694B /* SalmanLocalize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SalmanLocalize.swift; sourceTree = "<group>"; };
-		1964F71925FC479700DC694B /* style.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = style.swift; sourceTree = "<group>"; };
-		1964F71C25FC55F900DC694B /* AddTaskTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskTVCell.swift; sourceTree = "<group>"; };
+		1964F70225FC451600DC694B /* SkyFloatingLabelTextFieldWithIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkyFloatingLabelTextFieldWithIcon.swift; sourceTree = "<group>"; };
+		1964F71925FC479700DC694B /* UIView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		196DCD152610107E0021F937 /* SF-Pro-Text-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Regular.otf"; sourceTree = "<group>"; };
 		196DCD162610107F0021F937 /* SF-Pro-Text-Black 3.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Black 3.otf"; sourceTree = "<group>"; };
 		196DCD172610107F0021F937 /* SF-Pro-Text-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Semibold.otf"; sourceTree = "<group>"; };
@@ -173,15 +153,19 @@
 		196DCD2A261010AC0021F937 /* Poppins-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Thin.ttf"; sourceTree = "<group>"; };
 		196DCD2B261010AD0021F937 /* Poppins-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ThinItalic.ttf"; sourceTree = "<group>"; };
 		196DCD2C261010AD0021F937 /* Poppins-ExtraLightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ExtraLightItalic.ttf"; sourceTree = "<group>"; };
-		1974A1FA291BEE90006B1B86 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
-		1989FA1026013AA50008E943 /* data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = data.swift; sourceTree = "<group>"; };
-		198C459C2605F3F900461F27 /* DayPlanCardWithLeftTopOnCardTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayPlanCardWithLeftTopOnCardTVCell.swift; sourceTree = "<group>"; };
-		198C45AA26060E4200461F27 /* DisplayType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayType.swift; sourceTree = "<group>"; };
+		1974A1FA291BEE90006B1B86 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = R.generated.swift; path = DayPlanner/Resources/R.generated.swift; sourceTree = SOURCE_ROOT; };
+		198C45AA26060E4200461F27 /* CardDisplayType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDisplayType.swift; sourceTree = "<group>"; };
+		19A9232E29218FE300D20EF7 /* ColorsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorsData.swift; sourceTree = "<group>"; };
+		19A92334292266DF00D20EF7 /* WeekDays.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WeekDays.storyboard; sourceTree = "<group>"; };
+		19A923362922670900D20EF7 /* AddNewTask.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddNewTask.storyboard; sourceTree = "<group>"; };
+		19A923382922672000D20EF7 /* CardsSettings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CardsSettings.storyboard; sourceTree = "<group>"; };
+		19A9233B292270C500D20EF7 /* SettingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingModel.swift; sourceTree = "<group>"; };
+		19A9234029227DD000D20EF7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		19C9869F29228C0500231ACB /* WeekViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekViewModel.swift; sourceTree = "<group>"; };
+		19C986A129228C5D00231ACB /* DayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayViewModel.swift; sourceTree = "<group>"; };
 		19CDDBEA25FD789800686C09 /* GlobalTaskSettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalTaskSettingsVC.swift; sourceTree = "<group>"; };
-		19CDDBED25FD7A4B00686C09 /* OnClickTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnClickTVCell.swift; sourceTree = "<group>"; };
-		19CDDBF025FD7C0E00686C09 /* AlwaysOnTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlwaysOnTVCell.swift; sourceTree = "<group>"; };
-		19CDDBF725FD885900686C09 /* NewTaskVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskVC.swift; sourceTree = "<group>"; };
-		19DFCC7A2602537E00F00EC7 /* NewTaskNC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskNC.swift; sourceTree = "<group>"; };
+		19CDDBF725FD885900686C09 /* AddNewTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewTaskViewController.swift; sourceTree = "<group>"; };
+		19DFCC7A2602537E00F00EC7 /* NewTaskNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskNavigationController.swift; sourceTree = "<group>"; };
 		19E7D928291C0A5E00504213 /* DayPlanCardLeftTopOnCardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayPlanCardLeftTopOnCardTableViewCell.swift; sourceTree = "<group>"; };
 		19E7D929291C0A5E00504213 /* DayPlanCardLeftTopOnCardTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DayPlanCardLeftTopOnCardTableViewCell.xib; sourceTree = "<group>"; };
 		28D54646ED27F1048CD094FF /* Pods-DayPlannerSmallWidgetsExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DayPlannerSmallWidgetsExtension.release.xcconfig"; path = "Target Support Files/Pods-DayPlannerSmallWidgetsExtension/Pods-DayPlannerSmallWidgetsExtension.release.xcconfig"; sourceTree = "<group>"; };
@@ -258,7 +242,6 @@
 			isa = PBXGroup;
 			children = (
 				192895A32607E74B00EC96FC /* DayPlannerSmallWidgetsExtension.entitlements */,
-				1964F6FE25FC44C500DC694B /* Extensions */,
 				1964F6E725FC3F5500DC694B /* DayPlanner */,
 				192895912607D7A000EC96FC /* DayPlannerSmallWidgets */,
 				1928958C2607D7A000EC96FC /* Frameworks */,
@@ -279,24 +262,15 @@
 		1964F6E725FC3F5500DC694B /* DayPlanner */ = {
 			isa = PBXGroup;
 			children = (
-				19FBCB33260F876B00549396 /* Fonts */,
-				1974A1FA291BEE90006B1B86 /* R.generated.swift */,
+				19A9233D2922721600D20EF7 /* Delegates */,
+				1964F6FE25FC44C500DC694B /* Extensions */,
+				19A9233E292277CA00D20EF7 /* Resources */,
 				19FB8962291BE54F00C1E19C /* Models */,
 				19FB8963291BE55400C1E19C /* Views */,
 				19FB8964291BE55E00C1E19C /* ViewModels */,
 				192895A62607E76000EC96FC /* DayPlanner.entitlements */,
-				198C45A126060BDF00461F27 /* TaskCardCells */,
-				1964F6E825FC3F5500DC694B /* AppDelegate.swift */,
-				1964F6EA25FC3F5500DC694B /* SceneDelegate.swift */,
-				1964F6EC25FC3F5500DC694B /* ViewController.swift */,
-				1964F6EE25FC3F5500DC694B /* Main.storyboard */,
-				1964F6F125FC3F5800DC694B /* Assets.xcassets */,
-				1964F6F325FC3F5800DC694B /* LaunchScreen.storyboard */,
+				19A9233F29227DD000D20EF7 /* LaunchScreen.storyboard */,
 				1964F6F625FC3F5800DC694B /* Info.plist */,
-				198C45A426060C8A00461F27 /* TaskSettings */,
-				198C45A326060C5400461F27 /* DataDS */,
-				19CDDBF725FD885900686C09 /* NewTaskVC.swift */,
-				19DFCC7A2602537E00F00EC7 /* NewTaskNC.swift */,
 			);
 			path = DayPlanner;
 			sourceTree = "<group>";
@@ -304,13 +278,9 @@
 		1964F6FE25FC44C500DC694B /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				1964F71325FC461A00DC694B /* Shared.swift */,
-				1964F71625FC462800DC694B /* SalmanLocalize.swift */,
-				1964F70C25FC454E00DC694B /* EXTAlert.swift */,
-				1964F70925FC454100DC694B /* EXTInternet.swift */,
-				1964F71925FC479700DC694B /* style.swift */,
-				1964F70625FC453100DC694B /* ExtentionLocalize.swift */,
-				1964F70225FC451600DC694B /* TextField+Extention.swift */,
+				1964F71925FC479700DC694B /* UIView+Extension.swift */,
+				1964F70225FC451600DC694B /* SkyFloatingLabelTextFieldWithIcon.swift */,
+				195508B0292166C0005A94C5 /* Date+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -318,38 +288,41 @@
 		1974A1FC291BF4CB006B1B86 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
+				19A92334292266DF00D20EF7 /* WeekDays.storyboard */,
+				19A923362922670900D20EF7 /* AddNewTask.storyboard */,
+				19A923382922672000D20EF7 /* CardsSettings.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
 		};
-		198C45A126060BDF00461F27 /* TaskCardCells */ = {
+		19A9233A2922699200D20EF7 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				194BAAF125FECD9800129C23 /* DoneCardTVCell.swift */,
-				1964F71C25FC55F900DC694B /* AddTaskTVCell.swift */,
-				198C459C2605F3F900461F27 /* DayPlanCardWithLeftTopOnCardTVCell.swift */,
-			);
-			path = TaskCardCells;
-			sourceTree = "<group>";
-		};
-		198C45A326060C5400461F27 /* DataDS */ = {
-			isa = PBXGroup;
-			children = (
-				194BAAF825FECF3B00129C23 /* PlanCard.swift */,
-				1989FA1026013AA50008E943 /* data.swift */,
-				198C45AA26060E4200461F27 /* DisplayType.swift */,
-			);
-			path = DataDS;
-			sourceTree = "<group>";
-		};
-		198C45A426060C8A00461F27 /* TaskSettings */ = {
-			isa = PBXGroup;
-			children = (
+				1964F6EC25FC3F5500DC694B /* WeekDaysViewController.swift */,
+				19CDDBF725FD885900686C09 /* AddNewTaskViewController.swift */,
+				19DFCC7A2602537E00F00EC7 /* NewTaskNavigationController.swift */,
 				19CDDBEA25FD789800686C09 /* GlobalTaskSettingsVC.swift */,
-				19CDDBED25FD7A4B00686C09 /* OnClickTVCell.swift */,
-				19CDDBF025FD7C0E00686C09 /* AlwaysOnTVCell.swift */,
 			);
-			path = TaskSettings;
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		19A9233D2922721600D20EF7 /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				1964F6E825FC3F5500DC694B /* AppDelegate.swift */,
+				1964F6EA25FC3F5500DC694B /* SceneDelegate.swift */,
+			);
+			path = Delegates;
+			sourceTree = "<group>";
+		};
+		19A9233E292277CA00D20EF7 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				19FBCB33260F876B00549396 /* Fonts */,
+				1974A1FA291BEE90006B1B86 /* R.generated.swift */,
+				1964F6F125FC3F5800DC694B /* Assets.xcassets */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		19E7D927291C0A5100504213 /* DayPlanCardLeftTopOnCardTableViewCell */ = {
@@ -364,6 +337,12 @@
 		19FB8962291BE54F00C1E19C /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				195508AE2921650B005A94C5 /* PlanCard.swift */,
+				195508BA29216BF9005A94C5 /* SettingsData.swift */,
+				195508B729216B9D005A94C5 /* DataManager.swift */,
+				198C45AA26060E4200461F27 /* CardDisplayType.swift */,
+				19A9232E29218FE300D20EF7 /* ColorsData.swift */,
+				19A9233B292270C500D20EF7 /* SettingModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -373,6 +352,7 @@
 			children = (
 				1974A1FC291BF4CB006B1B86 /* Storyboards */,
 				19FB8965291BE5DA00C1E19C /* TableViewCells */,
+				19A9233A2922699200D20EF7 /* ViewControllers */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -380,6 +360,8 @@
 		19FB8964291BE55E00C1E19C /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				19C9869F29228C0500231ACB /* WeekViewModel.swift */,
+				19C986A129228C5D00231ACB /* DayViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -420,7 +402,7 @@
 				19FBCB3D260F8C8000549396 /* Poppins */,
 			);
 			name = Fonts;
-			path = DayPlanner/Fonts;
+			path = DayPlanner/Resources/Fonts;
 			sourceTree = SOURCE_ROOT;
 		};
 		19FBCB3D260F8C8000549396 /* Poppins */ = {
@@ -446,9 +428,8 @@
 				196DCD2A261010AC0021F937 /* Poppins-Thin.ttf */,
 				196DCD2B261010AD0021F937 /* Poppins-ThinItalic.ttf */,
 			);
-			name = Poppins;
-			path = ../../../../../../../../Documents/DayPlanner/DayPlanner/Fonts/Poppins;
-			sourceTree = BUILT_PRODUCTS_DIR;
+			path = Poppins;
+			sourceTree = "<group>";
 		};
 		DD0E4BE943427870D20996B8 /* Pods */ = {
 			isa = PBXGroup;
@@ -545,26 +526,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				195508A029214720005A94C5 /* OFL.txt in Resources */,
-				195508A429214720005A94C5 /* Poppins-Medium.ttf in Resources */,
-				195508A329214720005A94C5 /* Poppins-Light.ttf in Resources */,
-				1955089C29214720005A94C5 /* Poppins-Bold.ttf in Resources */,
-				195508A629214720005A94C5 /* Poppins-SemiBold.ttf in Resources */,
-				1955089E29214720005A94C5 /* Poppins-Italic.ttf in Resources */,
-				195508A229214720005A94C5 /* Poppins-BlackItalic.ttf in Resources */,
-				195508AC29214720005A94C5 /* Poppins-Black.ttf in Resources */,
+				19A92313292189DF00D20EF7 /* Poppins-Bold.ttf in Resources */,
+				19A92314292189DF00D20EF7 /* Poppins-SemiBold.ttf in Resources */,
+				19A92307292189DF00D20EF7 /* Poppins-Medium.ttf in Resources */,
 				192895962607D7A300EC96FC /* Assets.xcassets in Resources */,
-				1955089D29214720005A94C5 /* Poppins-ExtraBoldItalic.ttf in Resources */,
-				195508A529214720005A94C5 /* Poppins-BoldItalic.ttf in Resources */,
-				195508A729214720005A94C5 /* Poppins-MediumItalic.ttf in Resources */,
-				195508A829214720005A94C5 /* Poppins-ExtraLight.ttf in Resources */,
-				195508A129214720005A94C5 /* Poppins-ExtraLightItalic.ttf in Resources */,
-				1955089F29214720005A94C5 /* Poppins-SemiBoldItalic.ttf in Resources */,
-				195508AB29214720005A94C5 /* Poppins-LightItalic.ttf in Resources */,
-				195508AA29214720005A94C5 /* Poppins-ThinItalic.ttf in Resources */,
-				195508A929214720005A94C5 /* Poppins-Regular.ttf in Resources */,
-				1955089B29214720005A94C5 /* Poppins-Thin.ttf in Resources */,
-				195508AD29214720005A94C5 /* Poppins-ExtraBold.ttf in Resources */,
+				19C9869E29228B6900231ACB /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -572,30 +538,33 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1964F6F525FC3F5800DC694B /* LaunchScreen.storyboard in Resources */,
 				196DCDC3261016330021F937 /* Poppins-BlackItalic.ttf in Resources */,
 				196DCDC7261016330021F937 /* Poppins-Medium.ttf in Resources */,
 				196DCDCD261016330021F937 /* Poppins-Thin.ttf in Resources */,
 				1964F6F225FC3F5800DC694B /* Assets.xcassets in Resources */,
 				196DCDD0261016330021F937 /* Poppins-SemiBoldItalic.ttf in Resources */,
 				196DCDC5261016330021F937 /* Poppins-ExtraBoldItalic.ttf in Resources */,
-				1964F6F025FC3F5500DC694B /* Main.storyboard in Resources */,
 				196DCDCA261016330021F937 /* Poppins-ExtraLight.ttf in Resources */,
 				196DCDC8261016330021F937 /* OFL.txt in Resources */,
 				196DCDC2261016330021F937 /* Poppins-ThinItalic.ttf in Resources */,
 				196DCDCF261016330021F937 /* Poppins-Light.ttf in Resources */,
+				19A923392922672000D20EF7 /* CardsSettings.storyboard in Resources */,
 				191B4D19291C0860005235A7 /* DoneCardTableViewCell.xib in Resources */,
 				196DCDCE261016330021F937 /* Poppins-ExtraBold.ttf in Resources */,
 				196DCDC9261016330021F937 /* Poppins-Bold.ttf in Resources */,
 				196DCDCC261016330021F937 /* Poppins-Italic.ttf in Resources */,
 				196DCDC4261016330021F937 /* Poppins-SemiBold.ttf in Resources */,
 				196DCDC0261016330021F937 /* Poppins-BoldItalic.ttf in Resources */,
+				19A9234129227DD000D20EF7 /* LaunchScreen.storyboard in Resources */,
+				19A92335292266DF00D20EF7 /* WeekDays.storyboard in Resources */,
 				196DCDCB261016330021F937 /* Poppins-ExtraLightItalic.ttf in Resources */,
 				196DCDC1261016330021F937 /* Poppins-Black.ttf in Resources */,
 				191B4D1C291C086E005235A7 /* AddTaskTableViewCell.xib in Resources */,
+				19A923372922670900D20EF7 /* AddNewTask.storyboard in Resources */,
 				191B4D23291C094C005235A7 /* SettingsTableViewCell.xib in Resources */,
 				196DCDD1261016330021F937 /* Poppins-MediumItalic.ttf in Resources */,
 				19E7D92B291C0A5E00504213 /* DayPlanCardLeftTopOnCardTableViewCell.xib in Resources */,
+				19C9869D29228A5600231ACB /* Assets.xcassets in Resources */,
 				196DCDC6261016330021F937 /* Poppins-Regular.ttf in Resources */,
 				196DCDD2261016330021F937 /* Poppins-LightItalic.ttf in Resources */,
 			);
@@ -692,11 +661,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				192895AF2607EA2A00EC96FC /* PlanCard.swift in Sources */,
-				192895A92607EA2500EC96FC /* DisplayType.swift in Sources */,
+				19A9232C29218EE000D20EF7 /* SettingsData.swift in Sources */,
+				19A9232629218BC500D20EF7 /* Date+Extension.swift in Sources */,
+				19A9232329218B2400D20EF7 /* PlanCard.swift in Sources */,
+				19A9232B29218ECB00D20EF7 /* DataManager.swift in Sources */,
+				19A9232429218B3000D20EF7 /* CardDisplayType.swift in Sources */,
 				192895982607D7A300EC96FC /* DayPlannerSmallWidgets.intentdefinition in Sources */,
 				192895932607D7A000EC96FC /* DayPlannerSmallWidgets.swift in Sources */,
-				192895AC2607EA2800EC96FC /* data.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -704,33 +675,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1964F71D25FC55F900DC694B /* AddTaskTVCell.swift in Sources */,
-				19CDDBEE25FD7A4B00686C09 /* OnClickTVCell.swift in Sources */,
 				191B4D22291C094C005235A7 /* SettingsTableViewCell.swift in Sources */,
 				192895992607D7A300EC96FC /* DayPlannerSmallWidgets.intentdefinition in Sources */,
-				1964F70A25FC454200DC694B /* EXTInternet.swift in Sources */,
-				1964F6ED25FC3F5500DC694B /* ViewController.swift in Sources */,
-				198C459D2605F3F900461F27 /* DayPlanCardWithLeftTopOnCardTVCell.swift in Sources */,
-				1964F70325FC451600DC694B /* TextField+Extention.swift in Sources */,
-				1964F71A25FC479700DC694B /* style.swift in Sources */,
-				1964F70725FC453100DC694B /* ExtentionLocalize.swift in Sources */,
-				19CDDBF825FD885900686C09 /* NewTaskVC.swift in Sources */,
-				19DFCC7B2602537E00F00EC7 /* NewTaskNC.swift in Sources */,
-				194BAAF925FECF3B00129C23 /* PlanCard.swift in Sources */,
-				198C45AB26060E4200461F27 /* DisplayType.swift in Sources */,
+				195508BB29216BF9005A94C5 /* SettingsData.swift in Sources */,
+				19A9232F29218FE300D20EF7 /* ColorsData.swift in Sources */,
+				1964F6ED25FC3F5500DC694B /* WeekDaysViewController.swift in Sources */,
+				1964F70325FC451600DC694B /* SkyFloatingLabelTextFieldWithIcon.swift in Sources */,
+				1964F71A25FC479700DC694B /* UIView+Extension.swift in Sources */,
+				19C986A029228C0500231ACB /* WeekViewModel.swift in Sources */,
+				19CDDBF825FD885900686C09 /* AddNewTaskViewController.swift in Sources */,
+				19DFCC7B2602537E00F00EC7 /* NewTaskNavigationController.swift in Sources */,
+				195508B829216B9D005A94C5 /* DataManager.swift in Sources */,
+				198C45AB26060E4200461F27 /* CardDisplayType.swift in Sources */,
+				19A922FF2921898000D20EF7 /* Date+Extension.swift in Sources */,
 				1964F6E925FC3F5500DC694B /* AppDelegate.swift in Sources */,
 				19CDDBEB25FD789800686C09 /* GlobalTaskSettingsVC.swift in Sources */,
 				1964F6EB25FC3F5500DC694B /* SceneDelegate.swift in Sources */,
-				1964F71425FC461A00DC694B /* Shared.swift in Sources */,
 				1974A1FB291BEE90006B1B86 /* R.generated.swift in Sources */,
-				19CDDBF125FD7C0E00686C09 /* AlwaysOnTVCell.swift in Sources */,
+				19A9233C292270C500D20EF7 /* SettingModel.swift in Sources */,
+				19C986A229228C5D00231ACB /* DayViewModel.swift in Sources */,
 				191B4D1D291C086E005235A7 /* AddTaskTableViewCell.swift in Sources */,
-				1964F70D25FC454E00DC694B /* EXTAlert.swift in Sources */,
-				1964F71725FC462800DC694B /* SalmanLocalize.swift in Sources */,
+				195508AF2921650B005A94C5 /* PlanCard.swift in Sources */,
 				191B4D18291C0860005235A7 /* DoneCardTableViewCell.swift in Sources */,
 				19E7D92A291C0A5E00504213 /* DayPlanCardLeftTopOnCardTableViewCell.swift in Sources */,
-				1989FA1126013AA50008E943 /* data.swift in Sources */,
-				194BAAF225FECD9800129C23 /* DoneCardTVCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -745,18 +712,10 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		1964F6EE25FC3F5500DC694B /* Main.storyboard */ = {
+		19A9233F29227DD000D20EF7 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				1964F6EF25FC3F5500DC694B /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		1964F6F325FC3F5800DC694B /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				1964F6F425FC3F5800DC694B /* Base */,
+				19A9234029227DD000D20EF7 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
